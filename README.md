@@ -1,11 +1,10 @@
 # 2020-2-PROYCVDS-LOS-DISCIPULOS-DEL-MAESTRO-MIGUELITO
-## Pagina Web
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://los-discipulos-de-miguelito.herokuapp.com/faces/paginaWeb.xhtml)
 
 ## Circle Ci
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/20202-PROYCVDS-LOS-DISCIPULOS-DE-MIGUE/MAESTRO-MIGUELITO)
 
 ## Codacy
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9106912acf4e42f38eef7f27eb0c8522)](https://www.codacy.com/manual/2020-2-PROYCVDS-Oompa-Loompas
-/2020-2-PROYCVDS-Oompa-Loompas?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=2020-2-PROYCVDS-Oompa-Loompas
-/2020-2-PROYCVDS-Oompa-Loompas&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9106912acf4e42f38eef7f27eb0c8522)](https://app.codacy.com/gh/20202-PROYCVDS-LOS-DISCIPULOS-DE-MIGUE/MAESTRO-MIGUELITO/dashboard)
+
+## Pagina Web
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://los-discipulos-de-miguelito.herokuapp.com/faces/paginaWeb.xhtml)
