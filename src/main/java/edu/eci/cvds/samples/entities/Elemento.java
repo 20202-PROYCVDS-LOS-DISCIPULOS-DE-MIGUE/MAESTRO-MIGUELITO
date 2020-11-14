@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  *
  * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
+*/
 public class Elemento implements Serializable
 {
     private int idElemento;
