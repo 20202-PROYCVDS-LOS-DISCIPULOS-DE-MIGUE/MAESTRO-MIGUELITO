@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper">
+
+  <resultMap type='Laboratorio' id='LaboratorioResult'>
+    <id property='idLaboratorio' column='idLaboratorio' />
+    <result property='nombre' column='nombre' />
+    <result property='cantidadEquipos' column='cantidadEquipos' />
+    <result property='informacion' column='informacion' />
+  </resultMap>
+
+ 
+    <insert id="añadirLaboratorio" parameterType="map">
+        INSERT INTO laboratorio (idLaboratorio, nombre, cantidadEquipos, informacion)
+        VALUES (#{laboratorio.idLaboratorio},#{laboratorio.nombre},#{laboratorio.cantidadEquipos},#{laboratorioo.informacion})
+    </insert>
+
+	
+</mapper>	
