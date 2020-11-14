@@ -16,9 +16,32 @@ public class UsuarioBean extends BasePageBean
     private List<Usuario> usuarios = null;
     @Inject
     private  ServiciosUsuario serviciosUsuario;
+    
+    private String documento;
+    private String contraseña;
 
     public List<Usuario> consultarUsuarios() throws PersistenceException 
     {
         return serviciosUsuario.consultarUsuarios();
+    }
+    
+    public String getDocumento() 
+    {
+        return documento;
+    }
+
+    public void setDocumento(String login) 
+    {
+        this.documento = login;
+    }
+
+    public String getContraseña() 
+    {
+        return contraseña;
+    }
+
+    public void setContraseña(String senha) 
+    {
+        this.contraseña = senha;
     }
 }

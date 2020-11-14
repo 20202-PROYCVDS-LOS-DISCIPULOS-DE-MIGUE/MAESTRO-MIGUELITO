@@ -1,54 +1,46 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html	xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-		xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
-		
-		<h:head>
-			<title>Labinfo</title>
-			<link href="css/es.css" rel="stylesheet"/>
-			<script type="text/javascript" src="/js/main.js"></script>
-		</h:head>
-		<body>
-			<div  id = "primero" class="contenedor-form">
-				
-				<div id="hi" class="botonCuenta">
-					<span id="pr" style="color: white" onclick="ocultar()"> Crear Cuenta</span>
-				</div>
-				
-				<div id="segundo" class="formulario">
-					<img class="avatar" src= "img/logov2.png" alt="Logo de login"/>
-					<h2 style="color: white">Iniciar Sesión</h2>
-					<h:form action="#">
-						<p:inputText id="atributo" value="#{shiroBean.username}" type="text" placeholder="Usuario"></p:inputText>
-						<p:inputText id="contra" value="#{shiroBean.password}" type="password" placeholder="Contraseña"></p:inputText>
-						<p:commandButton value="Iniciar Sesión" type="submit" id="boton" actionListener="#{shiroBean.doLogin()}"></p:commandButton>
-					</h:form>
-				</div>
-				
-				<div id ="tercero" class="formulario">
-					<img class="avatar" src= "img/logov2.png" alt="Logo de login"/>
-					<div id="hi" class="botonVolver">
-						<span id="sg" style="color: white" onclick="mostrar()"> Volver</span>
-					</div>
-					<h2 style="color: white">Crea tu Cuenta</h2>
-					<form action="#">
-						<input type="text" placeholder="Usuario" id="registoUsuario"></input>
-						
-						<input type="password" placeholder="Contraseña" id="registoContra"></input>
-						
-						<input type="email" placeholder="Correo Electrónico" id="correo"></input>
-						
-						<input type="text" placeholder="Teléfono"></input>
-						
-						<input type="submit" value="Registrarse"  id="botonRegistro"></input>
-					</form>
-				</div>
-				<div class="reset-password">
-					<a href="#" style="color: white">¿Olvidé mi Contraseña?</a>
-				</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Discipulos-Lab</title>
+        <link href="paginaWeb.css" rel="stylesheet"/>
+        <script type="text/javascript" src="paginaWeb.js"></script>
+    </h:head>
+    
+    <body>			
+        <div id="contendorPagina" class="contenedor-form">
+            <div id="hi" class="nuevo">
+                <span id="cp" style="color: greenyellow; font-family: Bahnschrift;" onclick="ocultar()"> Crear Usuario</span>
+            </div>
 
-				
-			</div>								
-		</body>
+            <div id="ventanaUsuario" class="formularioCasillas">
+                <h2 style="color: greenyellow; font-family: Bahnschrift;">Bienvenido Usuario!</h2>
+                <h:form action="#">
+                    <p:inputText id="atributo" value="#{UsuarioBean.documento}" type="text" placeholder="Usuario"></p:inputText>
+                    <p:inputText id="contra" value="#{UsuarioBean.contraseña}" type="password" placeholder="Contraseña"></p:inputText>
+                    <p:commandButton value="Iniciar Sesión" type="submit" id="boton" actionListener=""></p:commandButton>
+                </h:form>
+            </div>
+
+            <div id ="ventanaNuevoUsuario" class="formularioCasillas">
+                <div id="hi" class="atras">
+                    <span id="vnu" style="color: greenyellow; font-family: Bahnschrift;" onclick="mostrar()"> Cancelar Usuario</span>
+                </div>
+                <h2 style="color: greenyellow; font-family: Bahnschrift;">Registro de nuevo usuario</h2>
+                <form action="#">
+                    <input id="documento" type="text" placeholder="Documento*"></input>
+                    <input id="documento" type="text" placeholder="Rol*"></input>
+                    <input id="documento" type="text" placeholder="Nombre*"></input>
+                    <input id="documento" type="text" placeholder="Apellido*"></input>
+                    <input id="contraseña" type="password" placeholder="Contraseña*"></input>
+                    <input id="correo" type="email" placeholder="Correo Electrónico*"></input>
+                    <input id="telefono" type="text" placeholder="Teléfono*"></input>
+                    <input id="Registrar" type="submit" value="Confirmar Registro"></input>
+                </form>
+            </div>
+            <div class="respaldoContraseña">
+                <a href="#" style="color: greenyellow; font-family: Bahnschrift;">Olvidaste tu Contraseña?</a>
+            </div>
+        </div>								
+    </body>
 </html>
