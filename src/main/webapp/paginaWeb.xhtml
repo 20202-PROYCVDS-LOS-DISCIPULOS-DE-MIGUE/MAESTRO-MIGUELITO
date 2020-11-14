@@ -16,9 +16,9 @@
             <div id="ventanaUsuario" class="formularioCasillas">
                 <h2 style="color: greenyellow; font-family: Bahnschrift;">Bienvenido Usuario!</h2>
                 <h:form action="#">
-                    <p:inputText id="atributo" value="#{UsuarioBean.documento}" type="text" placeholder="Usuario"></p:inputText>
-                    <p:inputText id="contra" value="#{UsuarioBean.contraseña}" type="password" placeholder="Contraseña"></p:inputText>
-                    <p:commandButton value="Iniciar Sesión" type="submit" id="boton" actionListener=""></p:commandButton>
+                    <p:inputText id="atributo" value="#{ShiroBean.documento}" type="text" placeholder="Usuario"></p:inputText>
+                    <p:inputText id="contra" value="#{ShiroBean.contraseña}" type="password" placeholder="Contraseña"></p:inputText>
+                    <p:commandButton value="Iniciar Sesión" type="submit" id="boton" actionListener="#{shiroBean.doLogin()}"></p:commandButton>
                 </h:form>
             </div>
 
