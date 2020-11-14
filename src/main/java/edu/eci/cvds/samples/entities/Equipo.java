@@ -16,7 +16,7 @@ public class Equipo implements Serializable
     private int idEquipo;
     private String ip;
     private String informacion;
-	private boolean actibo;
+    private boolean activo;
     private int laboratorio;
     
     public Equipo() 
@@ -60,7 +60,7 @@ public class Equipo implements Serializable
         this.informacion = informacion;
     }
 	
-	public int getActivo()
+    public boolean getActivo()
     {
         return activo;
     }

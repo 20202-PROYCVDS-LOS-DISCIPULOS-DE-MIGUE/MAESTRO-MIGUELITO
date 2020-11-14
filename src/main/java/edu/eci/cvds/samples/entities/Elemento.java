@@ -16,7 +16,7 @@ public class Elemento implements Serializable
     private int idElemento;
     private String tipo;
     private String marca;
-	private boolean activo;
+    private boolean activo;
     private int equipo;
     
     public Elemento() 
@@ -29,7 +29,7 @@ public class Elemento implements Serializable
         this.idElemento = idElemento;
         this.tipo = tipo;
         this.marca = marca;
-		this.activo = activo;
+	this.activo = activo;
         this.equipo = equipo;
     }
     
@@ -60,7 +60,7 @@ public class Elemento implements Serializable
         this.marca = marca;
     }
 	
-	public int getActivo()
+    public boolean getActivo()
     {
         return activo;
     }
