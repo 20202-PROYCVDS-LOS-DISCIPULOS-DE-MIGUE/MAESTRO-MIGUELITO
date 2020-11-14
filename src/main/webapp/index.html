@@ -9,17 +9,11 @@
 </h:head>
 <h:body class="is-preload">
 	<div class="login-box">
-    <!-- Header -->
-    <header id="header">
-        <h1>Login</h1>
-        <p> Maestro Miguelito</p>
-    </header>
-    <!-- Signup Form -->
-    <h:form id="signup-form" method="post" action="#">
-        <p:inputText type="Correo" name="Correo" id="email" placeholder="Correo" value="#{usuarioBean.nombre}"/><br/>
-        <p:inputText type="Contraseña" name="Contraseña" id="password" placeholder="Contraseña"  value="#{usuarioBean.contraseña}"/>
-        <p:commandButton type="login" value="login" styleClass="customStyleButton" action="#{usuario.consultarUsuarios()}"/>
-    </h:form>
+            <!-- Header -->
+            <header id="header">
+                <h1>Login</h1>
+                <p> Maestro Miguelito</p>
+            </header>
 	</div>
 </h:body>
 </html>
