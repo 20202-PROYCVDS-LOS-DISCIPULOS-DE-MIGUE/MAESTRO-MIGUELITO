@@ -58,3 +58,7 @@ ALTER TABLE "elementos" ADD CONSTRAINT FK_elementos_Eq FOREIGN KEY(equipo) REFER
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Eq FOREIGN KEY(registro) REFERENCES "equipos"(idEquipo);
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_elem FOREIGN KEY(registro) REFERENCES "elementos"(idElemento);
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Lab FOREIGN KEY(registro) REFERENCES "laboratorios"(idLaboratorio);
+------------------------------------------------------------------------
+CREATE SEQUENCE idLab INCREMENT BY 1;
+CREATE SEQUENCE idEle INCREMENT BY 1;
+CREATE SEQUENCE idNov INCREMENT BY 1;
