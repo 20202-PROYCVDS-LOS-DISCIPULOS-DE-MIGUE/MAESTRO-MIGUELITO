@@ -23,8 +23,8 @@ public class LoginBean {
 
     private static final long serialVersionUID = -2084921068710522276L;
 
-    private String nombre;
-    private String clave;
+    private String documento;
+    private String contraseña;
     
 
 
@@ -45,17 +45,20 @@ public class LoginBean {
         this.logger = logger;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDocumento() {
+        return documento;
     }
-    public String getClave(){
-        return clave;
+	
+	public void setDocumento(String documento){
+        this.documento=documento;
     }
-    public void setNombre(String nombre){
-        this.nombre=nombre;
+	
+    public String getContraseña(){
+        return contraseña;
     }
-    public void setClave(String clave){
-        this.clave=clave;
+    
+    public void setcontraseña(String contraseña){
+        this.contraseña=contraseña;
     }
 
 
@@ -63,8 +66,8 @@ public class LoginBean {
     @RequiresGuest
     public void login() throws PersistenceException {
         try {
-             logger.login(nombre,clave);
-             FacesContext.getCurrentInstance().getExternalContext().redirect("/index2.xhtml");
+             logger.login(documento,contraseña);
+             FacesContext.getCurrentInstance().getExternalContext().redirect("/Menu.xhtml");
 
         } catch (PersistenceException | IOException e){
             FacesContext.getCurrentInstance().addMessage("shiro", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuario no registrado", "Usuario no registrado"));
@@ -77,3 +80,4 @@ public class LoginBean {
         facesContext.getExternalContext().redirect("");
     }
 }
+

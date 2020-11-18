@@ -10,5 +10,5 @@ import edu.eci.cvds.samples.entities.Usuario;
 public interface UsuarioDAO {
 
     //public List<Usuario> getUsers() throws PersistenceException;
-    public Usuario getUser(String nombre) throws  PersistenceException;
+    public Usuario getUser(String documento) throws  PersistenceException;
 }

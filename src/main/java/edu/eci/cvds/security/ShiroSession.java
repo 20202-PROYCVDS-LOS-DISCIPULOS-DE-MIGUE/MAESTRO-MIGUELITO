@@ -25,22 +25,19 @@ public class ShiroSession implements SessionLogger {
     public void setUserServices(UsuarioServicios usuarioServicios) {
         this.usuarioServicios = usuarioServicios;
     }
-    @Override
-    public void login(String nombre,String clave) throws PersistenceException {
+    public void login(String documento,String contraseña) throws PersistenceException {
         try{
 
             Subject currentUser = SecurityUtils.getSubject();
 
-            UsernamePasswordToken token = new UsernamePasswordToken(nombre,clave);
+            UsernamePasswordToken token = new UsernamePasswordToken(documento,contraseña);
 
-            currentUser.getSession().setAttribute("Correo",nombre);
+            currentUser.getSession().setAttribute("documento",documento);
 
             currentUser.login( token );
 
-        } catch ( UnknownAccountException a ) {
+        } catch ( UnknownAccountException | IncorrectCredentialsException a ) {
             throw new PersistenceException("Usuario o contraseña incorrectos",a);
-        } catch ( IncorrectCredentialsException b ) {
-            throw new PersistenceException("Usuario o contraseña incorrectos",b);
         }
     }
 
@@ -48,5 +45,4 @@ public class ShiroSession implements SessionLogger {
     public boolean isLogged() {
         return SecurityUtils.getSubject().isAuthenticated();
     }
-
 }

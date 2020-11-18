@@ -20,18 +20,18 @@ public class UsuarioBean {
     //Private UsuarioServicios usuariorServicios
 
     private UsuarioServicios  usuarioServicios= ServiciosFactory.getInstance().getUserServices();
-    private String nombre;
-    private String clave;
+    private String documento;
+    private String contraseña;
 
 
     public void logIn(){
         try{
-            if(usuarioServicios.validateLogin(nombre,clave)){
+            if(usuarioServicios.validateLogin(documento,contraseña)){
                 System.out.println("Validacion ok");
-                Usuario usuario=usuarioServicios.getUser(nombre);
+                Usuario usuario=usuarioServicios.getUser(documento);
             }else{
                 System.out.println("Fallo de Validacion");
-                FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("Login.xhtml");
             }
         } catch (PersistenceException | IOException persistenceException) {
             persistenceException.printStackTrace();

@@ -1,17 +1,14 @@
 package edu.eci.cvds.view;
 
-import com.google.inject.Inject;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
 import edu.eci.cvds.samples.services.LaboratorioServicios;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.primefaces.PrimeFaces;
-import sun.awt.Symbol;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @ManagedBean(name="laboratorioBean")
@@ -21,7 +18,8 @@ public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServicios laboratorioServicios;
 	LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
-		private int idLaboratorio;
+		
+        private int idLaboratorio;
         private String nombre;
         private String informacion;
         private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();

@@ -32,9 +32,9 @@ public class MyBatisUsuarioDAO implements UsuarioDAO {
     }
 
     @Override
-    public Usuario getUser(String nombre) throws PersistenceException {
+    public Usuario getUser(String documento) throws PersistenceException {
         try{
-            return usuarioMapper.getUser(nombre);
+            return usuarioMapper.getUser(documento);
         }catch (Exception e){
             throw new PersistenceException("Error consultando usuario",e);
         }

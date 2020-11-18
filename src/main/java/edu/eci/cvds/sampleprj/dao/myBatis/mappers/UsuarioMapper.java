@@ -12,5 +12,5 @@ public interface UsuarioMapper {
 
     //public List<Usuarii>getUsers();
 
-    public Usuario getUser(@Param("nombre")String nombre);
+    public Usuario getUser(@Param("documento")String documento);
 }

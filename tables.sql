@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "usuarios" (
-	documento INT NOT NULL,
+	documento VARCHAR(50) NOT NULL,
 	nombres VARCHAR(50) NOT NULL,
 	apellidos VARCHAR(50) NOT NULL,
 	correo VARCHAR(50)NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS "novedades"(
 	fecha DATE NOT NULL,
 	titulo VARCHAR(20)NOT NULL,
 	detalle VARCHAR(100) NOT NULL,
-	responsable INT NOT NULL,
+	responsable VARCHAR(50) NOT NULL,
 	registro INT NOT NULL
 );
 

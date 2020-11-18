@@ -10,7 +10,7 @@ import edu.eci.cvds.samples.entities.Usuario;
 public interface UsuarioServicios {
     //public List<Usuario> getUsers() throws PersistenceException;
 
-    public Usuario getUser (String nombre) throws PersistenceException;
+    public Usuario getUser (String documento) throws PersistenceException;
 
-    public boolean validateLogin(String nombre, String clave) throws PersistenceException;
+    public boolean validateLogin(String documento, String contraseña) throws PersistenceException;
 }

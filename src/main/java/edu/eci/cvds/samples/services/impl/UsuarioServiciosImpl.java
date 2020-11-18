@@ -20,19 +20,13 @@ public class UsuarioServiciosImpl implements UsuarioServicios{
         return UsuarioDao.getUsers();
     }**/
 
-    @Override
-    public Usuario getUser(String nombre) throws PersistenceException {
-        return usuarioDao.getUser(nombre);
+    public Usuario getUser(String documento) throws PersistenceException {
+        return usuarioDao.getUser(documento);
     }
 
-    @Override
-    public boolean validateLogin(String nombre, String clave) throws PersistenceException {
-        Usuario usuario=usuarioDao.getUser(nombre);
-        if (usuario==null){
-            return false;
-        }else{
-            return true;
-        }
+    public boolean validateLogin(String documento, String contraseña) throws PersistenceException {
+        Usuario usuario=usuarioDao.getUser(documento);
+        return usuario != null;
     }
     public UsuarioDAO getUserDao(){
         return usuarioDao;
