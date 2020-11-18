@@ -1,31 +1,30 @@
 package edu.eci.cvds.view;
 
+import com.google.inject.Inject;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
 import edu.eci.cvds.samples.services.LaboratorioServicios;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.primefaces.PrimeFaces;
+import sun.awt.Symbol;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 @ManagedBean(name="laboratorioBean")
 @SessionScoped
+
 public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServicios laboratorioServicios;
 	LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
-	private int id;
-    private String nombre;
-    private String horario;
-    private String descripcion;
-    private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
+		private int idLaboratorio;
+        private String nombre;
+        private String informacion;
+        private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     
     
     public LaboratorioServicios getElementoServices(){
@@ -42,30 +41,24 @@ public class LaboratorioBean {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public int getId() {
-        return id;
+    public int getIdLaboratorio() {
+        return idLaboratorio;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdLaboratorio(int idLaboratorio) {
+        this.idLaboratorio = idLaboratorio;
     }
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-    public String getDescripcion() {
-        return descripcion;
+    
+    public String getinformacion() {
+        return informacion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setInformacion(String informacion) {
+        this.informacion = informacion;
     }
     public void registrarLaboratorio()throws PersistenceException{
         try{
-            laboratorioServicios.registrarLaboratorio(nombre,horario,descripcion);
+            laboratorioServicios.registrarLaboratorio(nombre,informacion);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Laboratorio registrado"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");

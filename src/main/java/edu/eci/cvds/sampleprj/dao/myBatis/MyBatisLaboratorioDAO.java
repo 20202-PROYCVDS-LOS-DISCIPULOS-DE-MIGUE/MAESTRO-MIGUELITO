@@ -8,10 +8,6 @@ import edu.eci.cvds.samples.entities.Laboratorio;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class MyBatisLaboratorioDAO implements LaboratorioDAO{
 
     @Inject
@@ -25,25 +21,22 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     public void setLaboratoriosMapper(LaboratorioMapper laboratorioMapper) {
         this.laboratorioMapper = laboratorioMapper;
     }
-    
     @Override
-    public Laboratorio getLaboratorio(int id) throws PersistenceException {
+    public Laboratorio getLaboratorio(int idLaboratorio) throws PersistenceException {
         try{
-            return laboratorioMapper.getLaboratorio(id);
+            return laboratorioMapper.getLaboratorio(idLaboratorio);
         }catch (Exception e){
             throw new PersistenceException("Error consultando laboratorios",e);
         }
     }
-    
     @Override
-    public void registrarLaboratorio(String nombre,String horario,String descripcion) throws PersistenceException{
+    public void registrarLaboratorio(String nombre,String informacion) throws PersistenceException{
         try{
-            laboratorioMapper.registrarLaboratorio(nombre,horario,descripcion);
+            laboratorioMapper.registrarLaboratorio(nombre,informacion);
         }catch (Exception e){
             throw new PersistenceException("Error insertando laboratorio",e);
         }
     }
-    
     @Override
     public ArrayList<Laboratorio>getLaboratorios()throws PersistenceException{
         try{
@@ -52,4 +45,5 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
             throw new PersistenceException("Error consultando laboratorios",e);
         }
     }
+
 }
