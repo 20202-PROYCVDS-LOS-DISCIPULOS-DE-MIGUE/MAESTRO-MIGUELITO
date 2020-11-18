@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  lang="es">
+	<h:head>
+		<title>Equipos</title>
+		<meta charset="utf-8"/>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			<h2>Equipos</h2>
+			
+			<br/>
+			<h3>Registrar Equipo</h3>
+			<div class="contenedor">
+				<div class="login-box">
+					<h:form id="signup-form" method="post" action="#">
+						<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
+						<p:inputText type="laboratorio" name="laboratorio" id="laboratorio" placeholder="Laboratorio" value=""/>
+						<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{EquipoBean.nombre}"/>
+						<h:selectOneMenu id="Equipo_EnUso" value="#{EquipoBean.enUso}">
+							<f:selectItem itemLabel="Activo" itemValue="true" />
+							<f:selectItem itemLabel="Desactivo" itemValue="false" />
+						</h:selectOneMenu>
+					</h:form>
+					<p:commandButton type="submit" value="Registrar Equipo" actionListener="#{EquipoBean.registrarEquipo()}"/>
+				</div>
+			</div>
+			
+			<h3>Registrar Elemento</h3>
+			<div class="contenedor">
+				<div class="login-box">
+					<h:form id="signup-form2" method="post" action="#">
+						<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
+						<h:selectOneMenu id="Elemento_Nombre" value="#{ElementoBean.nombre}">
+							<f:selectItem itemLabel="Teclado" itemValue="Teclado"/>
+							<f:selectItem itemLabel="Monitor" itemValue="Monitor"/>
+							<f:selectItem itemLabel="CPU" itemValue="CPU" />
+							<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
+						</h:selectOneMenu>
+						<p:inputText type="marca" name="marca" id="marca" placeholder="Marca" value="#{ElementoBean.marca}"/>
+						<h:selectOneMenu id="Equipo_EnUso" value="#{Elemento.enUso}">
+							<f:selectItem itemLabel="Activo" itemValue="true" />
+							<f:selectItem itemLabel="Desactivo" itemValue="false" />
+						</h:selectOneMenu>
+						<p:commandButton type="submit" value="Registrar Elemento" action="#{ElementoBean.registrarElemento()}"/>
+					</h:form>
+				</div>
+			</div>
+			
+			<br/>
+			<h3>Equipos Registrados</h3>
+			<p:dataTable var="Equipos" value="#{EquipoBean.getEquipos()}" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}{LastPageLink} {RowsPerPageDropdown}"
+				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+
+				<p:column sortBy="#{Equipos.id}">
+					<f:facet name="header">
+						<h:outputText value="Id Equipo"/>
+					</f:facet>
+					<h:outputText value="#{Equipos.id}"/>
+				</p:column>
+
+				<p:column sortBy="#{Equipos.nombre}">
+					<f:facet name="header">
+						<h:outputText value="IP"/>
+					</f:facet>
+					<h:outputText value="#{Equipos.nombre}"/>
+				</p:column>
+
+				<p:column sortBy="#{Equipos.estado}">
+					<f:facet name="header">
+						<h:outputText value="Informacion"/>
+					</f:facet>
+					<h:outputText value="#{Equipos.estado}"/>
+				</p:column>
+
+				<p:column sortBy="#{Equipos.enUso}">
+					<f:facet name="header">
+						<h:outputText value="Activo"/>
+					</f:facet>
+					<h:outputText value="#{Equipos.enuso}"/>
+				</p:column>
+
+				<p:column sortBy="#{Equipos.idLaboratorio}">
+					<f:facet name="header">
+						<h:outputText value="Id Laboratorio"/>
+					</f:facet>
+					<h:outputText value="#{Equipos.idLaboratorio}" />
+				</p:column>
+			</p:dataTable>
+			
+			<br/>
+			<h3>Elementos Registrados</h3>
+			<p:dataTable var="Elementos" value="#{ElementoBean.getElementos()}" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
+				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+	
+				<p:column sortBy="#{Equipos.id}"  >
+					<f:facet name="header">
+						<h:outputText value="Id Elemento" />
+					</f:facet>
+					<h:outputText value="#{Elementos.id}" />
+				</p:column>
+
+				<p:column sortBy="#{Elementos.nombre}" >
+					<f:facet name="header">
+						<h:outputText value="Tipo" />
+					</f:facet>
+					<h:outputText value="#{Elementos.nombre}" />
+				</p:column>
+
+				<p:column sortBy="#{Elementos.marca}" >
+					<f:facet name="header">
+						<h:outputText value="Marca" />
+					</f:facet>
+					<h:outputText value="#{Elementos.marca}" />
+				</p:column>
+
+				<p:column sortBy="#{Elementos.modelo}">
+					<f:facet name="header">
+						<h:outputText value="Activo" />
+					</f:facet>
+					<h:outputText value="#{Elementos.modelo}" />
+				</p:column>
+
+				<p:column sortBy="#{Elementos.idequipo}">
+					<f:facet name="header">
+						<h:outputText value="Id Equipo" />
+					</f:facet>
+					<h:outputText value="#{Elementos.idEquipo}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		
+		<br/>
+		<br/>
+		
+		<div class="equipo">
+			<a href="Menu.xhtml">
+				<input type="button" value="Volver"></input>
+			</a>
+		</div>
+	</h:body>
+</html>

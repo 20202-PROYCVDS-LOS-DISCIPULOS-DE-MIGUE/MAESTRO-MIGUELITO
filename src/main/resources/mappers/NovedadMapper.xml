@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.NovedadMapper">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.NovedadMapper">
+    <resultMap type="Novedad" id="NovedadResultado">
+    	<id property="idNovedad" column="idNovedad"/>
+	<result property="fecha" column="fecha"/>
+    	<result property="titulo" column="titulo"/>
+    	<result property="detalle" column="detalle"/>
+	<result property="responsable" column="responsable"/>
+    	<result property="registro" column="registro"/>
+    </resultMap>
 
-  <resultMap type='Novedad' id='NovedadResult'>
-    <id property='idNovedad' column='idNovedad' />
-    <result property='fecha' column='fecha' />
-    <result property='titulo' column='titulo' />
-    <result property='detalle' column='detalle' />
-    <result property='responsable' column='responsable' />
-    <result property='registro' column='registro' />
-  </resultMap>
-  
-  </mapper>
+    <select id="getNovedad" resultMap="NovedadResultado" parameterType="map">    
+        SELECT * FROM "novedades";
+    </select>
+
+    <insert id="registrarNovedad" parameterType="map">
+        INSERT INTO "novedades"(idNovedad, fecha, titulo, detalle, responsable, registro)
+	VALUES((SELECT count(*)+1 FROM "novedades"), #{fecha}, #{titulo,}, #{detalle}, #{responsable},#{registro});
+    </insert>
+</mapper>

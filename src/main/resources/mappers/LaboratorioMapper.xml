@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper">
+    <resultMap type="Laboratorio" id="LaboratorioResultado">
+    	<id property="idLaboratorio" column="idLaboratorio"/>
+	<result property="nombre" column="nombre"/>
+    	<result property="informacion" column="informacion"/>	
+    </resultMap>
 
-  <resultMap type='Laboratorio' id='LaboratorioResult'>
-    <id property='idLaboratorio' column='idLaboratorio' />
-    <result property='nombre' column='nombre' />
-    <result property='cantidadEquipos' column='cantidadEquipos' />
-    <result property='informacion' column='informacion' />
-  </resultMap>
+    <select id="getLaboratorio" resultMap="LaboratorioResultado" parameterType="map">
+        SELECT * FROM "laboratorios";
+    </select>
 
- 
-    <insert id="añadirLaboratorio" parameterType="map">
-        INSERT INTO laboratorio (idLaboratorio, nombre, cantidadEquipos, informacion)
-        VALUES (#{laboratorio.idLaboratorio},#{laboratorio.nombre},#{laboratorio.cantidadEquipos},#{laboratorioo.informacion})
+    <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.samples.entities.Laboratorio">
+        INSERT INTO "laboratorios"(idLaboratorio, nombre, informacion)
+	VALUES((SELECT count(*)+1 FROM "laboratorios"), #{nombre}, #{informacion});
     </insert>
+</mapper>
 
-	
-</mapper>	
+
+

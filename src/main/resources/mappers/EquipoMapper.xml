@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.EquipoMapper">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.EquipoMapper">
+    <resultMap type="Equipo" id="EquipoResultado">
+        <id property="idEquipo" column="idEquipo"/>
+        <result property="ip" column="ip"/>
+        <result property="informacion" column="informacion"/>
+        <result property="activo" column="activo"/>
+        <result property="laboratorio" column="laboratorio"/>
+    </resultMap>
 
-  <resultMap type='Equipo' id='EquipoResult'>
-    <id property='idEquipo' column='idEquipo' />
-    <result property='ip' column='ip' />
-    <result property='informacion' column='informacion' />
-	<result property='activo' column='activo' />
-    <result property='laboratorio' column='laboratorio' />
-  </resultMap>
-	
-	<insert id="añadirEquipo" parameterType="map">
-        INSERT INTO equipo (idEquipo, ip, informacion,activo, laboratorio)
-        VALUES (#{equipo.idEquipo},#{equipo.ip}, #{equipo.informacion},#{equipo.activo}, #{equipo.laboratorio})
+    <select id="getEquipo" resultMap="EquipoResultado" parameterType="map">
+        SELECT * FROM "equipos";
+    </select>
+
+    <insert id="registrarEquipo" parameterType="edu.eci.cvds.samples.entities.Equipo">
+        INSERT INTO "equipos"(idEquipo, ip, informacion, activo, laboratorio)
+	VALUES((SELECT count(*)+1 FROM "equipos"), #{ip}, #{informacion}, #{activo}, #{laboratorio});
     </insert>
-
 </mapper>

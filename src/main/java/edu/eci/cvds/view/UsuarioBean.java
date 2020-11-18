@@ -1,47 +1,41 @@
 package edu.eci.cvds.view;
 
-import com.google.inject.Inject;
-import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.exceptions.PersistenceException;
-import edu.eci.cvds.samples.services.ServiciosUsuario;
+import edu.eci.cvds.samples.entities.Usuario;
+import edu.eci.cvds.samples.services.ServiciosFactory;
+import edu.eci.cvds.samples.services.UsuarioServicios;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import java.util.List;
+import javax.faces.context.FacesContext;
+import java.io.IOException;
 
-
+/**
+ *
+ * @author Daniel Ducuara - Miguel Rodríguez - James Torres
+ */
 @ManagedBean(name = "usuarioBean")
 @SessionScoped
-public class UsuarioBean extends BasePageBean
-{
-    private List<Usuario> usuarios = null;
-    @Inject
-    private  ServiciosUsuario serviciosUsuario;
-    
-    private String documento;
-    private String contraseña;
+public class UsuarioBean {
+    //@Inject
+    //Private UsuarioServicios usuariorServicios
 
-    public List<Usuario> consultarUsuarios() throws PersistenceException 
-    {
-        return serviciosUsuario.consultarUsuarios();
-    }
-    
-    public String getDocumento() 
-    {
-        return documento;
-    }
+    private UsuarioServicios  usuarioServicios= ServiciosFactory.getInstance().getUserServices();
+    private String nombre;
+    private String clave;
 
-    public void setDocumento(String login) 
-    {
-        this.documento = login;
-    }
 
-    public String getContraseña() 
-    {
-        return contraseña;
+    public void logIn(){
+        try{
+            if(usuarioServicios.validateLogin(nombre,clave)){
+                System.out.println("Validacion ok");
+                Usuario usuario=usuarioServicios.getUser(nombre);
+            }else{
+                System.out.println("Fallo de Validacion");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+            }
+        } catch (PersistenceException | IOException persistenceException) {
+            persistenceException.printStackTrace();
+        }
     }
 
-    public void setContraseña(String senha) 
-    {
-        this.contraseña = senha;
-    }
 }

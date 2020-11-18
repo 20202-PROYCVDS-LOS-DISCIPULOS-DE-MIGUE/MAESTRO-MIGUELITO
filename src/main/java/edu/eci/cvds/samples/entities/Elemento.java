@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.cvds.samples.entities;
 
 import java.io.Serializable;
@@ -10,13 +5,13 @@ import java.io.Serializable;
 /**
  *
  * @author Daniel Ducuara - Miguel Rodríguez - James Torres
-*/
+ */
 public class Elemento implements Serializable
 {
     private int idElemento;
     private String tipo;
     private String marca;
-    private boolean activo;
+	private boolean activo;
     private int equipo;
     
     public Elemento() 
@@ -29,7 +24,7 @@ public class Elemento implements Serializable
         this.idElemento = idElemento;
         this.tipo = tipo;
         this.marca = marca;
-	this.activo = activo;
+		this.activo = activo;
         this.equipo = equipo;
     }
     
@@ -60,7 +55,7 @@ public class Elemento implements Serializable
         this.marca = marca;
     }
 	
-    public boolean getActivo()
+	public boolean getActivo()
     {
         return activo;
     }

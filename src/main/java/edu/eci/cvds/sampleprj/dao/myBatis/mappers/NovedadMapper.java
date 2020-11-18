@@ -1,23 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.cvds.sampleprj.dao.myBatis.mappers;
-
-import org.apache.ibatis.annotations.Param;
 
 import edu.eci.cvds.samples.entities.Novedad;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  * @author Daniel Ducuara - Miguel Rodríguez - James Torres
  */
-public interface NovedadMapper 
-{
-    public void añadirNovedad(@Param("novedad")Novedad novedad);
+public interface NovedadMapper {
+    public void registrarNovedad(@Param("fecha") LocalDate fecha, @Param("descripcion")String descripcion, @Param("estado")String estado, @Param("tipo")String tipo, @Param("idElemento")int idElemento);
 
-    public List<Novedad> consultarNovedades();
+    public Novedad getNovedad(int id);
+
+    public ArrayList<Novedad> getNovedades();
 }

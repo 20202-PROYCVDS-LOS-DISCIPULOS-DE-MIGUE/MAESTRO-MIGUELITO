@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.cvds.samples.entities;
 
 import java.io.Serializable;
@@ -15,7 +10,6 @@ public class Laboratorio implements Serializable
 {
     private int idLaboratorio;
     private String nombre;
-    private int cantidadEquipos;
     private String informacion;
     
     public Laboratorio() 
@@ -23,11 +17,10 @@ public class Laboratorio implements Serializable
         
     }
     
-    public Laboratorio(int idLaboratorio, String nombre, int cantidadEquipos, String informacion)
+    public Laboratorio(int idLaboratorio, String nombre, String informacion)
     {
         this.idLaboratorio = idLaboratorio;
         this.nombre = nombre;
-        this.cantidadEquipos = cantidadEquipos;
         this.informacion = informacion;
     }
     
@@ -49,14 +42,6 @@ public class Laboratorio implements Serializable
         this.nombre = nombre;
     }
     
-    public int getCantidadEquipos ()
-    {
-        return cantidadEquipos;
-    }
-    public void setCantidadEquipos (int cantidadEquipos)
-    {
-        this.cantidadEquipos = cantidadEquipos;
-    }
     
     public String getInformacion ()
     {
@@ -70,6 +55,6 @@ public class Laboratorio implements Serializable
     @Override
     public String toString () 
     {
-        return "Laboratory {idLaboratorio: " + idLaboratorio + ", Nombre: " + nombre + ", Cantidad de Equipos: " + cantidadEquipos + ", Información: " + informacion + "}";
+        return "Laboratory {idLaboratorio: " + idLaboratorio + ", Nombre: " + nombre + ", Información: " + informacion + "}";
     }
 }

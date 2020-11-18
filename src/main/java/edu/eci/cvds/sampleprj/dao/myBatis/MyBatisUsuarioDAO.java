@@ -1,58 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.cvds.sampleprj.dao.myBatis;
 
 import com.google.inject.Inject;
-
-import edu.eci.cvds.samples.entities.Usuario;
 import edu.eci.cvds.sampleprj.dao.UsuarioDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.UsuarioMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
-import java.util.List;
+import edu.eci.cvds.samples.entities.Usuario;
 
 /**
  *
  * @author Daniel Ducuara - Miguel Rodríguez - James Torres
  */
-public class MyBatisUsuarioDAO implements UsuarioDAO
-{
+public class MyBatisUsuarioDAO implements UsuarioDAO {
+
     @Inject
     private UsuarioMapper usuarioMapper;
-	
-    @Override
-    public List <Usuario> consultarUsuarios() throws PersistenceException 
-    {
-        try {
-            return usuarioMapper.consultarUsuarios();
-        } catch (org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error consultando cliente ",e);
+    /**@Override
+    public List<Usuario> getUsers() throws PersistenceException {
+        try{
+            return UsuarioMapper.getUsers();
+        }catch (Exception e){
+            throw new PersistenceException("Error consultando usuarios",e);
         }
+    }**/
+
+    public UsuarioMapper getUserMapper() {
+        return usuarioMapper;
     }
-	
-    @Override
-    public boolean guardarUsuario(int documento, String contraseña) throws PersistenceException 
-    {
-        try {
-			Usuario usuario = usuarioMapper.cargarUsuario(documento, contraseña);
-			return true;
-		} 
-        catch(org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Credenciales invalidas", e); 
-			
-		}
+
+    public void setUserMapper(UsuarioMapper usuarioMapper) {
+        this.usuarioMapper = usuarioMapper;
     }
-    
+
     @Override
-    public Usuario cargarUsuario(int documento, String contraseña) throws PersistenceException 
-    {
-        try {
-            return usuarioMapper.cargarUsuario(documento, contraseña);
+    public Usuario getUser(String nombre) throws PersistenceException {
+        try{
+            return usuarioMapper.getUser(nombre);
+        }catch (Exception e){
+            throw new PersistenceException("Error consultando usuario",e);
         }
-        catch(org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error consultando cliente.", e); 
-		}
     }
 }

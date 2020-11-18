@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  lang="es">
+	<h:head>
+		<title>Laboratorios</title>
+		<meta charset="utf-8"/>
+	</h:head>
+
+	<h:body>
+		<h:form>
+			<h2>Laboratorios</h2>
+			
+			<br/>
+			<h3>Registrar Laboratorio</h3>
+			
+			<h:form id="signup-form" method="post" action="#">
+				<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
+				<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{LaboratorioBean.nombre}"/>
+				<p:inputText type="informacion" name="informacion" id="informacion" placeholder="Información" value="#{LaboratorioBean.descripcion}"/>
+				<p:commandButton type="submit" value="Registrar Laboratorio" action="#{LaboratorioBean.registrarLaboratorio()}"/>
+			</h:form>
+			<br/>
+			<h3>Laborarios Registrados</h3>
+			
+			<p:dataTable var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}" paginator="true" rows="5"
+				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
+				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+
+				<p:column sortBy="#{Laboratorios.id}"  >
+					<f:facet name="header">
+						<h:outputText value="Id Labotario" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.id}" />
+				</p:column>
+
+				<p:column sortBy="#{Laboratorios.nombre}" >
+					<f:facet name="header">
+						<h:outputText value="nombre" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.nombre}" />
+				</p:column>
+
+				<p:column sortBy="#{Laboratorios.descripcion}">
+					<f:facet name="header">
+						<h:outputText value="Información" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.descripcion}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	
+		<br/>
+		<br/>
+	
+		<div class="laboratorio">
+			<a href="Menu.xhtml">
+				<input type="button" value="Volver"></input>
+			</a>
+		</div>
+	</h:body>
+</html>

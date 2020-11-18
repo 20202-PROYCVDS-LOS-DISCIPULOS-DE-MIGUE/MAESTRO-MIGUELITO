@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-  <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.UsuarioMapper">
-
-  <resultMap type='Usuario' id='UsuarioResult'>
-    <id property='documento' column='documento' />
-    <result property='nombre' column='nombre' />
-     <result property='apellido' column='apellido' />
-     <result property='correo' column='correo' />
-    <result property='telefono' column='telefono' />
-    <result property='rol' column='rol' />
-    <result property='contraseña' column='contraseña' />
-  </resultMap>
-
-   <select parameterType="map" id="consultarUsuarios" resultMap="UsuarioResult">
-    SELECT  * FROM usuarios
-  </select>
-  
-  <select id="guardarUsuario" resultMap="UsuarioResult">
-        SELECT *
-        FROM usuarios
-        WHERE documento=#{Documento} AND contraseña=#{Contraseña}
+<mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.UsuarioMapper">
+    <resultMap type="Usuario" id="UsuarioResultado">
+        <id property="documento" column="documento"/>
+        <result property="nombres" column="nombres"/>
+        <result property="apellidos" column="apellidos"/>
+        <result property="correo" column="correo"/>
+        <result property="telefono" column="telefono"/>
+        <result property="rol" column="rol"/>
+        <result property="estado" column="estado"/>
+        <result property="contraseña" column="contraseña"/>
+        <result property="laboratorioAsignado" column="laboratorioAsignado"/>
+    </resultMap>
+    
+    <select id="getUsurio" resultMap="UsuarioResultado" parameterType="String">
+        SELECT * FROM "usuarios" as u WHERE documento = #{documento}
     </select>
-  </mapper>
+</mapper>

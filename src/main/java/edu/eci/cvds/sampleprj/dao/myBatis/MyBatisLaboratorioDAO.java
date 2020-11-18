@@ -1,54 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.eci.cvds.sampleprj.dao.myBatis;
 
 import com.google.inject.Inject;
-
-import edu.eci.cvds.exceptions.PersistenceException;
+import edu.eci.cvds.sampleprj.dao.LaboratorioDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper;
+import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
- * @author M.A.R.S
+ * @author Daniel Ducuara - Miguel Rodríguez - James Torres
  */
-public class MyBatisLaboratorioDAO 
-{
+public class MyBatisLaboratorioDAO implements LaboratorioDAO{
+
     @Inject
-    private LaboratorioMapper laboratoryMapper;
-    
-    public void guardarLaboratorio (Laboratorio laboratorio) throws PersistenceException 
-    {
-        try {
-            laboratoryMapper.guardarLaboratorio(laboratorio);
-        }
-        catch(org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error guardando cliente.", e); 
-	}
+    private LaboratorioMapper laboratorioMapper;
+
+    public LaboratorioMapper getLaboratoriosMapper() {
+
+        return laboratorioMapper;
+    }
+
+    public void setLaboratoriosMapper(LaboratorioMapper laboratorioMapper) {
+        this.laboratorioMapper = laboratorioMapper;
     }
     
-    public Laboratorio cargarLaboratorio (int idLaboratorio) throws PersistenceException 
-    {
-        try {
-            return laboratoryMapper.cargarLaboratorio(idLaboratorio);
+    @Override
+    public Laboratorio getLaboratorio(int id) throws PersistenceException {
+        try{
+            return laboratorioMapper.getLaboratorio(id);
+        }catch (Exception e){
+            throw new PersistenceException("Error consultando laboratorios",e);
         }
-        catch(org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error consultando cliente.", e); 
-	}
     }
     
-    public List<Laboratorio> consultarLaboratorio() throws PersistenceException 
-    {
-        try {
-            return laboratoryMapper.consultarLaboratorios();
-        } 
-        catch (org.apache.ibatis.exceptions.PersistenceException e) {
-            throw new PersistenceException("Error consultando cliente ", e);
+    @Override
+    public void registrarLaboratorio(String nombre,String horario,String descripcion) throws PersistenceException{
+        try{
+            laboratorioMapper.registrarLaboratorio(nombre,horario,descripcion);
+        }catch (Exception e){
+            throw new PersistenceException("Error insertando laboratorio",e);
+        }
+    }
+    
+    @Override
+    public ArrayList<Laboratorio>getLaboratorios()throws PersistenceException{
+        try{
+            return laboratorioMapper.getLaboratorios();
+        }catch (Exception e){
+            throw new PersistenceException("Error consultando laboratorios",e);
         }
     }
 }
