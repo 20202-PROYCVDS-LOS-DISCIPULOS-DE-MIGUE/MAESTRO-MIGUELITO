@@ -6,9 +6,10 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 	telefono INT NOT NULL,
 	rol VARCHAR(30) NOT NULL,
 	estado VARCHAR(30)NOT NULL,
-	constraseña VARCHAR(30) NOT NULL,
+	contraseña VARCHAR(30) NOT NULL
 );
 ---------------------------------------------------------------------
+CREATE SEQUENCE idLaboratorio INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "laboratorios" (
 	idLaboratorio INT NOT NULL,
 	nombre VARCHAR(30)NOT NULL,
@@ -23,6 +24,7 @@ CREATE TABLE IF NOT EXISTS "equipos"(
 	laboratorio INT NOT NULL
 );
 ---------------------------------------------------------------------
+CREATE SEQUENCE idElemento INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "elementos"(
 	idElemento INT NOT NULL,
 	tipo VARCHAR(30)NOT NULL,
@@ -31,6 +33,7 @@ CREATE TABLE IF NOT EXISTS "elementos"(
 	equipo INT NOT NULL
 );
 ---------------------------------------------------------------------
+CREATE SEQUENCE idNovedad INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "novedades"(
 	idNovedad INT NOT NULL,
 	fecha DATE NOT NULL,
@@ -57,6 +60,3 @@ ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Eq FOREIGN KEY(registro) REF
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_elem FOREIGN KEY(registro) REFERENCES "elementos"(idElemento);
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Lab FOREIGN KEY(registro) REFERENCES "laboratorios"(idLaboratorio);
 ------------------------------------------------------------------------
-CREATE SEQUENCE idLab INCREMENT BY 1;
-CREATE SEQUENCE idEle INCREMENT BY 1;
-CREATE SEQUENCE idNov INCREMENT BY 1;

@@ -16,9 +16,8 @@ import java.util.Map;
 @SessionScoped
 public class UsuarioBean {
     //@Inject
-    //Private UsuarioServicios usuariorServicios
-
-    private UsuarioServicios  usuarioServicios= ServiciosFactory.getInstance().getUserServices();
+    //private UsuarioServicios usuarioServicios 
+	private UsuarioServicios usuarioServicios = ServiciosFactory.getInstance().getUserServices();
     private String documento;
     private String contraseña;
 
@@ -26,10 +25,10 @@ public class UsuarioBean {
     public void logIn(){
         try{
             if(usuarioServicios.validateLogin(documento,contraseña)){
-                System.out.println("Validacion ok");
+                System.out.println("login exitoso");
                 Usuario usuario=usuarioServicios.getUser(documento);
             }else{
-                System.out.println("Fallo de Validacion");
+                System.out.println("Datos erroneos");
                 FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
             }
         } catch (PersistenceException persistenceException) {

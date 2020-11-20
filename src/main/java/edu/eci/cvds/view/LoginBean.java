@@ -22,10 +22,7 @@ public class LoginBean {
 
     private String documento;
     private String contraseña;
-    
-
-
-    //@Inject
+	//@Inject
     //private SessionLogger logger;
     private SessionLogger logger = ServiciosFactory.getInstance().getLoginServices();
 

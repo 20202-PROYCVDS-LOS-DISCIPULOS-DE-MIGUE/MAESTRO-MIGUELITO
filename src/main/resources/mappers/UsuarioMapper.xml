@@ -16,6 +16,6 @@
     </resultMap>
     
     <select id="getUsurio" resultMap="UsuarioResultado" parameterType="String">
-        SELECT * FROM "usuarios" as u WHERE documento = #{documento}
+        SELECT * FROM "usuarios" WHERE documento = #{documento}
     </select>
 </mapper>

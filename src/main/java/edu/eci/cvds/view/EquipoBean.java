@@ -21,10 +21,9 @@ import java.util.ArrayList;
 @SessionScoped
 public class EquipoBean {
     //@Inject
-    //private EquipoServices equipoServices;
-
-    EquipoServicios equipoServicios= ServiciosFactory.getInstance().getEquipoServicios();
-    ElementoServicios elementoServicios= ServiciosFactory.getInstance().getElementoServicios();
+    //private EquipoServicios equipoServicios;
+    private EquipoServicios equipoServicios = ServiciosFactory.getInstance().getEquipoServicios();
+    private ElementoServicios elementoServicios= ServiciosFactory.getInstance().getElementoServicios();
 
 
     private int idEquipo;
@@ -32,9 +31,9 @@ public class EquipoBean {
     private String informacion;
     private boolean activo;
     private int laboratorio;
-    private Laboratorio idLab;
-    private Elemento ejemplo;
-    private Elemento ejemploDos;
+    private Laboratorio conLaboratorio;
+    private Elemento teclado;
+    private Elemento monitor;
     private Elemento raton;
     private Elemento torre;
     private ArrayList<Equipo>listaEquipos;
@@ -63,20 +62,20 @@ public class EquipoBean {
         this.raton = raton;
     }
 
-    public Elemento getEjemploDos(){
-        return ejemploDos;
+    public Elemento getMonitor(){
+        return monitor;
     }
 
 
-    public void setEjemploDos(Elemento ejemploDos){
-        this.ejemploDos=ejemploDos;
+    public void setMonitor(Elemento monitor){
+        this.monitor=monitor;
     }
-    public Elemento getEjemplo(){
-        return ejemplo;
+    public Elemento getTeclado(){
+        return teclado;
     }
 
-    public void setEjemplo(Elemento ejemplo) {
-        this.ejemplo = ejemplo;
+    public void setTeclado(Elemento teclado) {
+        this.teclado = teclado;
     }
 
     public EquipoServicios getElementoServices(){
@@ -87,12 +86,12 @@ public class EquipoBean {
         this.equipoServicios=equipoServicios;
     }
 
-    public Laboratorio getIdLab(){
-        return idLab;
+    public Laboratorio getConLaboratorio(){
+        return conLaboratorio;
     }
 
-    public void setIdLab(Laboratorio idLab) {
-        this.idLab = idLab;
+    public void setConLaboratorio(Laboratorio conLaboratorio) {
+        this.conLaboratorio = conLaboratorio;
     }
 
     public String getIp() {
@@ -138,15 +137,15 @@ public class EquipoBean {
 
     public void registrarEquipo()throws PersistenceException{
         try{
-            laboratorio=idLab.getIdLaboratorio();
+            laboratorio=conLaboratorio.getIdLaboratorio();
             if(laboratorio>0){
                 equipoServicios.registrarEquipo(ip,informacion,activo,laboratorio);
                 listaEquipos=new ArrayList<Equipo>();
                 listaEquipos=getEquipos();
                 for(int i=0;i<listaEquipos.size();i++){
                     if(listaEquipos.get(i).getIp().equals(ip)){
-                        elementoServicios.editElemento(ejemplo.getIdElemento(),listaEquipos.get(i).getIdEquipo());
-                        elementoServicios.editElemento(ejemploDos.getIdElemento(),listaEquipos.get(i).getIdEquipo());
+                        elementoServicios.editElemento(teclado.getIdElemento(),listaEquipos.get(i).getIdEquipo());
+                        elementoServicios.editElemento(monitor.getIdElemento(),listaEquipos.get(i).getIdEquipo());
                         elementoServicios.editElemento(torre.getIdElemento(),listaEquipos.get(i).getIdEquipo());
                         elementoServicios.editElemento(raton.getIdElemento(),listaEquipos.get(i).getIdEquipo());
                     }

@@ -19,9 +19,7 @@ import java.util.ArrayList;
 public class ElementoBean {
     //@Inject
     //private ElementoServicios elementoServicios;
-
-    ElementoServicios elementoServicios = ServiciosFactory.getInstance().getElementoServicios();
-
+    private ElementoServicios elementoServicios = ServiciosFactory.getInstance().getElementoServicios();
     private int idElemento;
     private String tipo;
     private String marca;

@@ -20,11 +20,11 @@ import java.util.ArrayList;
 public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServicios laboratorioServicios;
-	LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
-		private int idLaboratorio;
-        private String nombre;
-        private String informacion;
-        private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
+	private LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
+	private int idLaboratorio;
+    private String nombre;
+    private String informacion;
+    private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     
     
     public LaboratorioServicios getElementoServices(){

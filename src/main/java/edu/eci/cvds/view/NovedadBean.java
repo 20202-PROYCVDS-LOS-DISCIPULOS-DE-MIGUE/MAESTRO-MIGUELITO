@@ -24,7 +24,7 @@ public class NovedadBean {
     //@Inject
     //private NovedadServicios novedadServicios;
 
-    NovedadServicios novedadServicios = ServiciosFactory.getInstance().getNovedadServicios();
+    private NovedadServicios novedadServicios = ServiciosFactory.getInstance().getNovedadServicios();
     private int id;
     private LocalDate fecha=LocalDate.now();
     private String descripcion;
