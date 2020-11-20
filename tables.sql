@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 	rol VARCHAR(30) NOT NULL,
 	estado VARCHAR(30)NOT NULL,
 	constraseña VARCHAR(30) NOT NULL,
-	laboratorioAsignado INT NOT NULL
 );
 ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "laboratorios" (
@@ -52,7 +51,6 @@ ALTER TABLE "usuarios" ADD CONSTRAINT UK_Personal UNIQUE (correo,telefono);
 ALTER TABLE "equipos" ADD CONSTRAINT UK_Equipos UNIQUE (ip);
 ---------------------------------------------------------------------
 ALTER TABLE "novedades" ADD CONSTRAINT FK_Novedades_Per FOREIGN KEY(responsable) REFERENCES "usuarios"(documento);
-ALTER TABLE "usuarios" ADD CONSTRAINT FK_Personal_Lab FOREIGN KEY(laboratorioAsignado) REFERENCES "laboratorios"(idLaboratorio);
 ALTER TABLE "equipos" ADD CONSTRAINT FK_Equipos_Lab FOREIGN KEY(laboratorio) REFERENCES "laboratorios"(idLaboratorio);
 ALTER TABLE "elementos" ADD CONSTRAINT FK_elementos_Eq FOREIGN KEY(equipo) REFERENCES "equipos"(idEquipo);
 ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Eq FOREIGN KEY(registro) REFERENCES "equipos"(idEquipo);

@@ -13,7 +13,6 @@
         <result property="rol" column="rol"/>
         <result property="estado" column="estado"/>
         <result property="contraseña" column="contraseña"/>
-        <result property="laboratorioAsignado" column="laboratorioAsignado"/>
     </resultMap>
     
     <select id="getUsurio" resultMap="UsuarioResultado" parameterType="String">

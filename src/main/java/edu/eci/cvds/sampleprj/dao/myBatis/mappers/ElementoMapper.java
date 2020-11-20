@@ -1,20 +1,15 @@
 package edu.eci.cvds.sampleprj.dao.myBatis.mappers;
 
 import edu.eci.cvds.samples.entities.Elemento;
-
 import org.apache.ibatis.annotations.Param;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public interface ElementoMapper {
-    public void registrarElemento(@Param("nombre")String nombre,@Param("marca")String marca,@Param("modelo")String modelo,@Param("caracteristicas")String caracteristicas,@Param("idEquipo")int idEquipo);
+    public void registrarElemento(@Param("tipo")String tipo,@Param("marca")String marca,@Param("activo")boolean activo,@Param("equipo")int equipo);
 
-    public Elemento getElemento(int id);
+    public Elemento getElemento(@Param("idElemento")int idElemento);
 
     public ArrayList<Elemento> getElementos();
 
-    public void editElemento(@Param("id")int id,@Param("idequipo")int idequipo);
+    public void editElemento(@Param("idElemento")int idElemento,@Param("equipo")int equipo);
 }

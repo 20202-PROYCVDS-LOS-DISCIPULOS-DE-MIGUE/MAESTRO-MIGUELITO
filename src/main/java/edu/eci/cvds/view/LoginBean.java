@@ -4,6 +4,7 @@ import edu.eci.cvds.security.SessionLogger;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authz.annotation.RequiresGuest;
 import org.apache.shiro.subject.Subject;
 import javax.faces.application.FacesMessage;
@@ -12,10 +13,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 @ManagedBean(name="loginBean")
 @SessionScoped
 public class LoginBean {
@@ -80,4 +77,3 @@ public class LoginBean {
         facesContext.getExternalContext().redirect("");
     }
 }
-

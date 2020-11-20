@@ -1,5 +1,6 @@
 package edu.eci.cvds.view;
 
+import com.google.inject.Inject;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Elemento;
 import edu.eci.cvds.samples.services.ElementoServicios;
@@ -9,12 +10,10 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import java.sql.Time;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
+
 @ManagedBean(name="elementoBean")
 @SessionScoped
 public class ElementoBean {
@@ -23,12 +22,11 @@ public class ElementoBean {
 
     ElementoServicios elementoServicios = ServiciosFactory.getInstance().getElementoServicios();
 
-    private int id;
-    private String nombre;
+    private int idElemento;
+    private String tipo;
     private String marca;
-    private String modelo;
-    private String caracteristicas;
-    private int idEquipo;
+    private boolean activo;
+    private int equipo;
     private ArrayList<Elemento>tecladosDisponibles;
     private ArrayList<Elemento>monitoresDisponibles;
     private ArrayList<Elemento>cpusDisponibles;
@@ -108,12 +106,12 @@ public class ElementoBean {
         this.elementoServicios=elementoServicios;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getMarca() {
@@ -124,41 +122,34 @@ public class ElementoBean {
         this.marca = marca;
     }
 
-    public String getModelo() {
-        return modelo;
+    public boolean getActivo() {
+        return activo;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
-    public int getId() {
-        return id;
+    public int getIdElemento() {
+        return idElemento;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdElemento(int idElemento) {
+        this.idElemento = idElemento;
     }
 
-    public int getIdEquipo() {
-        return idEquipo;
+    public int getEquipo() {
+        return equipo;
     }
 
-    public void setIdEquipo(int idEquipo) {
-        this.idEquipo = idEquipo;
+    public void setEquipo(int equipo) {
+        this.equipo = equipo;
     }
 
-    public String getCaracteristicas() {
-        return caracteristicas;
-    }
-
-    public void setCaracteristicas(String caracteristicas) {
-        this.caracteristicas = caracteristicas;
-    }
 
     public void registrarElemento()throws PersistenceException{
         try{
-            elementoServicios.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoServicios.registrarElemento(tipo,marca,activo,equipo);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento registrado"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");
@@ -172,8 +163,8 @@ public class ElementoBean {
         elementos=elementoServicios.getElementos();
         return elementos;
     }
-    public void editElemento(int id,int idEquipo)throws PersistenceException{
-        elementoServicios.editElemento(id,idEquipo);
+    public void editElemento(int idElemento,int equipo)throws PersistenceException{
+        elementoServicios.editElemento(idElemento,equipo);
     }
 
 }

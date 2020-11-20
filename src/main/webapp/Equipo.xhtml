@@ -20,8 +20,8 @@
 					<h:form id="signup-form" method="post" action="#">
 						<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 						<p:inputText type="laboratorio" name="laboratorio" id="laboratorio" placeholder="Laboratorio" value=""/>
-						<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{EquipoBean.nombre}"/>
-						<h:selectOneMenu id="Equipo_EnUso" value="#{EquipoBean.enUso}">
+						<p:inputText type="ip" name="ip" id="ip" placeholder="ip" value="#{EquipoBean.ip}"/>
+						<h:selectOneMenu id="Equipo_Activo" value="#{EquipoBean.activo}">
 							<f:selectItem itemLabel="Activo" itemValue="true" />
 							<f:selectItem itemLabel="Desactivo" itemValue="false" />
 						</h:selectOneMenu>
@@ -35,14 +35,14 @@
 				<div class="login-box">
 					<h:form id="signup-form2" method="post" action="#">
 						<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-						<h:selectOneMenu id="Elemento_Nombre" value="#{ElementoBean.nombre}">
+						<h:selectOneMenu id="Elemento_Tipo" value="#{ElementoBean.tipo}">
 							<f:selectItem itemLabel="Teclado" itemValue="Teclado"/>
 							<f:selectItem itemLabel="Monitor" itemValue="Monitor"/>
-							<f:selectItem itemLabel="CPU" itemValue="CPU" />
+							<f:selectItem itemLabel="Torre" itemValue="Torre" />
 							<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
 						</h:selectOneMenu>
 						<p:inputText type="marca" name="marca" id="marca" placeholder="Marca" value="#{ElementoBean.marca}"/>
-						<h:selectOneMenu id="Equipo_EnUso" value="#{Elemento.enUso}">
+						<h:selectOneMenu id="Equipo_Activo" value="#{Elemento.activo}">
 							<f:selectItem itemLabel="Activo" itemValue="true" />
 							<f:selectItem itemLabel="Desactivo" itemValue="false" />
 						</h:selectOneMenu>
@@ -57,39 +57,39 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}{LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 
-				<p:column sortBy="#{Equipos.id}">
+				<p:column sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
-						<h:outputText value="Id Equipo"/>
+						<h:outputText value="IdEquipo"/>
 					</f:facet>
-					<h:outputText value="#{Equipos.id}"/>
+					<h:outputText value="#{Equipos.idEquipo}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.nombre}">
+				<p:column sortBy="#{Equipos.ip}">
 					<f:facet name="header">
 						<h:outputText value="IP"/>
 					</f:facet>
-					<h:outputText value="#{Equipos.nombre}"/>
+					<h:outputText value="#{Equipos.ip}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.estado}">
+				<p:column sortBy="#{Equipos.informacion}">
 					<f:facet name="header">
 						<h:outputText value="Informacion"/>
 					</f:facet>
-					<h:outputText value="#{Equipos.estado}"/>
+					<h:outputText value="#{Equipos.informacion}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.enUso}">
+				<p:column sortBy="#{Equipos.activo}">
 					<f:facet name="header">
 						<h:outputText value="Activo"/>
 					</f:facet>
-					<h:outputText value="#{Equipos.enuso}"/>
+					<h:outputText value="#{Equipos.activo}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.idLaboratorio}">
+				<p:column sortBy="#{Equipos.laboratorio}">
 					<f:facet name="header">
-						<h:outputText value="Id Laboratorio"/>
+						<h:outputText value="laboratorio"/>
 					</f:facet>
-					<h:outputText value="#{Equipos.idLaboratorio}" />
+					<h:outputText value="#{Equipos.laboratorio}" />
 				</p:column>
 			</p:dataTable>
 			
@@ -99,18 +99,18 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 	
-				<p:column sortBy="#{Equipos.id}"  >
+				<p:column sortBy="#{Equipos.idEquipo}"  >
 					<f:facet name="header">
-						<h:outputText value="Id Elemento" />
+						<h:outputText value="IdElemento" />
 					</f:facet>
-					<h:outputText value="#{Elementos.id}" />
+					<h:outputText value="#{Elementos.idElemento}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.nombre}" >
+				<p:column sortBy="#{Elementos.tipo}" >
 					<f:facet name="header">
 						<h:outputText value="Tipo" />
 					</f:facet>
-					<h:outputText value="#{Elementos.nombre}" />
+					<h:outputText value="#{Elementos.tipo}" />
 				</p:column>
 
 				<p:column sortBy="#{Elementos.marca}" >
@@ -120,18 +120,18 @@
 					<h:outputText value="#{Elementos.marca}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.modelo}">
+				<p:column sortBy="#{Elementos.activo}">
 					<f:facet name="header">
 						<h:outputText value="Activo" />
 					</f:facet>
-					<h:outputText value="#{Elementos.modelo}" />
+					<h:outputText value="#{Elementos.activo}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.idequipo}">
+				<p:column sortBy="#{Elementos.equipo}">
 					<f:facet name="header">
-						<h:outputText value="Id Equipo" />
+						<h:outputText value="Equipo" />
 					</f:facet>
-					<h:outputText value="#{Elementos.idEquipo}" />
+					<h:outputText value="#{Elementos.equipo}" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

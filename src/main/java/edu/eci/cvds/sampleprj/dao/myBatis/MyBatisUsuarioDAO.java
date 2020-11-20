@@ -6,10 +6,8 @@ import edu.eci.cvds.sampleprj.dao.myBatis.mappers.UsuarioMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Usuario;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
+import java.util.List;
+
 public class MyBatisUsuarioDAO implements UsuarioDAO {
 
     @Inject

@@ -19,7 +19,7 @@
 			<h:form id="signup-form" method="post" action="#">
 				<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 				<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{LaboratorioBean.nombre}"/>
-				<p:inputText type="informacion" name="informacion" id="informacion" placeholder="Información" value="#{LaboratorioBean.descripcion}"/>
+				<p:inputText type="informacion" name="informacion" id="informacion" placeholder="Información" value="#{LaboratorioBean.informacion}"/>
 				<p:commandButton type="submit" value="Registrar Laboratorio" action="#{LaboratorioBean.registrarLaboratorio()}"/>
 			</h:form>
 			<br/>
@@ -29,11 +29,11 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 
-				<p:column sortBy="#{Laboratorios.id}"  >
+				<p:column sortBy="#{Laboratorios.idLaboratorio}"  >
 					<f:facet name="header">
-						<h:outputText value="Id Labotario" />
+						<h:outputText value="IdLabotario" />
 					</f:facet>
-					<h:outputText value="#{Laboratorios.id}" />
+					<h:outputText value="#{Laboratorios.idLaboratorio}" />
 				</p:column>
 
 				<p:column sortBy="#{Laboratorios.nombre}" >
@@ -43,11 +43,11 @@
 					<h:outputText value="#{Laboratorios.nombre}" />
 				</p:column>
 
-				<p:column sortBy="#{Laboratorios.descripcion}">
+				<p:column sortBy="#{Laboratorios.informacion}">
 					<f:facet name="header">
 						<h:outputText value="Información" />
 					</f:facet>
-					<h:outputText value="#{Laboratorios.descripcion}" />
+					<h:outputText value="#{Laboratorios.informacion}" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

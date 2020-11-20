@@ -8,21 +8,17 @@ import edu.eci.cvds.samples.services.EquipoServicios;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class EquipoServiciosImpl implements EquipoServicios {
     @Inject
     private EquipoDAO equipoDAO;
 
 
     @Override
-    public void registrarEquipo(String nombre, String estado, String enUso, int idLaboratorio) throws PersistenceException {
-        if(estado==null){
+    public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException {
+        if(informacion==null){
             throw new PersistenceException("Equipo incorrecto");
         }else{
-            equipoDAO.registrarEquipo(nombre,estado,enUso,idLaboratorio);
+            equipoDAO.registrarEquipo(ip,informacion,activo,laboratorio);
         }
     }
 

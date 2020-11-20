@@ -1,5 +1,8 @@
 package edu.eci.cvds.view;
 
+
+import com.google.inject.Inject;
+import edu.eci.cvds.view.ElementoBean;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Elemento;
 import edu.eci.cvds.samples.entities.Equipo;
@@ -14,10 +17,6 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 @ManagedBean(name="equipoBean")
 @SessionScoped
 public class EquipoBean {
@@ -28,11 +27,11 @@ public class EquipoBean {
     ElementoServicios elementoServicios= ServiciosFactory.getInstance().getElementoServicios();
 
 
-    private int id;
-    private String nombre;
-    private String estado;
-    private String enUso;
-    private int idLaboratorio;
+    private int idEquipo;
+    private String ip;
+    private String informacion;
+    private boolean activo;
+    private int laboratorio;
     private Laboratorio idLab;
     private Elemento ejemplo;
     private Elemento ejemploDos;
@@ -68,6 +67,7 @@ public class EquipoBean {
         return ejemploDos;
     }
 
+
     public void setEjemploDos(Elemento ejemploDos){
         this.ejemploDos=ejemploDos;
     }
@@ -95,56 +95,56 @@ public class EquipoBean {
         this.idLab = idLab;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getIp() {
+        return ip;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setIp(String ip){
+        this.ip = ip;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getInformacion() {
+        return informacion;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setInformacion(String informacion) {
+        this.informacion = informacion;
     }
 
-    public String getEnUso() {
-        return enUso;
+    public boolean getActivo() {
+        return activo;
     }
 
-    public void setEnUso(String enUso) {
-        this.enUso = enUso;
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 
-    public int getId() {
-        return id;
+    public int getIdEquipo() {
+        return idEquipo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEquipo(int idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
-    public int getIdLaboratorio() {
-        return idLaboratorio;
+    public int getLaboratorio() {
+        return laboratorio;
     }
 
-    public void setIdLaboratorio(int idLaboratorio) {
-        this.idLaboratorio = idLaboratorio;
+    public void setLaboratorio(int laboratorio) {
+        this.laboratorio = laboratorio;
     }
 
 
     public void registrarEquipo()throws PersistenceException{
         try{
-            idLaboratorio=idLab.getIdLaboratorio();
-            if(idLaboratorio>0){
-                equipoServicios.registrarEquipo(nombre,estado,enUso,idLaboratorio);
+            laboratorio=idLab.getIdLaboratorio();
+            if(laboratorio>0){
+                equipoServicios.registrarEquipo(ip,informacion,activo,laboratorio);
                 listaEquipos=new ArrayList<Equipo>();
                 listaEquipos=getEquipos();
                 for(int i=0;i<listaEquipos.size();i++){
-                    if(listaEquipos.get(i).getIp().equals(nombre)){
+                    if(listaEquipos.get(i).getIp().equals(ip)){
                         elementoServicios.editElemento(ejemplo.getIdElemento(),listaEquipos.get(i).getIdEquipo());
                         elementoServicios.editElemento(ejemploDos.getIdElemento(),listaEquipos.get(i).getIdEquipo());
                         elementoServicios.editElemento(torre.getIdElemento(),listaEquipos.get(i).getIdEquipo());

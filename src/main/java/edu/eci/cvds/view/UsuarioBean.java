@@ -8,11 +8,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 @ManagedBean(name = "usuarioBean")
 @SessionScoped
 public class UsuarioBean {
@@ -31,10 +30,12 @@ public class UsuarioBean {
                 Usuario usuario=usuarioServicios.getUser(documento);
             }else{
                 System.out.println("Fallo de Validacion");
-                FacesContext.getCurrentInstance().getExternalContext().redirect("Login.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
             }
-        } catch (PersistenceException | IOException persistenceException) {
+        } catch (PersistenceException persistenceException) {
             persistenceException.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

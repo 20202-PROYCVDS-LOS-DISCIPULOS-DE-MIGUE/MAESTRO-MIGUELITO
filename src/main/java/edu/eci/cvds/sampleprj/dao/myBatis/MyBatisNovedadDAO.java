@@ -9,10 +9,6 @@ import edu.eci.cvds.samples.entities.Novedad;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class MyBatisNovedadDAO implements NovedadDAO{
 
     @Inject
@@ -36,8 +32,6 @@ public class MyBatisNovedadDAO implements NovedadDAO{
             throw new PersistenceException("Error consultando novedad",e);
         }
     }
-    
-    @Override
     public void registrarNovedad(String descripcion,String estado,String tipo,int idElemento) throws PersistenceException{
         try{
             LocalDate fecha=LocalDate.now();

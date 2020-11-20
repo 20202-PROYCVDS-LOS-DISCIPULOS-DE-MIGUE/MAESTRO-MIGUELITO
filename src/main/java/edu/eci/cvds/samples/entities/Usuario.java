@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package edu.eci.cvds.samples.entities;
 
 import java.io.Serializable;
@@ -16,7 +21,6 @@ public class Usuario implements Serializable
     private int rol;
     private String estado;
     private String contraseña;
-    private int labAsignado;
         
     /**
      *Constructor para la clase usuario
@@ -28,9 +32,8 @@ public class Usuario implements Serializable
      * @param rol: Rol de indentificación de usuario.
      * @param estado: Estado de usuario.
      * @param contraseña: Contraseña de usuario.
-     * @param labAsignado: Laboratorio asignado al usuario.
      */
-    public Usuario(int documento, String nombre, String apellido, String correo, int telefono, int rol, String estado, String contraseña, int labAsignado)
+    public Usuario(int documento, String nombre, String apellido, String correo, int telefono, int rol, String estado, String contraseña)
     {
         this.documento = documento;
         this.nombre= nombre;
@@ -39,7 +42,6 @@ public class Usuario implements Serializable
     	this.telefono = telefono;
         this.rol = rol;
         this.contraseña = contraseña;
-        this.labAsignado = labAsignado;
     }
     
     public int getDocumento ()
@@ -114,18 +116,10 @@ public class Usuario implements Serializable
         this.contraseña = contraseña;
     }
     
-    public int getLabAsignado ()
-    {
-        return labAsignado;
-    }
-    public void setLabAsignado (int labAsignado)
-    {
-        this.labAsignado = labAsignado;
-    }
     
     @Override
     public String toString () 
     {
-        return "Usuario {Documento: " + documento + ", Nombre: " + nombre + ", Apellido: " + apellido + ", Correo: " + correo + ", Telefono : " + telefono + ", Rol: " + rol + ", Estado: " + estado + ", Contraseña: " + contraseña + ", Laboratirio Asignado: " + labAsignado + "}";
+        return "Usuario {Documento: " + documento + ", Nombre: " + nombre + ", Apellido: " + apellido + ", Correo: " + correo + ", Telefono : " + telefono + ", Rol: " + rol + ", Estado: " + estado + ", Contraseña: " + contraseña +"}";
     }
 }

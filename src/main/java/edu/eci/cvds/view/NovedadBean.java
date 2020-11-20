@@ -1,7 +1,11 @@
 package edu.eci.cvds.view;
 
 import edu.eci.cvds.exceptions.PersistenceException;
+import edu.eci.cvds.samples.entities.Elemento;
+import edu.eci.cvds.samples.entities.Equipo;
+import edu.eci.cvds.samples.entities.Laboratorio;
 import edu.eci.cvds.samples.entities.Novedad;
+import edu.eci.cvds.samples.services.EquipoServicios;
 import edu.eci.cvds.samples.services.NovedadServicios;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.primefaces.PrimeFaces;
@@ -12,10 +16,7 @@ import javax.faces.context.FacesContext;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
+
 @ManagedBean(name="novedadBean")
 @SessionScoped
 

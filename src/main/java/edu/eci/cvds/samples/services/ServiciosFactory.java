@@ -16,10 +16,6 @@ import java.util.Optional;
 
 import static com.google.inject.Guice.createInjector;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class ServiciosFactory {
 
     private static ServiciosFactory instance= new ServiciosFactory();

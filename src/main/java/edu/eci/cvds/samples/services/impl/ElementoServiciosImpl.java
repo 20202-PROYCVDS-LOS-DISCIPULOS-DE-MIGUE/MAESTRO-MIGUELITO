@@ -6,23 +6,20 @@ import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Elemento;
 import edu.eci.cvds.samples.services.ElementoServicios;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class ElementoServiciosImpl implements ElementoServicios {
     @Inject
     private ElementoDAO elementoDAO;
 
 
     @Override
-    public void registrarElemento(String nombre, String marca, String modelo, String caracteristicas, int idEquipo) throws PersistenceException {
+    public void registrarElemento(String tipo, String marca, boolean activo,int equipo) throws PersistenceException {
         if(marca==null){
             throw new PersistenceException("Elemento incorrecto");
         }else{
-            elementoDAO.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoDAO.registrarElemento(tipo,marca,activo,equipo);
         }
     }
 

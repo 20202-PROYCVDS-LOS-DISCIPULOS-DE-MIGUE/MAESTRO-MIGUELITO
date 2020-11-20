@@ -8,10 +8,6 @@ import edu.eci.cvds.samples.entities.Equipo;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class MyBatisEquipoDAO implements EquipoDAO {
 
     @Inject
@@ -26,25 +22,21 @@ public class MyBatisEquipoDAO implements EquipoDAO {
     }
 
     @Override
-    public Equipo getEquipo(int id) throws PersistenceException {
+    public Equipo getEquipo(int idEquipo) throws PersistenceException {
         try{
-            return equipoMapper.getEquipo(id);
+            return equipoMapper.getEquipo(idEquipo);
         }catch (Exception e){
             throw new PersistenceException("Error consultando equipo",e);
         }
     }
-    
-    @Override
-    public void registrarEquipo(String nombre,String estado,String enUso,int idLaboratorio) throws PersistenceException{
+    public void registrarEquipo(String ip,String informacion,boolean activo,int laboratorio) throws PersistenceException{
         try{
-            equipoMapper.registrarEquipo(nombre,estado,enUso,idLaboratorio);
+            equipoMapper.registrarEquipo(ip,informacion,activo,laboratorio);
         }catch (Exception e){
             throw new PersistenceException("Error insertando equipo",e);
         }
    }
-    
-    @Override
-    public ArrayList<Equipo> getEquipos()throws PersistenceException{
+   public ArrayList<Equipo> getEquipos()throws PersistenceException{
         try{
             return equipoMapper.getEquipos();
         }catch (Exception e){

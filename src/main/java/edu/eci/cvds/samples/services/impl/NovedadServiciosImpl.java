@@ -1,17 +1,15 @@
 package edu.eci.cvds.samples.services.impl;
 
 import com.google.inject.Inject;
+import edu.eci.cvds.sampleprj.dao.EquipoDAO;
 import edu.eci.cvds.sampleprj.dao.NovedadDAO;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Novedad;
 import edu.eci.cvds.samples.services.NovedadServicios;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class NovedadServiciosImpl implements NovedadServicios {
     @Inject
     private NovedadDAO novedadDAO;

@@ -6,12 +6,9 @@ import edu.eci.cvds.sampleprj.dao.myBatis.mappers.ElementoMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Elemento;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
-/**
- *
- * @author Daniel Ducuara - Miguel Rodríguez - James Torres
- */
 public class MyBatisElementoDAO implements ElementoDAO {
 
     @Inject
@@ -26,37 +23,29 @@ public class MyBatisElementoDAO implements ElementoDAO {
     }
 
     @Override
-    public Elemento getElemento(int id) throws PersistenceException {
+    public Elemento getElemento(int idElemento) throws PersistenceException {
         try{
-            return elementoMapper.getElemento(id);
+            return elementoMapper.getElemento(idElemento);
         }catch (Exception e){
             throw new PersistenceException("Error consultando elemento",e);
         }
     }
-    
-    @Override
-    public void registrarElemento(String nombre,String marca,String modelo,String caracteristicas,int idEquipo) throws PersistenceException{
+    public void registrarElemento(String tipo,String marca,boolean activo,int equipo) throws PersistenceException{
         try{
-            elementoMapper.registrarElemento(nombre,marca,modelo,caracteristicas,idEquipo);
+            elementoMapper.registrarElemento(tipo,marca,activo,equipo);
         }catch (Exception e){
             throw new PersistenceException("Error insertando elemento",e);
         }
     }
-    
-    @Override
     public ArrayList<Elemento>getElementos()throws PersistenceException{
         try{
             return elementoMapper.getElementos();
         }catch (Exception e){
             throw new PersistenceException("Error consultando elementos",e);
         }
-        
-    }
-    
-    @Override
-    public void editElemento(int id,int idEquipo) throws PersistenceException {
+    }public void editElemento(int idElemento,int equipo) throws PersistenceException {
         try{
-            elementoMapper.editElemento(id,idEquipo);
+            elementoMapper.editElemento(idElemento,equipo);
         }catch (Exception e){
             throw new PersistenceException("Error en la asociacion",e);
         }
