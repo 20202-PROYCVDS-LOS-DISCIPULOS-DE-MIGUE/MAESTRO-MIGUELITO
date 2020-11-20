@@ -23,7 +23,6 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 
 	@Override
 	public Laboratorio getLaboratorio(int idLaboratorio) throws PersistenceException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

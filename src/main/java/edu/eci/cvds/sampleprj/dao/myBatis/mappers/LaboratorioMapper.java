@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public interface LaboratorioMapper {
 
-	public Laboratorio getLaboratorio(int id);
-
+	public Laboratorio getLaboratorio(int idLaboratorio);
 	public void registrarLaboratorio(@Param("nombre")String nombre,@Param("informacion")String informacion);
 	public ArrayList<Laboratorio>getLaboratorios();
 }

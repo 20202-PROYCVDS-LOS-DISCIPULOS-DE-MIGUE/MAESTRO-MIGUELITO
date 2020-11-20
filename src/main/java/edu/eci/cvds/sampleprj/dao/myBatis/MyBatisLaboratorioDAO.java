@@ -14,7 +14,6 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     private LaboratorioMapper laboratorioMapper;
 
     public LaboratorioMapper getLaboratoriosMapper() {
-
         return laboratorioMapper;
     }
 

@@ -49,7 +49,7 @@ public class LaboratorioBean {
         this.idLaboratorio = idLaboratorio;
     }
     
-    public String getinformacion() {
+    public String getInformacion() {
         return informacion;
     }
 

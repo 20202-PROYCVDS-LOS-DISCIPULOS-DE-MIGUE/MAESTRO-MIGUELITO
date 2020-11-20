@@ -15,11 +15,7 @@ public class Laboratorio implements Serializable
     private int idLaboratorio;
     private String nombre;
     private String informacion;
-    
-    public Laboratorio() 
-    {
-        
-    }
+   
     
     public Laboratorio(int idLaboratorio, String nombre, String informacion)
     {
