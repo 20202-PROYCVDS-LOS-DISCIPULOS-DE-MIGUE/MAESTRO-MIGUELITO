@@ -17,6 +17,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.ArrayList;
 
+@SuppressWarnings("deprecation")
 @ManagedBean(name="equipoBean")
 @SessionScoped
 public class EquipoBean {

@@ -15,7 +15,7 @@
         <result property="contraseña" column="contraseña"/>
     </resultMap>
     
-    <select id="getUsurio" resultMap="UsuarioResultado" parameterType="String">
+    <select id="getUser" resultMap="UserResult" parameterType="String">
         SELECT * FROM "usuarios" WHERE documento = #{documento}
     </select>
 </mapper>

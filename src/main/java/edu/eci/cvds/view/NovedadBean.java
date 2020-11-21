@@ -16,7 +16,7 @@ import javax.faces.context.FacesContext;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
+@SuppressWarnings("deprecation")
 @ManagedBean(name="novedadBean")
 @SessionScoped
 

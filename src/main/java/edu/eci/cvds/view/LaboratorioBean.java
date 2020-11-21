@@ -14,6 +14,7 @@ import javax.faces.context.FacesContext;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+@SuppressWarnings("deprecation")
 @ManagedBean(name="laboratorioBean")
 @SessionScoped
 

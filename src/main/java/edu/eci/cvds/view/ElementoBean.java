@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import java.sql.Time;
 import java.util.ArrayList;
 
-
+@SuppressWarnings("deprecation")
 @ManagedBean(name="elementoBean")
 @SessionScoped
 public class ElementoBean {

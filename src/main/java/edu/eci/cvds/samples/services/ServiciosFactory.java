@@ -3,8 +3,8 @@ package edu.eci.cvds.samples.services;
 import com.google.inject.Injector;
 import edu.eci.cvds.sampleprj.dao.*;
 import edu.eci.cvds.sampleprj.dao.myBatis.*;
-import edu.eci.cvds.security.SessionLogger;
-import edu.eci.cvds.security.ShiroSession;
+import edu.eci.cvds.security.Sesion;
+import edu.eci.cvds.security.Autenticated;
 import edu.eci.cvds.samples.services.impl.ElementoServiciosImpl;
 import edu.eci.cvds.samples.services.impl.LaboratorioServiciosImpl;
 import edu.eci.cvds.samples.services.impl.EquipoServiciosImpl;
@@ -39,16 +39,16 @@ public class ServiciosFactory {
                 bind(EquipoServicios.class).to(EquipoServiciosImpl.class);
                 bind(LaboratorioDAO.class).to(MyBatisLaboratorioDAO.class);
                 bind(LaboratorioServicios.class).to(LaboratorioServiciosImpl.class);
-                bind(SessionLogger.class).to(ShiroSession.class);
+                bind(Sesion.class).to(Autenticated.class);
             }
         });
     }
-    public SessionLogger getLoginServices(){
+    public Sesion getLoginServices(){
         if (!optInjector.isPresent()) {
             optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
         }
 
-        return optInjector.get().getInstance(SessionLogger.class);
+        return optInjector.get().getInstance(Sesion.class);
     }
 
     public static ServiciosFactory getInstance(){

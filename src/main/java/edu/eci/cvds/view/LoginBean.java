@@ -1,6 +1,6 @@
 package edu.eci.cvds.view;
 
-import edu.eci.cvds.security.SessionLogger;
+import edu.eci.cvds.security.Sesion;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.apache.shiro.SecurityUtils;
@@ -13,30 +13,30 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.IOException;
 
+@SuppressWarnings("deprecation")
 @ManagedBean(name="loginBean")
 @SessionScoped
-public class LoginBean {
-
+public class LoginBean{
 
     private static final long serialVersionUID = -2084921068710522276L;
 
     private String documento;
     private String contraseña;
 	//@Inject
-    //private SessionLogger logger;
-    private SessionLogger logger = ServiciosFactory.getInstance().getLoginServices();
+    //private Sesion sesion;
+    private Sesion sesion = ServiciosFactory.getInstance().getLoginServices();
 
     public Subject getCurrentUser(){
         Subject currentUser = SecurityUtils.getSubject();
         return currentUser;
     }
 
-    public SessionLogger getLogger() {
-        return logger;
+    public Sesion getSesion() {
+        return sesion;
     }
 
-    public void setLogger(SessionLogger logger) {
-        this.logger = logger;
+    public void setLogger(Sesion sesion) {
+        this.sesion = sesion;
     }
 
     public String getDocumento() {
@@ -60,7 +60,7 @@ public class LoginBean {
     @RequiresGuest
     public void login() throws PersistenceException {
         try {
-             logger.login(documento,contraseña);
+             sesion.login(documento,contraseña);
              FacesContext.getCurrentInstance().getExternalContext().redirect("/Menu.xhtml");
 
         } catch (PersistenceException | IOException e){

@@ -3,7 +3,7 @@ import edu.eci.cvds.exceptions.PersistenceException;
 
 
 import com.google.inject.Inject;
-import edu.eci.cvds.security.SessionLogger;
+import edu.eci.cvds.security.Sesion;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.services.UsuarioServicios;
 import org.apache.shiro.SecurityUtils;
@@ -13,7 +13,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.subject.Subject;
 
-public class ShiroSession implements SessionLogger {
+public class Autenticated implements Sesion {
     @Inject
     private UsuarioServicios usuarioServicios;
 
@@ -38,9 +38,9 @@ public class ShiroSession implements SessionLogger {
             currentUser.login( token );
 
         } catch ( UnknownAccountException a ) {
-            throw new PersistenceException("Usuario o contraseña incorrectos",a);
+            throw new PersistenceException("credenciales inválidas",a);
         } catch ( IncorrectCredentialsException b ) {
-            throw new PersistenceException("Usuario o contraseña incorrectos",b);
+            throw new PersistenceException("credenciales inválidas",b);
         }
     }
 
