@@ -57,35 +57,35 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}{LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 
-				<p:column sortBy="#{Equipos.idEquipo}">
+				<p:column filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
 						<h:outputText value="IdEquipo"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.idEquipo}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.ip}">
+				<p:column filterBy="#{Equipos.ip}" sortBy="#{Equipos.ip}">
 					<f:facet name="header">
 						<h:outputText value="IP"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.ip}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.informacion}">
+				<p:column filterBy="#{Equipos.informacion}" sortBy="#{Equipos.informacion}">
 					<f:facet name="header">
 						<h:outputText value="Informacion"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.informacion}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.activo}">
+				<p:column filterBy="#{Equipos.activo}" sortBy="#{Equipos.activo}">
 					<f:facet name="header">
 						<h:outputText value="Activo"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.activo}"/>
 				</p:column>
 
-				<p:column sortBy="#{Equipos.laboratorio}">
+				<p:column filterBy="#{Equipos.laboratorio}" sortBy="#{Equipos.laboratorio}">
 					<f:facet name="header">
 						<h:outputText value="laboratorio"/>
 					</f:facet>
@@ -99,35 +99,35 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 	
-				<p:column sortBy="#{Equipos.idEquipo}"  >
+				<p:column filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
 						<h:outputText value="IdElemento" />
 					</f:facet>
 					<h:outputText value="#{Elementos.idElemento}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.tipo}" >
+				<p:column filterBy="#{Elementos.tipo}" sortBy="#{Elementos.tipo}">
 					<f:facet name="header">
 						<h:outputText value="Tipo" />
 					</f:facet>
 					<h:outputText value="#{Elementos.tipo}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.marca}" >
+				<p:column filterBy="#{Elementos.marca}" sortBy="#{Elementos.marca}">
 					<f:facet name="header">
 						<h:outputText value="Marca" />
 					</f:facet>
 					<h:outputText value="#{Elementos.marca}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.activo}">
+				<p:column filterBy="#{Elementos.activo}" sortBy="#{Elementos.activo}">
 					<f:facet name="header">
 						<h:outputText value="Activo" />
 					</f:facet>
 					<h:outputText value="#{Elementos.activo}" />
 				</p:column>
 
-				<p:column sortBy="#{Elementos.equipo}">
+				<p:column filterBy="#{Elementos.equipo}" sortBy="#{Elementos.equipo}">
 					<f:facet name="header">
 						<h:outputText value="Equipo" />
 					</f:facet>

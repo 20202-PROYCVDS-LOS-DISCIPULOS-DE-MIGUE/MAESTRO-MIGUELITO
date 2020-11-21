@@ -29,21 +29,21 @@
 				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
 				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
 
-				<p:column sortBy="#{Laboratorios.idLaboratorio}"  >
+				<p:column filterBy="#{Laboratorios.idLaboratorio}" sortBy="#{Laboratorios.idLaboratorio}"  >
 					<f:facet name="header">
 						<h:outputText value="IdLabotario" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.idLaboratorio}" />
 				</p:column>
 
-				<p:column sortBy="#{Laboratorios.nombre}" >
+				<p:column filterBy="#{Laboratorios.nombre}" sortBy="#{Laboratorios.nombre}" >
 					<f:facet name="header">
 						<h:outputText value="nombre" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.nombre}" />
 				</p:column>
 
-				<p:column sortBy="#{Laboratorios.informacion}">
+				<p:column filterBy="#{Laboratorios.informacion}" sortBy="#{Laboratorios.informacion}">
 					<f:facet name="header">
 						<h:outputText value="Información" />
 					</f:facet>

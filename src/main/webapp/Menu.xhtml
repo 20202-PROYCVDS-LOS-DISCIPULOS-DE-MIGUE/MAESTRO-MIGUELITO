@@ -6,39 +6,44 @@
 	<h:head>
 		<title>Menu</title>
 		<meta charset="utf-8"/>
+		<link href="/Menu.css" rel="stylesheet"/>
 	</h:head>
 
-	<h:body class="is-preload">	
-		<h1>Menu</h1>
-		
-		<div class="contenedor">	
-			<div class="login-box">
-				<header id="header">
-					<h1>Equipos</h1>
-				</header>
-
-				<a href="Equipo.xhtml">
-					<input type="button" value="Equipos"></input>
-				</a>
+	<h:body>
+		<div class="menuPresentation">
+			<div class="title">
+				<h1>Menu Principal</h1>
 			</div>
-		
-			<div class="login-box">
-				<header id="header">
-					<h1>Laboratorios</h1>
-				</header>
-			
-				<a href="Laboratorio.xhtml">
-					<input type="button" value="Laboratorios"></input>
-				</a>
+			<div>
+				<img class="logos2" src="img/USB.png" alt="Laboratorios" width="200" height="200"/>
 			</div>
+			<div class="options">	
+				<div class="option">
+					<div class="subTitle">
+						<p>Equipos</p>
+					</div>
+					<a href="Equipo.xhtml">
+						<input class="nextWindow" type="button" value="Equipos"></input>
+					</a>
+				</div>
 		
-			<br/>
-			<br/>
+				<div class="option">
+					<div class="subTitle">
+						<p>Laboratorios</p>
+					</div>
+					<a href="Laboratorio.xhtml">
+						<input class="nextWindow" type="button" value="Laboratorios"></input>
+					</a>
+				</div>
 		
-			<div class="menu">
-				<a href="Login.xhtml">
-					<input type="button" value="Cerrar sesión"></input>
-				</a>
+				<br/>
+				<br/>
+		
+				<div class="menu">
+					<a href="Login.xhtml">
+						<input class="backWindow" type="button" value="Cerrar sesión"></input>
+					</a>
+				</div>
 			</div>
 		</div>
 	</h:body>
