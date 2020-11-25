@@ -1,0 +1,52 @@
+body {
+	margin : 0;
+	padding : 0;
+	background-image : url(../img/MenuBackground.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.menuPresentation{
+	font-family: Bahnschrift;
+	text-transform: uppercase;
+	font-weight: bold;
+    text-align: center;
+}
+
+.title {
+	margin-top: -55px;
+	color: #FFFF;
+	font-size: 40px;
+	background-color: #4B7447;
+}
+
+.subTitle {
+	color: #011A27;
+	font-size: 24px;
+	background-color: #8EBA43;
+}
+
+.nextWindow {
+	margin-top: 10px;
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFF;
+    width: 110px;
+    height: 30px;
+    background-color: #011A27;
+    float: center;
+}
+
+.backWindow {
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFF;
+    width: 200px;
+    height: 30px;
+    background-color: #011A27;
+    float: center;
+}
