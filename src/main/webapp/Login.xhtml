@@ -7,21 +7,33 @@
 	<h:head>
 		<title>Login</title>
 		<meta charset="utf-8"/>
+		<link href="/Login.css" rel="stylesheet"/>
 	</h:head>
 
-	<h:body class="is-preload">
-		<div class="login-box">
-			<header id="header">
+	<h:body>
+		<div class="loginPresentation">
+			<div class="title">
 				<h1>Login</h1>
-				<p>Laboratorio Informatica</p>
-			</header>
-		
+			</div>
+			<div>
+				<img class="logos" src="img/Operativos.png" alt="Sistemas Operativos" width="260" height="259" />
+			</div>
+			<div class="subTitle">
+				<p>Laboratorio Informática</p>
+			</div>
 			<h:form id="signup-form" method="post" action="#">
-				<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-				<p:inputText type="documento" name="documento" id="documento" placeholder="Documento" value="#{loginBean.documento}"/>
-				<p:inputText type="password" name="contraseña" id="contraseña" placeholder="Contraseña" value="#{loginBean.contraseña}"/>
-				<p:commandButton type="submit" value="Entrar" action="#{loginBean.login()}"/>
+				<div>
+					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
+					<p:inputText class="documento" type="text" name="documento" placeholder="Documento" value="#{loginBean.documento}"/>
+					<p:inputText class="contraseña" type="password" name="contraseña" placeholder="Contraseña" value="#{loginBean.contraseña}"/>
+				</div>
+				<div id="nextWindow">
+					<p:commandButton class="ingresar" type="submit" value="Entrar" action="#{loginBean.login()}"/>
+				</div>
 			</h:form>
+			<div class="subTitle2">
+				<p>Los discipulos del maestro miguelito</p>
+			</div>
 		</div>
 	</h:body>
 </html>
