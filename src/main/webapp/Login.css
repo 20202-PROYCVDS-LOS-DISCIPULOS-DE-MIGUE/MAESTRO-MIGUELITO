@@ -1,40 +1,38 @@
 body {
-	margin : 0;
-	padding : 0;
-	background-image : url(../img/LoginBackground.jpg);
-	background-size: cover;
-	height: 100vh;
+    margin : 0;
+    padding : 0;
+    background-image : url(../img/LoginBackground.jpg);
+    background-size: cover;
+    height: 100vh;
 }
 
+::placeholder { color: rgba(0, 0, 0, 0.5); }
+
 .loginPresentation{
-	font-family: Bahnschrift;
-	text-transform: uppercase;
-	font-weight: bold;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
 }
 
 .title {
-	margin-top: -55px;
-	color: #F1F1F2;
-	font-size: 40px;
-	background-color: #011A27;
+    margin-top: -47px;
+    color: #F1F1F2;
+    font-size: 35px;
+    background-color: #011A27;
 }
 
 .subTitle {
-	color: #BCBABE;
-	font-size: 24px;
-	background-color: #063852;
+    color: #BCBABE;
+    font-size: 25px;
+    background-color: #063852;
 }
 
 .subTitle2 {
-	margin-top: 25px;
-	color: #FFFF;
-	font-size: 18px;
-	background-color: #4B7447;
-}
-
-.logos {
-
+    margin-top: 25px;
+    color: #F1F1F2;
+    font-size: 18px;
+    background-color: #011A27;
 }
 
 .documento {
@@ -49,7 +47,7 @@ body {
 }
 
 .contraseña {
-	margin-top: 20px;
+    margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 14px;
     text-transform: uppercase;
@@ -60,8 +58,8 @@ body {
 }
 
 .ingresar {
-	margin-top: 20px;
-	font-size: 14px;
+    margin-top: 20px;
+    font-size: 14px;
     font-family: Bahnschrift;
     text-transform: uppercase;
     text-align: center;
@@ -70,12 +68,4 @@ body {
     height: 25px;
     background-color: #F1F1F2;
     float: center;
-}
-
-#nextWindow {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
 }

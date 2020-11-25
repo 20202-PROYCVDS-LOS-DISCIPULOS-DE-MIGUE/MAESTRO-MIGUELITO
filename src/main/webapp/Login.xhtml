@@ -7,7 +7,7 @@
 	<h:head>
 		<title>Login</title>
 		<meta charset="utf-8"/>
-		<link href="/Login.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="/Login.css?1.0" media="all"/>
 	</h:head>
 
 	<h:body>
@@ -27,7 +27,7 @@
 					<p:inputText class="documento" type="text" name="documento" placeholder="Documento" value="#{loginBean.documento}"/>
 					<p:inputText class="contraseña" type="password" name="contraseña" placeholder="Contraseña" value="#{loginBean.contraseña}"/>
 				</div>
-				<div id="nextWindow">
+				<div>
 					<p:commandButton class="ingresar" type="submit" value="Entrar" action="#{loginBean.login()}"/>
 				</div>
 			</h:form>

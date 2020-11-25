@@ -7,66 +7,65 @@
 	<h:head>
 		<title>Laboratorios</title>
 		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="/Laboratorio.css?1.0" media="all"/>
 	</h:head>
 
 	<h:body>
-		<h:form>
-			<h2>Laboratorios</h2>
+		<div class="menuPresentation">
+			<div class="title">
+				<h1>Laboratorios</h1>
+			</div>
+			<div class="subTitle">
+				<h3>Registrar Laboratorio</h3>
+			</div>
 			
-			<br/>
-			<h3>Registrar Laboratorio</h3>
-			
-			<h:form id="signup-form" method="post" action="#">
-				<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-				<p:inputText type="text" name="nombre" id="nombre" placeholder="Nombre" value="#{nombre}"/>
-				<p:inputText type="text" name="informacion" id="informacion" placeholder="Información" value="#{informacion}"/>
-				<p:commandButton type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre,informacion)}"/>
-			</h:form>
-			<br/>
-			<h3>Laborarios Registrados</h3>
-			
-<<<<<<< HEAD
-			<p:dataTable var="Laboratorios" value="#{laboratorioBean.todosLaboratorios()}" paginator="true" rows="15"
-				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
-				 rowsPerPageTemplate="5,10,15">
-				 
-				<p:column sortBy="#{Laboratorios.idlaboratorio}"  >
-=======
-			<p:dataTable var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}" paginator="true" rows="5"
-				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
-				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+			<div>
+				<h:form id="signup-form" method="post" action="#">
+					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
+					<p:inputText type="text" name="nombre" class="nombre" placeholder="Nombre" value="#{nombre}"/>
+					<p:inputText type="text" name="informacion" class="informacion" placeholder="Información" value="#{informacion}"/>
+				</h:form>
+				<br/>
+				<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre,informacion)}"/>
+			</div>
 
-				<p:column filterBy="#{Laboratorios.idLaboratorio}" sortBy="#{Laboratorios.idLaboratorio}"  >
->>>>>>> 8888664f4213aeba956544d3788db73054aa6116
+			<br/>
+			<div class="subTitle2">
+				<h3>Laboratorios Registrados</h3>
+			</div>
+			
+			<p:dataTable var="Laboratorios" value="#{laboratorioBean.todosLaboratorios()}" paginator="true" rows="5"
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
+				
+				<p:column class="columns" filterBy="#{Laboratorios.idLaboratorio}" sortBy="#{Laboratorios.idLaboratorio}">
 					<f:facet name="header">
 						<h:outputText value="IdLabotario" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.idLaboratorio}" />
 				</p:column>
 
-				<p:column filterBy="#{Laboratorios.nombre}" sortBy="#{Laboratorios.nombre}" >
+				<p:column class="columns" filterBy="#{Laboratorios.nombre}" sortBy="#{Laboratorios.nombre}" >
 					<f:facet name="header">
 						<h:outputText value="nombre" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.nombre}" />
 				</p:column>
-
-				<p:column filterBy="#{Laboratorios.informacion}" sortBy="#{Laboratorios.informacion}">
+				<p:column class="columns" filterBy="#{Laboratorios.informacion}" sortBy="#{Laboratorios.informacion}">
 					<f:facet name="header">
 						<h:outputText value="Información" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.informacion}" />
 				</p:column>
 			</p:dataTable>
-		</h:form>
+			<br/>
+			<br/>
 	
-		<br/>
-		<br/>
-	
-		<div class="laboratorio">
-			<a href="Menu.xhtml">
-				<input type="button" value="Volver"></input>
-			</a>
+			<div class="laboratorio">
+				<a href="Menu.xhtml">
+					<input class="backWindow" type="button" value="Volver"></input>
+				</a>
+			</div>
 		</div>
 	</h:body>
 </html>

@@ -1,10 +1,18 @@
 body {
 	margin : 0;
 	padding : 0;
-	background-image : url(../img/Main.jpg);
 	background-size: cover;
 	height: 100vh;
+	content:'';
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/LaboratorioBackground.jpg);
 }
+
+::placeholder { color: rgba(255, 255, 255, 0.1); }
 
 .menuPresentation{
 	font-family: Bahnschrift;
@@ -23,41 +31,56 @@ body {
 .subTitle {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: #000000;
+	background-color: rgba(183, 27, 109, 0.5);
 }
 
 .subTitle2 {
-	margin-top: 25px;
 	color: #FFFFFF;
-	font-size: 18px;
+	font-size: 25px;
+	background-color: rgba(20, 179, 182, 0.5);
 }
 
-.nextWindow1 {
+.nombre {
+    margin-right: 10px;
+    font-family: Bahnschrift;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #14ABA7;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+}
+
+.informacion {
+	margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #14ABA7;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+}
+
+.register {
 	margin-top: 10px;
 	font-size: 14px;
     font-family: Bahnschrift;
     text-transform: uppercase;
     text-align: center;
-    color: #FFFFFF;
-    width: 110px;
+    color: #000000;
+    width: 200px;
     height: 30px;
-    background-color: #FF9002;
+    background-color: #FFFFFF;
     float: center;
     border-radius: 8px;
 }
 
-.nextWindow2 {
-	margin-top: 10px;
-	font-size: 14px;
-    font-family: Bahnschrift;
-    text-transform: uppercase;
-    text-align: center;
-    color: #FFFFFF;
-    width: 150px;
-    height: 30px;
-    background-color: #B71B1C;
-    float: center;
-    border-radius: 8px;
+.columns{
+	color: #000000;
+	background-color: #FFFFFF;
 }
 
 .backWindow {
@@ -68,7 +91,7 @@ body {
     color: #FFFFFF;
     width: 200px;
     height: 30px;
-    background-color: #1764BE;
+    background-color: #AA1B67;
     float: center;
     border-radius: 8px;
 }
