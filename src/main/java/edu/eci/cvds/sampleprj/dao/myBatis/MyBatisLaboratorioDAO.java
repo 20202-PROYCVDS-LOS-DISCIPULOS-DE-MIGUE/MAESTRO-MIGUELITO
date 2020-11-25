@@ -5,6 +5,7 @@ import edu.eci.cvds.sampleprj.dao.LaboratorioDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
+import org.mybatis.guice.transactional.Transactional;
 
 import java.util.ArrayList;
 
@@ -20,15 +21,19 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     public void setLaboratoriosMapper(LaboratorioMapper laboratorioMapper) {
         this.laboratorioMapper = laboratorioMapper;
     }
+
+
     @Override
-    public Laboratorio getLaboratorio(int idLaboratorio) throws PersistenceException {
+    public Laboratorio getLaboratorio(int idlaboratorio) throws PersistenceException {
         try{
-            return laboratorioMapper.getLaboratorio(idLaboratorio);
+            return laboratorioMapper.getLaboratorio(idlaboratorio);
         }catch (Exception e){
             throw new PersistenceException("Error consultando laboratorios",e);
         }
     }
+
     @Override
+    @Transactional
     public void registrarLaboratorio(String nombre,String informacion) throws PersistenceException{
         try{
             laboratorioMapper.registrarLaboratorio(nombre,informacion);
@@ -36,6 +41,7 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
             throw new PersistenceException("Error insertando laboratorio",e);
         }
     }
+
     @Override
     public ArrayList<Laboratorio>getLaboratorios()throws PersistenceException{
         try{

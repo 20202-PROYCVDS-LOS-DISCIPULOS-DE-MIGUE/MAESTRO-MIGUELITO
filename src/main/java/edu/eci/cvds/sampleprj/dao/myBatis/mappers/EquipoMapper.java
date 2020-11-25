@@ -8,6 +8,6 @@ import java.util.ArrayList;
 public interface EquipoMapper {
     public void registrarEquipo(@Param("ip")String ip,@Param("informacion")String informacion,@Param("activo")boolean activo,@Param("laboratorio")int laboratorio);
 
-    public Equipo getEquipo(int idEquipo);
+    public Equipo getEquipo(int idequipo);
     public ArrayList<Equipo> getEquipos();
 }

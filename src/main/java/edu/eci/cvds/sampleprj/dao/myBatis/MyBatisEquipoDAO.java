@@ -22,9 +22,9 @@ public class MyBatisEquipoDAO implements EquipoDAO {
     }
 
     @Override
-    public Equipo getEquipo(int idEquipo) throws PersistenceException {
+    public Equipo getEquipo(int idequipo) throws PersistenceException {
         try{
-            return equipoMapper.getEquipo(idEquipo);
+            return equipoMapper.getEquipo(idequipo);
         }catch (Exception e){
             throw new PersistenceException("Error consultando equipo",e);
         }

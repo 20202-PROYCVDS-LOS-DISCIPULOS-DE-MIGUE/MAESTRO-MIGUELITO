@@ -22,7 +22,7 @@ public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServicios laboratorioServicios;
 	private LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
-	private int idLaboratorio;
+	private int idlaboratorio;
     private String nombre;
     private String informacion;
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
@@ -43,11 +43,11 @@ public class LaboratorioBean {
         this.nombre = nombre;
     }
     public int getIdLaboratorio() {
-        return idLaboratorio;
+        return idlaboratorio;
     }
 
-    public void setIdLaboratorio(int idLaboratorio) {
-        this.idLaboratorio = idLaboratorio;
+    public void setIdLaboratorio(int idlaboratorio) {
+        this.idlaboratorio = idlaboratorio;
     }
     
     public String getInformacion() {
@@ -57,9 +57,9 @@ public class LaboratorioBean {
     public void setInformacion(String informacion) {
         this.informacion = informacion;
     }
-    public void registrarLaboratorio()throws PersistenceException{
+    public void registrarLaboratorio(String nombret, String informaciont)throws PersistenceException{
         try{
-            laboratorioServicios.registrarLaboratorio(nombre,informacion);
+            laboratorioServicios.registrarLaboratorio(nombret,informaciont);
             FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Laboratorio registrado"));
             PrimeFaces current = PrimeFaces.current();
             current.executeScript("PF('dlg2').hide();");
@@ -70,6 +70,6 @@ public class LaboratorioBean {
     }
     public ArrayList<Laboratorio> todosLaboratorios() throws PersistenceException {
         laboratorios=laboratorioServicios.getLaboratorios();
-        return laboratorioServicios.getLaboratorios();
+        return laboratorios;
     }
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
  */
 public class Equipo implements Serializable
 {
-    private int idEquipo;
+    private int idequipo;
     private String ip;
     private String informacion;
     private boolean activo;
@@ -23,9 +23,9 @@ public class Equipo implements Serializable
         
     }
     
-    public Equipo (int idEquipo, String ip, String informacion,boolean activo, int laboratorio)
+    public Equipo (int idequipo, String ip, String informacion,boolean activo, int laboratorio)
     {
-        this.idEquipo = idEquipo;
+        this.idequipo = idequipo;
         this.ip = ip;
         this.informacion = informacion;
 	this.activo = activo;
@@ -34,11 +34,11 @@ public class Equipo implements Serializable
     
     public int getIdEquipo ()
     {
-        return idEquipo;
+        return idequipo;
     }
-    public void setIdEquipo (int idEquipo)
+    public void setIdEquipo (int idequipo)
     {
-        this.idEquipo = idEquipo;
+        this.idequipo = idequipo;
     }
     
     public String getIp ()
@@ -80,6 +80,6 @@ public class Equipo implements Serializable
     @Override
     public String toString () 
     {
-        return "Equipos {idEquipo: " + idEquipo + ", ip: " + ip + ", Información: " + informacion + ",activo:"+activo+", Laboratorio: " + laboratorio + "}";
+        return "Equipos {idequipo: " + idequipo + ", ip: " + ip + ", Información: " + informacion + ",activo:"+activo+", Laboratorio: " + laboratorio + "}";
     }
 }

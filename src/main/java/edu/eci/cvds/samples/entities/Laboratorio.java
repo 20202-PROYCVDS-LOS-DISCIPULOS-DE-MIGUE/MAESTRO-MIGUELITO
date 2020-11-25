@@ -12,25 +12,25 @@ import java.io.Serializable;
  */
 public class Laboratorio implements Serializable 
 {
-    private int idLaboratorio;
+    private int idlaboratorio;
     private String nombre;
     private String informacion;
    
     
-    public Laboratorio(int idLaboratorio, String nombre, String informacion)
+    public Laboratorio(int idlaboratorio, String nombre, String informacion)
     {
-        this.idLaboratorio = idLaboratorio;
+        this.idlaboratorio = idlaboratorio;
         this.nombre = nombre;
         this.informacion = informacion;
     }
     
     public int getIdLaboratorio ()
     {
-        return idLaboratorio;
+        return idlaboratorio;
     }
-    public void setIdLaboratorio (int idLaboratorio)
+    public void setIdLaboratorio (int idlaboratorio)
     {
-        this.idLaboratorio = idLaboratorio;
+        this.idlaboratorio = idlaboratorio;
     }
     
     public String getNombre ()
@@ -55,6 +55,6 @@ public class Laboratorio implements Serializable
     @Override
     public String toString () 
     {
-        return "Laboratory {idLaboratorio: " + idLaboratorio + ", Nombre: " + nombre + ", Información: " + informacion + "}";
+        return "Laboratory {idlaboratorio: " + idlaboratorio + ", Nombre: " + nombre + ", Información: " + informacion + "}";
     }
 }

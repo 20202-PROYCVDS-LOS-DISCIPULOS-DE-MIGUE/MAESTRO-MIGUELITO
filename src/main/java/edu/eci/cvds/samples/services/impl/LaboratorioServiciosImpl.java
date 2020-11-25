@@ -13,16 +13,13 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 
 
 	@Override
-	public void registrarLaboratorio(String nombre, String informacion) throws PersistenceException {
-		if(nombre==null){
-			throw new PersistenceException("laboratorio incorrecto");
-		}else{
+	public void registrarLaboratorio(String nombre, String informacion) throws PersistenceException {	
 			laboratorioDAO.registrarLaboratorio(nombre,informacion);
 		}
-	}
+
 
 	@Override
-	public Laboratorio getLaboratorio(int idLaboratorio) throws PersistenceException {
+	public Laboratorio getLaboratorio(int idlaboratorio) throws PersistenceException {
 		return null;
 	}
 

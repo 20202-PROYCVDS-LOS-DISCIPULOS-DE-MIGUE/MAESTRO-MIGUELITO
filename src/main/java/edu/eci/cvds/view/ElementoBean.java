@@ -29,7 +29,7 @@ public class ElementoBean {
     private ArrayList<Elemento>monitoresDisponibles;
     private ArrayList<Elemento>cpusDisponibles;
     private ArrayList<Elemento>mousesDisponibles;
-    private ArrayList<Elemento>elementos;
+    private ArrayList<Elemento>elementos= new ArrayList<Elemento>();;
 
 
     public ArrayList<Elemento>getTecladosDisponibles() throws PersistenceException {
@@ -157,7 +157,6 @@ public class ElementoBean {
         }
     }
     public ArrayList<Elemento> getElementos()throws PersistenceException {
-        ArrayList<Elemento> elementos=new ArrayList<Elemento>();
         elementos=elementoServicios.getElementos();
         return elementos;
     }

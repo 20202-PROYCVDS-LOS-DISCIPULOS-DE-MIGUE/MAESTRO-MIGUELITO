@@ -136,7 +136,7 @@ public class EquipoBean {
     }
 
 
-    public void registrarEquipo()throws PersistenceException{
+    public void registrarEquipo(int laboratorio,String ip)throws PersistenceException{
         try{
             laboratorio=conLaboratorio.getIdLaboratorio();
             if(laboratorio>0){

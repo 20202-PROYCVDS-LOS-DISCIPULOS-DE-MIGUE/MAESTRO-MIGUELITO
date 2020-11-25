@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 ---------------------------------------------------------------------
 CREATE SEQUENCE idLaboratorio INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "laboratorios" (
-	idLaboratorio INT NOT NULL,
+	idlaboratorio INT NOT NULL,
 	nombre VARCHAR(30)NOT NULL,
 	informacion VARCHAR(100)NOT NULL
 );

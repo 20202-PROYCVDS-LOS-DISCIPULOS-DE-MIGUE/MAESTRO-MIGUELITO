@@ -65,7 +65,7 @@ public class ServiciosFactory {
 
     public ElementoServicios getElementoServicios(){
         if(!optInjector.isPresent()){
-            optInjector=Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
+            optInjector=Optional.of(myBatisInjector("development","mybatis-config.xml"));
         }
         return optInjector.get().getInstance(ElementoServicios.class);
     }

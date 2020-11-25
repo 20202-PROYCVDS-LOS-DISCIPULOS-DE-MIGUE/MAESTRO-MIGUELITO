@@ -5,15 +5,15 @@
 
 <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.EquipoMapper">
     <resultMap type="Equipo" id="EquipoResultado">
-        <id property="idEquipo" column="idEquipo"/>
+        <id property="idequipo" column="idequipo"/>
         <result property="ip" column="ip"/>
         <result property="informacion" column="informacion"/>
         <result property="activo" column="activo"/>
         <result property="laboratorio" column="laboratorio"/>
     </resultMap>
 
-    <select id="getEquipo" resultMap="EquipoResultado" parameterType="map">
-        SELECT * FROM "equipos";
+    <select id="getEquipos" resultMap="EquipoResultado" parameterType="map">
+        SELECT * FROM equipos;
     </select>
 
     <insert id="registrarEquipo" parameterType="edu.eci.cvds.samples.entities.Equipo">

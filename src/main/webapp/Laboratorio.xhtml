@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml"
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:f="http://java.sun.com/jsf/core"
-	  lang="es">
+	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
 		<title>Laboratorios</title>
 		<meta charset="utf-8"/>
@@ -18,18 +18,18 @@
 			
 			<h:form id="signup-form" method="post" action="#">
 				<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-				<p:inputText type="nombre" name="nombre" id="nombre" placeholder="Nombre" value="#{LaboratorioBean.nombre}"/>
-				<p:inputText type="informacion" name="informacion" id="informacion" placeholder="Información" value="#{LaboratorioBean.informacion}"/>
-				<p:commandButton type="submit" value="Registrar Laboratorio" action="#{LaboratorioBean.registrarLaboratorio()}"/>
+				<p:inputText type="text" name="nombre" id="nombre" placeholder="Nombre" value="#{nombre}"/>
+				<p:inputText type="text" name="informacion" id="informacion" placeholder="Información" value="#{informacion}"/>
+				<p:commandButton type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre,informacion)}"/>
 			</h:form>
 			<br/>
 			<h3>Laborarios Registrados</h3>
 			
-			<p:dataTable var="Laboratorios" value="#{LaboratorioBean.todosLaboratorios()}" paginator="true" rows="5"
-				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
-				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
-
-				<p:column sortBy="#{Laboratorios.idLaboratorio}"  >
+			<p:dataTable var="Laboratorios" value="#{laboratorioBean.todosLaboratorios()}" paginator="true" rows="15"
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
+				 rowsPerPageTemplate="5,10,15">
+				 
+				<p:column sortBy="#{Laboratorios.idlaboratorio}"  >
 					<f:facet name="header">
 						<h:outputText value="IdLabotario" />
 					</f:facet>

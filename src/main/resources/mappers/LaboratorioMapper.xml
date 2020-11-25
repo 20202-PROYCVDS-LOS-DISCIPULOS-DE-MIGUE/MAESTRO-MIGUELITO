@@ -4,19 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper">
-    <resultMap type="Laboratorio" id="LaboratorioResultado">
-    	<id property="idLaboratorio" column="idLaboratorio"/>
-	<result property="nombre" column="nombre"/>
-    	<result property="informacion" column="informacion"/>	
+  
+    <resultMap type='Laboratorio' id='LaboratorioResultado'>
+    	<id property='idlaboratorio' column='idlaboratorio'/>
+	<result property='nombre' column='nombre'/>
+    	<result property='informacion' column='informacion'/>	
     </resultMap>
 
-    <select id="consultarLaboratorio" resultMap="LaboratoriosResult" parameterType="map">
-        SELECT * FROM "laboratorios";
+    <select id="getLaboratorios" resultMap="LaboratorioResultado" parameterType="map">
+        SELECT * FROM laboratorios;
     </select>
 
-    <insert id="registrarLaboratorio" parameterType="edu.eci.cvds.samples.entities.Laboratorio">
-        INSERT INTO "laboratorios"(idLaboratorio, nombre, informacion)
-		VALUES((SELECT count(*)+1 FROM "laboratorios"), #{nombre}, #{informacion});
+    <insert id="registrarLaboratorio" parameterType="map">
+        INSERT INTO laboratorios (idlaboratorio, nombre, informacion)
+		VALUES((SELECT count(*)+1 FROM laboratorios), #{nombre}, #{informacion});
     </insert>
 </mapper>
 
