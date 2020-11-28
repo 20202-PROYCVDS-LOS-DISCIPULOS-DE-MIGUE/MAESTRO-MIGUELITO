@@ -14,14 +14,6 @@ public class MyBatisElementoDAO implements ElementoDAO {
     @Inject
     private ElementoMapper elementoMapper;
 
-    public ElementoMapper getElementoMapper() {
-        return elementoMapper;
-    }
-
-    public void setElementoMapper(ElementoMapper elementoMapper) {
-        this.elementoMapper = elementoMapper;
-    }
-
     @Override
     public Elemento getElemento(int idElemento) throws PersistenceException {
         try{
@@ -34,7 +26,7 @@ public class MyBatisElementoDAO implements ElementoDAO {
         try{
             elementoMapper.registrarElemento(tipo,marca,activo,equipo);
         }catch (Exception e){
-            throw new PersistenceException("Error insertando elemento",e);
+            throw new PersistenceException("Error registrando elemento",e);
         }
     }
     public ArrayList<Elemento>getElementos()throws PersistenceException{
@@ -43,11 +35,6 @@ public class MyBatisElementoDAO implements ElementoDAO {
         }catch (Exception e){
             throw new PersistenceException("Error consultando elementos",e);
         }
-    }public void editElemento(int idElemento,int equipo) throws PersistenceException {
-        try{
-            elementoMapper.editElemento(idElemento,equipo);
-        }catch (Exception e){
-            throw new PersistenceException("Error en la asociacion",e);
-        }
-    }
+	}
+ 
 }

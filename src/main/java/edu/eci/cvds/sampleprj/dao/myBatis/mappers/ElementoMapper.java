@@ -6,10 +6,7 @@ import java.util.ArrayList;
 
 public interface ElementoMapper {
     public void registrarElemento(@Param("tipo")String tipo,@Param("marca")String marca,@Param("activo")boolean activo,@Param("equipo")int equipo);
-
     public Elemento getElemento(@Param("idElemento")int idElemento);
-
     public ArrayList<Elemento> getElementos();
 
-    public void editElemento(@Param("idElemento")int idElemento,@Param("equipo")int equipo);
 }

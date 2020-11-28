@@ -13,18 +13,10 @@ public class MyBatisEquipoDAO implements EquipoDAO {
     @Inject
     private EquipoMapper equipoMapper;
 
-    public EquipoMapper getEquipoMapper() {
-        return equipoMapper;
-    }
-
-    public void setEquipoMapper(EquipoMapper equipoMapper) {
-        this.equipoMapper = equipoMapper;
-    }
-
     @Override
-    public Equipo getEquipo(int idequipo) throws PersistenceException {
+    public Equipo getEquipo(int idEquipo) throws PersistenceException {
         try{
-            return equipoMapper.getEquipo(idequipo);
+            return equipoMapper.getEquipo(idEquipo);
         }catch (Exception e){
             throw new PersistenceException("Error consultando equipo",e);
         }
@@ -33,7 +25,7 @@ public class MyBatisEquipoDAO implements EquipoDAO {
         try{
             equipoMapper.registrarEquipo(ip,informacion,activo,laboratorio);
         }catch (Exception e){
-            throw new PersistenceException("Error insertando equipo",e);
+            throw new PersistenceException("Error registrando equipo",e);
         }
    }
    public ArrayList<Equipo> getEquipos()throws PersistenceException{

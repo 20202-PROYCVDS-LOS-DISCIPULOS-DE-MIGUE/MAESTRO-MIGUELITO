@@ -25,76 +25,7 @@ public class ElementoBean {
     private String marca;
     private boolean activo;
     private int equipo;
-    private ArrayList<Elemento>tecladosDisponibles;
-    private ArrayList<Elemento>monitoresDisponibles;
-    private ArrayList<Elemento>cpusDisponibles;
-    private ArrayList<Elemento>mousesDisponibles;
     private ArrayList<Elemento>elementos= new ArrayList<Elemento>();;
-
-
-    public ArrayList<Elemento>getTecladosDisponibles() throws PersistenceException {
-        elementos=getElementos();
-        //System.out.println("llega a teclados");
-        tecladosDisponibles=new ArrayList<Elemento>();
-        for(int i=0;i<elementos.size();i++){
-            //System.out.println(elementos.get(i).getNombre().equals("Teclado"));
-            //System.out.println(elementos.get(i).getIdEquipo());
-            if(elementos.get(i).getTipo().equals("Teclado")&& elementos.get(i).getEquipo()==0){
-                tecladosDisponibles.add(elementos.get(i));
-            }
-        }
-        return tecladosDisponibles;
-    }
-    public void setTecladosDisponibles(ArrayList<Elemento>tecladosDisponibles){
-        this.tecladosDisponibles=tecladosDisponibles;
-    }
-    public void setMonitoresDisponibles(ArrayList<Elemento>monitoresDisponibles){
-        this.monitoresDisponibles=monitoresDisponibles;
-    }
-    public ArrayList<Elemento>getMonitoresDisponibles() throws PersistenceException {
-        getElementos();
-        monitoresDisponibles=new ArrayList<Elemento>();
-        for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getTipo().equals("Monitor")&& elementos.get(i).getEquipo()==0){
-                monitoresDisponibles.add(elementos.get(i));
-            }
-        }
-        return monitoresDisponibles;
-    }
-    public ArrayList<Elemento>getMousesDisponibles() throws PersistenceException {
-        getElementos();
-        mousesDisponibles=new ArrayList<Elemento>();
-        for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getTipo().equals("Mouse")&& elementos.get(i).getEquipo()==0){
-                mousesDisponibles.add(elementos.get(i));
-            }
-        }
-        return mousesDisponibles;
-    }
-
-    public void setMousesDisponibles(ArrayList<Elemento> mousesDisponibles) {
-        this.mousesDisponibles = mousesDisponibles;
-    }
-
-    public ArrayList<Elemento>getCpusDisponibles() throws PersistenceException {
-        getElementos();
-        cpusDisponibles=new ArrayList<Elemento>();
-        for(int i=0;i<getElementos().size();i++){
-            if(elementos.get(i).getTipo().equals("Torre")&& elementos.get(i).getEquipo()==0){
-                cpusDisponibles.add(elementos.get(i));
-            }
-        }
-        return cpusDisponibles;
-    }
-    public void setCpusDisponibles(ArrayList<Elemento>cpusDisponibles){
-        this.cpusDisponibles=cpusDisponibles;
-    }
-
-
-    public void setElementos(ArrayList<Elemento>elementos){
-        this.elementos=elementos;
-    }
-
 
     public ElementoServicios getElementoServices(){
         return elementoServicios;
@@ -145,23 +76,22 @@ public class ElementoBean {
     }
 
 
-    public void registrarElemento()throws PersistenceException{
+    public void registrarElemento(String tipo,String marca,boolean activo,int equipo)throws PersistenceException{
         try{
             elementoServicios.registrarElemento(tipo,marca,activo,equipo);
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Elemento registrado"));
-            PrimeFaces current = PrimeFaces.current();
-            current.executeScript("PF('dlg2').hide();");
+            FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar elemento", "Registro del elemento exitoso"));
         }catch (PersistenceException ex){
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo crear el Elemento","Error"));
-            throw ex;
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar elemento", "No se pudo registrar el elemento"));
         }
     }
     public ArrayList<Elemento> getElementos()throws PersistenceException {
         elementos=elementoServicios.getElementos();
         return elementos;
     }
-    public void editElemento(int idElemento,int equipo)throws PersistenceException{
-        elementoServicios.editElemento(idElemento,equipo);
+ 
+	public void setElementos(ArrayList<Elemento>elementos){
+        this.elementos=elementos;
     }
-
 }

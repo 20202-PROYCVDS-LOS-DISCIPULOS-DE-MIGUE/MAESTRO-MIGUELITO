@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public interface NovedadServicios{
 
-    public default void registrarNovedad(String descripcion, String estado, String tipo, int idElemento) throws PersistenceException {
-    }
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro) throws PersistenceException;
     public ArrayList<Novedad> getNovedades()throws PersistenceException;
 }

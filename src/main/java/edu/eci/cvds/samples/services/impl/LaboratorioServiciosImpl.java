@@ -19,8 +19,8 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 
 
 	@Override
-	public Laboratorio getLaboratorio(int idlaboratorio) throws PersistenceException {
-		return null;
+	public Laboratorio getLaboratorio(int idLaboratorio) throws PersistenceException {
+		return laboratorioDAO.getLaboratorio(idLaboratorio);
 	}
 
 	@Override

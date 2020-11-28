@@ -17,11 +17,7 @@ public class Elemento implements Serializable
     private String marca;
     private boolean activo;
     private int equipo;
-    
-    public Elemento() 
-    {
-        
-    }
+   
     
     public Elemento(int idElemento, String tipo, String marca,boolean activo, int equipo)
     {

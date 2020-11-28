@@ -1,0 +1,53 @@
+body {
+	margin : 0;
+	padding : 0;
+	background-size: cover;
+	height: 100vh;
+	content:'';
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url(../img/LaboratorioBackground.jpg);
+}
+
+::placeholder { color: rgba(255, 255, 255, 0.1); }
+
+.menuPresentation{
+	font-family: Bahnschrift;
+	text-transform: uppercase;
+	font-weight: bold;
+    text-align: center;
+}
+
+.title {
+	margin-top: -47px;
+	color: #FFFFFF;
+	font-size: 35px;
+	background-color: #000000;
+}
+
+.subTitle {
+	color: #FFFFFF;
+	font-size: 25px;
+	background-color: rgba(183, 27, 109, 0.5);
+}
+
+.columns{
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.backWindow {
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+    height: 30px;
+    background-color: #AA1B67;
+    float: center;
+    border-radius: 8px;
+}

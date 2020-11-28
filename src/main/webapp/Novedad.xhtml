@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Novedades</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="/Novedad.css?1.0" media="all"/>
+	</h:head>
+
+	<h:body>
+		<div class="menuPresentation">
+			<div class="title">
+				<h1>Novedades</h1>
+			</div>
+			<div class="subTitle2">
+				<h3>Novedades Registradas</h3>
+			</div>
+			
+			<p:dataTable var="Novedades" value="#{novedadBean.getNovedades()}" paginator="true" rows="5"
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
+				
+				<p:column class="columns" filterBy="#{Novedades.idNovedad}" sortBy="#{Novedades.idNovedad}">
+					<f:facet name="header">
+						<h:outputText value="IdNovedad" />
+					</f:facet>
+					<h:outputText value="#{Novedades.idNovedad}" />
+				</p:column>
+
+				<p:column class="columns" filterBy="#{Novedades.fecha}" sortBy="#{Novedades.fecha}" >
+					<f:facet name="header">
+						<h:outputText value="fecha" />
+					</f:facet>
+					<h:outputText value="#{Novedades.fecha}" />
+				</p:column>
+				<p:column class="columns" filterBy="#{Novedades.titulo}" sortBy="#{Novedades.titulo}">
+					<f:facet name="header">
+						<h:outputText value="titulo" />
+					</f:facet>
+					<h:outputText value="#{Novedades.titulo}" />
+				</p:column>
+				<p:column class="columns" filterBy="#{Novedades.detalle}" sortBy="#{Novedades.detalle}">
+					<f:facet name="header">
+						<h:outputText value="detalle" />
+					</f:facet>
+					<h:outputText value="#{Novedades.detalle}" />
+				</p:column>
+				<p:column class="columns" filterBy="#{Novedades.responsable}" sortBy="#{Novedades.responsable}">
+					<f:facet name="header">
+						<h:outputText value="responsable" />
+					</f:facet>
+					<h:outputText value="#{Novedades.responsable}" />
+				</p:column>
+				<p:column class="columns" filterBy="#{Novedades.registro}" sortBy="#{Novedades.registro}">
+					<f:facet name="header">
+						<h:outputText value="registro" />
+					</f:facet>
+					<h:outputText value="#{Novedades.registro}" />
+				</p:column>
+				
+			</p:dataTable>
+			<br/>
+			<br/>
+	
+			<div class="novedad">
+				<a href="Menu.xhtml">
+					<input class="backWindow" type="button" value="Volver"></input>
+				</a>
+			</div>
+		</div>
+	</h:body>
+</html>

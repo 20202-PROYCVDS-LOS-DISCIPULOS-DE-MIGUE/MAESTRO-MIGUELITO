@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public interface EquipoServicios {
     public void registrarEquipo(String ip ,String informacion,boolean activo,int laboratorio)throws PersistenceException;
-    public Equipo getEquipo(int id)throws PersistenceException;
-    public void imprimir() throws PersistenceException;
+    public Equipo getEquipo(int idEquipo)throws PersistenceException;
     public ArrayList<Equipo> getEquipos()throws PersistenceException;
 }

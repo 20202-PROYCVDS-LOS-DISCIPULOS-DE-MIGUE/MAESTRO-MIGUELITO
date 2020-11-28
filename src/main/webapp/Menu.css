@@ -60,6 +60,20 @@ body {
     border-radius: 8px;
 }
 
+.nextWindow3 {
+	margin-top: 10px;
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    background-color: #008000;
+    float: center;
+    border-radius: 8px;
+}
+
 .backWindow {
 	font-size: 14px;
     font-family: Bahnschrift;

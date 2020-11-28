@@ -6,20 +6,16 @@ import edu.eci.cvds.sampleprj.dao.NovedadDAO;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Novedad;
 import edu.eci.cvds.samples.services.NovedadServicios;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class NovedadServiciosImpl implements NovedadServicios {
     @Inject
     private NovedadDAO novedadDAO;
+	
     @Override
-    public void registrarNovedad(String descripcion, String estado, String tipo, int idElemento) throws PersistenceException {
-        if(descripcion==null){
-            throw new PersistenceException(("novedad incorrecta"));
-        }else{
-            novedadDAO.registrarNovedad(descripcion,estado,tipo,idElemento);
-        }
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro) throws PersistenceException {
+        novedadDAO.registrarNovedad(fecha,titulo,detalle,responsable,registro);
     }
 
     @Override

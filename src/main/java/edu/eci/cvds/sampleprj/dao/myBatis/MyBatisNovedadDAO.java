@@ -5,7 +5,6 @@ import edu.eci.cvds.sampleprj.dao.NovedadDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.NovedadMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Novedad;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -14,28 +13,18 @@ public class MyBatisNovedadDAO implements NovedadDAO{
     @Inject
     private NovedadMapper novedadMapper;
 
-    public NovedadMapper getNovedadMapper() {
-
-        return novedadMapper;
-    }
-
-    public void setNovedadMapper(NovedadMapper novedadMapper)
-    {
-        this.novedadMapper = novedadMapper;
-    }
-
     @Override
-    public Novedad getNovedad(int id) throws PersistenceException {
+    public Novedad getNovedad(int idNovedad) throws PersistenceException {
         try{
-            return novedadMapper.getNovedad(id);
+            return novedadMapper.getNovedad(idNovedad);
         }catch (Exception e){
             throw new PersistenceException("Error consultando novedad",e);
         }
     }
-    public void registrarNovedad(String descripcion,String estado,String tipo,int idElemento) throws PersistenceException{
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro) throws PersistenceException{
         try{
-            LocalDate fecha=LocalDate.now();
-            novedadMapper.registrarNovedad(fecha,descripcion,estado,tipo,idElemento);
+            fecha=LocalDate.now();
+            novedadMapper.registrarNovedad(fecha,titulo,detalle,responsable,registro);
         }catch (Exception e){
             throw new PersistenceException("Error insertando Novedad",e);
         }

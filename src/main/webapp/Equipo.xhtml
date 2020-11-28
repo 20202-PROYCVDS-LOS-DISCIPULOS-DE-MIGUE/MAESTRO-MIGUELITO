@@ -22,15 +22,16 @@
 			<div>
 				<h:form id="signup-form" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="Laboratorio" value="laboratorio"/>
 					<p:inputText type="text" name="ip" class="ip" placeholder="ip" value="#{ip}"/>
-					<h:selectOneMenu class="equipoActivo" value="#{equipoBean.activo}">
+					<p:inputText type="text" name="informacion" class="informacion" placeholder="informacion" value="#{informacion}"/>
+					<h:selectOneMenu class="equipoActivo" value="#{activo}">
 						<f:selectItem itemLabel="Activo" itemValue="true" />
-						<f:selectItem itemLabel="Desactivo" itemValue="false" />
+						<f:selectItem itemLabel="Inactivo" itemValue="false" />
 					</h:selectOneMenu>
+					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(laboratorio,ip)}"/>
+				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion,activo,laboratorio)}"/>
 			</div>
 
 			<div class="subTitle">
@@ -39,20 +40,21 @@
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<h:selectOneMenu class="elementoTipo" value="#{ElementoBean.tipo}">
+					<h:selectOneMenu class="elementoTipo" value="#{tipo}">
 						<f:selectItem itemLabel="Teclado" itemValue="Teclado"/>
 						<f:selectItem itemLabel="Monitor" itemValue="Monitor"/>
 						<f:selectItem itemLabel="Torre" itemValue="Torre" />
 						<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
 					</h:selectOneMenu>
-					<p:inputText type="marca" name="marca" class="marca" placeholder="Marca" value="#{ElementoBean.marca}"/>
-					<h:selectOneMenu class="equipoActivo" value="#{Elemento.activo}">
+					<p:inputText type="text" name="marca" class="marca" placeholder="marca" value="#{marca}"/>
+					<h:selectOneMenu class="equipoActivo2" value="#{activo}">
 						<f:selectItem itemLabel="Activo" itemValue="true" />
-						<f:selectItem itemLabel="Desactivo" itemValue="false" />
+						<f:selectItem itemLabel="Inactivo" itemValue="false" />
 					</h:selectOneMenu>
+					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{ElementoBean.registrarElemento()}"/>
+				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca,activo,equipo)}"/>
 			</div>
 			
 			<br/>
@@ -60,8 +62,8 @@
 				<h3>Equipos Registrados</h3>
 			</div>
 			<p:dataTable var="Equipos" value="#{equipoBean.getEquipos()}" paginator="true" rows="5"
-				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks}{LastPageLink} {RowsPerPageDropdown}"
-				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
 
 				<p:column class="columns" filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
@@ -103,8 +105,8 @@
 				<h3>Elementos Registrados</h3>
 			</div>
 			<p:dataTable var="Elementos" value="#{elementoBean.getElementos()}" paginator="true" rows="5"
-				paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink} {RowsPerPageDropdown}"
-				currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords} guardadas">
+				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
 	
 				<p:column class="columns" filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">

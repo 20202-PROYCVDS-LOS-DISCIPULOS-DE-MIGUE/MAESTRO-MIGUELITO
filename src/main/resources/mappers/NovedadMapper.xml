@@ -13,12 +13,12 @@
     	<result property="registro" column="registro"/>
     </resultMap>
 
-    <select id="getNovedad" resultMap="NovedadResultado" parameterType="map">    
+    <select id="getNovedades" resultMap="NovedadResultado" parameterType="map">    
         SELECT * FROM "novedades";
     </select>
 
     <insert id="registrarNovedad" parameterType="map">
-        INSERT INTO "novedades"(idNovedad, fecha, titulo, detalle, responsable, registro)
-	VALUES((SELECT count(*)+1 FROM "novedades"), #{fecha}, #{titulo,}, #{detalle}, #{responsable},#{registro});
+        INSERT INTO "novedades"(fecha, titulo, detalle, responsable, registro)
+		VALUES( #{fecha}, #{titulo,}, #{detalle}, #{responsable},#{registro});
     </insert>
 </mapper>

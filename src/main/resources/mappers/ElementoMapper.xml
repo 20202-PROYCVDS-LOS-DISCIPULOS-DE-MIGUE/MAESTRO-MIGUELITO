@@ -16,12 +16,8 @@
         SELECT * FROM elementos;
     </select>
 
-    <update id="editElemento">
-        UPDATE "elementos" SET equipo=#{equipo} WHERE idElemento=#{idElemento};
-    </update>
-
-    <insert id="registrarElemento" parameterType="edu.eci.cvds.samples.entities.Usuario">
-        INSERT INTO "elementos" (idElemento, tipo, marca, activo, equipo)
-	VALUES((SELECT count(*)+1 FROM "elementos"), #{tipo}, #{marca}, #{activo}, #{equipo});
+    <insert id="registrarElemento" parameterType="map">
+        INSERT INTO "elementos" (tipo, marca, activo, equipo)
+		VALUES(#{tipo}, #{marca}, #{activo}, #{equipo});
     </insert>
 </mapper>

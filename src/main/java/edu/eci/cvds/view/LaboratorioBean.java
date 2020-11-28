@@ -29,7 +29,7 @@ public class LaboratorioBean {
         return laboratorioServicios;
     }
 
-    public void setElementoServices(LaboratorioServicios laboratorioServicios){
+    public void setLaboratorioServices(LaboratorioServicios laboratorioServicios){
         this.laboratorioServicios=laboratorioServicios;
     }
     public String getNombre() {
@@ -54,19 +54,22 @@ public class LaboratorioBean {
     public void setInformacion(String informacion) {
         this.informacion = informacion;
     }
-    public void registrarLaboratorio(String nombret, String informaciont)throws PersistenceException{
+    public void registrarLaboratorio(String nombre, String informacion)throws PersistenceException{
         try{
-            laboratorioServicios.registrarLaboratorio(nombret,informaciont);
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Laboratorio registrado"));
-            PrimeFaces current = PrimeFaces.current();
-            current.executeScript("PF('dlg2').hide();");
-        }catch (PersistenceException ex){
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"Error registrando laboratorio","Error"));
-            throw ex;
+            laboratorioServicios.registrarLaboratorio(nombre,informacion);
+            FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar laboratorio", "Registro del laboratorio exitoso"));
+        }catch (PersistenceException e){
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar laboratorio", "No se pudo registrar el laboratorio"));
         }
     }
-    public ArrayList<Laboratorio> todosLaboratorios() throws PersistenceException {
+    public ArrayList<Laboratorio> getLaboratorios() throws PersistenceException {
         laboratorios=laboratorioServicios.getLaboratorios();
         return laboratorios;
+    }
+
+	public void setLaboratorios(ArrayList<Laboratorio>laboratorios){
+        this.laboratorios=laboratorios;
     }
 }

@@ -14,15 +14,6 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     @Inject
     private LaboratorioMapper laboratorioMapper;
 
-    public LaboratorioMapper getLaboratoriosMapper() {
-        return laboratorioMapper;
-    }
-
-    public void setLaboratoriosMapper(LaboratorioMapper laboratorioMapper) {
-        this.laboratorioMapper = laboratorioMapper;
-    }
-
-
     @Override
     public Laboratorio getLaboratorio(int idlaboratorio) throws PersistenceException {
         try{
@@ -33,12 +24,11 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     }
 
     @Override
-    @Transactional
     public void registrarLaboratorio(String nombre,String informacion) throws PersistenceException{
         try{
             laboratorioMapper.registrarLaboratorio(nombre,informacion);
         }catch (Exception e){
-            throw new PersistenceException("Error insertando laboratorio",e);
+            throw new PersistenceException("Error registrando laboratorio",e);
         }
     }
 

@@ -16,8 +16,8 @@
         SELECT * FROM equipos;
     </select>
 
-    <insert id="registrarEquipo" parameterType="edu.eci.cvds.samples.entities.Equipo">
-        INSERT INTO "equipos"(idEquipo, ip, informacion, activo, laboratorio)
-	VALUES((SELECT count(*)+1 FROM "equipos"), #{ip}, #{informacion}, #{activo}, #{laboratorio});
+    <insert id="registrarEquipo" parameterType="map">
+        INSERT INTO "equipos"(ip, informacion, activo, laboratorio)
+		VALUES(#{ip}, #{informacion}, #{activo}, #{laboratorio});
     </insert>
 </mapper>

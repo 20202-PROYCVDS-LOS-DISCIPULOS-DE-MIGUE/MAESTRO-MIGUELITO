@@ -15,20 +15,18 @@ public class EquipoServiciosImpl implements EquipoServicios {
 
     @Override
     public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException {
-        if(informacion==null){
-            throw new PersistenceException("Equipo incorrecto");
-        }else{
-            equipoDAO.registrarEquipo(ip,informacion,activo,laboratorio);
-        }
+        try 
+		{
+			equipoDAO.registrarEquipo(ip, informacion, activo, laboratorio);
+		} catch (PersistenceException e) 
+		{
+			throw new PersistenceException("Error agregando el equipo");
+		}
     }
 
     @Override
-    public Equipo getEquipo(int id) throws PersistenceException {
-        return null;
-    }
-
-    public void imprimir(){
-        System.out.println("imprimir");
+    public Equipo getEquipo(int idEquipo) throws PersistenceException {
+        return equipoDAO.getEquipo(idEquipo);
     }
 
     @Override

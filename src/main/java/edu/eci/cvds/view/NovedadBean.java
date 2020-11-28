@@ -25,25 +25,28 @@ public class NovedadBean {
     //private NovedadServicios novedadServicios;
 
     private NovedadServicios novedadServicios = ServiciosFactory.getInstance().getNovedadServicios();
-    private int id;
+    private int idNovedad;
     private LocalDate fecha=LocalDate.now();
-    private String descripcion;
-    private String estado;
-    private String tipo;
-    private int idElemento;
+    private String titulo;
+    private String detalle;
+    private String responsable;
+    private int registro;
+	private ArrayList<Novedad>novedades=new ArrayList<Novedad>();
 
-
+	public void setNovedadServices(NovedadServicios novedadServicios){
+        this.novedadServicios=novedadServicios;
+    }
 
 
     public NovedadServicios getNovedadServices(){
         return novedadServicios;
     }
 
-    public int getId(){
-        return id;
+    public int getIdNovedad(){
+        return idNovedad;
     }
-    public void setId(int id){
-        this.id=id;
+    public void setIdNovedad(int idNovedad){
+        this.idNovedad=idNovedad;
     }
 
     public LocalDate getFecha() {
@@ -54,53 +57,54 @@ public class NovedadBean {
         this.fecha = fecha;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getDetalle() {
+        return detalle;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setDetalle(String detalle) {
+        this.detalle = detalle;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getResponsable() {
+        return responsable;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setResponsable(String responsable) {
+        this.responsable = responsable;
     }
 
-    public int getIdElemento() {
-        return idElemento;
+    public int getRegistro() {
+        return registro;
     }
 
-    public void setIdElemento(int idElemento) {
-        this.idElemento = idElemento;
+    public void setRegistro(int registro) {
+        this.registro = registro;
     }
 
-    public void registrarNovedad()throws PersistenceException{
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro)throws PersistenceException{
         try{
-
-            novedadServicios.registrarNovedad(descripcion,estado,tipo,idElemento);
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Novedad registrada"));
-            PrimeFaces current = PrimeFaces.current();
-            current.executeScript("PF('dlg2').hide();");
+			novedadServicios.registrarNovedad(fecha,titulo,detalle,responsable,registro);
+            FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar novedad", "Registro de novedad exitoso"));
         }catch (PersistenceException ex){
-            FacesContext.getCurrentInstance().addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"Error registrando Novedad","Error"));
-            throw ex;
+             FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar novedad", "No se pudo registrar la novedad"));
         }
     }
     public ArrayList<Novedad>getNovedades() throws PersistenceException {
         ArrayList<Novedad>novedades=novedadServicios.getNovedades();
         return novedades;
+    }
+	public void setNovedades(ArrayList<Novedad>novedades){
+        this.novedades=novedades;
     }
 
 }

@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 	contraseña VARCHAR(30) NOT NULL
 );
 ---------------------------------------------------------------------
-CREATE SEQUENCE idLaboratorio INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "laboratorios" (
 	idlaboratorio INT NOT NULL,
 	nombre VARCHAR(30)NOT NULL,
@@ -24,7 +23,6 @@ CREATE TABLE IF NOT EXISTS "equipos"(
 	laboratorio INT NOT NULL
 );
 ---------------------------------------------------------------------
-CREATE SEQUENCE idElemento INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "elementos"(
 	idElemento INT NOT NULL,
 	tipo VARCHAR(30)NOT NULL,
@@ -33,9 +31,8 @@ CREATE TABLE IF NOT EXISTS "elementos"(
 	equipo INT NOT NULL
 );
 ---------------------------------------------------------------------
-CREATE SEQUENCE idNovedad INCREMENT BY 1;
 CREATE TABLE IF NOT EXISTS "novedades"(
-	idNovedad INT NOT NULL,
+	idNovedad SERIAL PRIMARY KEY,
 	fecha DATE NOT NULL,
 	titulo VARCHAR(20)NOT NULL,
 	detalle VARCHAR(100) NOT NULL,
@@ -45,10 +42,6 @@ CREATE TABLE IF NOT EXISTS "novedades"(
 
 ---------------------------------------------------------------------
 ALTER TABLE "usuarios" ADD CONSTRAINT PK_Personal PRIMARY KEY(documento);
-ALTER TABLE "laboratorios" ADD CONSTRAINT PK_Laboratorios PRIMARY KEY(idLaboratorio);
-ALTER TABLE "equipos" ADD CONSTRAINT PK_Equipos PRIMARY KEY(idEquipo);
-ALTER TABLE "elementos" ADD CONSTRAINT PK_Elementos PRIMARY KEY(idElemento);
-ALTER TABLE "novedades" ADD CONSTRAINT PK_Novedades PRIMARY KEY(idNovedad);
 ---------------------------------------------------------------------
 ALTER TABLE "usuarios" ADD CONSTRAINT UK_Personal UNIQUE (correo,telefono);
 ALTER TABLE "equipos" ADD CONSTRAINT UK_Equipos UNIQUE (ip);

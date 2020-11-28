@@ -39,18 +39,6 @@ body {
 	background-color: rgba(27, 183, 83, 0.5);
 }
 
-.laboratorio {
-    margin-right: 10px;
-    font-family: Bahnschrift;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #C11626;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-}
-
 .ip {
 	margin-top: 20px;
     font-family: Bahnschrift;
@@ -63,8 +51,8 @@ body {
     float: center;
 }
 
-.equipoActivo {
-	margin-top: 20px;
+.laboratorio {
+    margin-right: 10px;
     font-family: Bahnschrift;
     font-size: 14px;
     text-transform: uppercase;
@@ -73,12 +61,39 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
+	
+}
+
+.informacion {
+	margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+	
+}
+
+.equipoActivo {
+	margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+	
 }
 
 .elementoTipo {
     margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
@@ -88,6 +103,31 @@ body {
 }
 
 .marca {
+    margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+}
+
+.equipoActivo2 {
+	margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+	
+}
+
+.equipo {
     margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 14px;
