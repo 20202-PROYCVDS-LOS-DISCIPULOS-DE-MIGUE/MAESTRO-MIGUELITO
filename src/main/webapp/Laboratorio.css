@@ -1,20 +1,15 @@
 body {
-	margin : 0;
-	padding : 0;
-	background-size: cover;
-	height: 100vh;
-	content:'';
-	background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url(../img/LaboratorioBackground.jpg);
+    margin : 0;
+    padding : 0;
+    background-image : url(../img/Laboratorio.jpg);
+    background-size: cover;
+    height: 100vh;
 }
 
 ::placeholder { color: rgba(255, 255, 255, 0.1); }
 
-.menuPresentation{
+.menuPresentation
+{
 	font-family: Bahnschrift;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -22,22 +17,26 @@ body {
 }
 
 .title {
-	margin-top: -47px;
-	color: #FFFFFF;
-	font-size: 35px;
-	background-color: #000000;
+    margin-top: -47px;
+    color: #F1F1F2;
+    font-size: 35px;
+    background-color: #000000;
 }
 
 .subTitle {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: rgba(183, 27, 109, 0.5);
+	background-color: rgba(183, 27, 109, 0.8);
+    margin-left: 250px;
+    border-radius: 20px;
 }
 
 .subTitle2 {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: rgba(20, 179, 182, 0.5);
+	background-color: rgba(20, 179, 182, 0.8);
+    margin-right: 250px;
+    border-radius: 20px;
 }
 
 .nombre {
@@ -91,7 +90,13 @@ body {
     color: #FFFFFF;
     width: 200px;
     height: 30px;
-    background-color: #AA1B67;
-    float: center;
+    background-color: #14B3B6;
+    float: right;
     border-radius: 8px;
+}
+
+.subTitle4 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.9);
 }

@@ -7,15 +7,18 @@
 	<h:head>
 		<title>Novedades</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/Novedad.css?1.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/Novedad.css?2.0" media="all"/>
 	</h:head>
 
 	<h:body>
 		<div class="menuPresentation">
 			<div class="title">
 				<h1>Novedades</h1>
+				<a href="Menu.xhtml">
+					<input class="backWindow" type="button" value="Volver"></input>
+				</a>
 			</div>
-			<div class="subTitle2">
+			<div class="subTitle">
 				<h3>Novedades Registradas</h3>
 			</div>
 			
@@ -60,15 +63,9 @@
 					</f:facet>
 					<h:outputText value="#{Novedades.registro}" />
 				</p:column>
-				
 			</p:dataTable>
-			<br/>
-			<br/>
-	
-			<div class="novedad">
-				<a href="Menu.xhtml">
-					<input class="backWindow" type="button" value="Volver"></input>
-				</a>
+			<div class="subTitle4">
+				<p>Los discipulos del maestro miguelito ©</p>
 			</div>
 		</div>
 	</h:body>

@@ -1,12 +1,12 @@
 body {
 	margin : 0;
 	padding : 0;
-	background-image : url(../img/Main.jpg);
+	background-image : url(../img/Menu.jpg);
 	background-size: cover;
 	height: 100vh;
 }
 
-.menuPresentation{
+.menuPresentation {
 	font-family: Bahnschrift;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -14,22 +14,34 @@ body {
 }
 
 .title {
-	margin-top: -47px;
-	color: #FFFFFF;
-	font-size: 35px;
-	background-color: #000000;
+    margin-top: -47px;
+    color: #F1F1F2;
+    font-size: 35px;
+    background-color: #000000;
 }
 
-.subTitle {
+.subTitle1 {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: #000000;
+	background-color: rgba(255, 146, 1, 0.9);
 }
 
 .subTitle2 {
-	margin-top: 25px;
-	color: #FFFFFF;
-	font-size: 18px;
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(183, 27, 28, 0.9);
+}
+
+.subTitle3 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(0, 128, 0, 0.9);
+}
+
+.subTitle4 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .nextWindow1 {
@@ -83,6 +95,10 @@ body {
     width: 200px;
     height: 30px;
     background-color: #1764BE;
-    float: center;
+    float: right;
     border-radius: 8px;
+}
+
+.logos {
+   margin-left: 200px;
 }
