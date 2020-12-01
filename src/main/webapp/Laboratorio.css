@@ -40,7 +40,7 @@ body {
 }
 
 .nombre {
-    margin-right: 10px;
+    margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 14px;
     text-transform: uppercase;
@@ -49,6 +49,7 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .informacion {
@@ -61,6 +62,7 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .register {
@@ -79,8 +81,8 @@ body {
 
 .columns{
 	color: #000000;
-	background-color: #FFFFFF;
-}
+	background-color: rgba(255, 255, 255, 1.0);
+    font-family: Bahnschrift;}
 
 .backWindow {
 	font-size: 14px;
@@ -92,7 +94,8 @@ body {
     height: 30px;
     background-color: #14B3B6;
     float: right;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .subTitle4 {

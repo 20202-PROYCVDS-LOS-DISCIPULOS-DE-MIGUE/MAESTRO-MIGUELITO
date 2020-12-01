@@ -42,101 +42,108 @@ body {
 .ip {
 	margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;    
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .laboratorio {
     margin-right: 10px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
-	
+	margin-right: 20px;
 }
 
 .informacion {
 	margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;    
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
-	
+	margin-right: 20px;
 }
 
 .equipoActivo {
 	margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 20px;
+    font-size: 15;
+    height: 28px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
-	
+	margin-right: 20px;
 }
 
 .elementoTipo {
     margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 20px;
+    font-size: 15;
+    height: 28px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .marca {
     margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;    
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .equipoActivo2 {
-	margin-top: 20px;
+    margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 20px;
+    font-size: 15;
+    height: 28px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
-	
+    margin-right: 20px;
 }
 
 .equipo {
     margin-top: 20px;
     font-family: Bahnschrift;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;    
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
     float: center;
+    margin-right: 20px;
 }
 
 .register {
@@ -150,12 +157,13 @@ body {
     height: 30px;
     background-color: #FFFFFF;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .columns{
 	color: #000000;
-	background-color: #FFFFFF;
+	background-color: rgba(255, 255, 255, 1.0);
+    font-family: Bahnschrift;
 }
 
 .backWindow {
@@ -168,7 +176,8 @@ body {
     height: 30px;
     background-color: #1BB753;
     float: right;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .subTitle4 {

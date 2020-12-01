@@ -55,7 +55,8 @@ body {
     height: 30px;
     background-color: #FF9002;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .nextWindow2 {
@@ -69,7 +70,8 @@ body {
     height: 30px;
     background-color: #B71B1C;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .nextWindow3 {
@@ -83,7 +85,8 @@ body {
     height: 30px;
     background-color: #008000;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .backWindow {
@@ -96,7 +99,8 @@ body {
     height: 30px;
     background-color: #1764BE;
     float: right;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .logos {
