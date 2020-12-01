@@ -50,6 +50,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .laboratorio {
@@ -63,6 +64,7 @@ body {
     text-align: center;
     float: center;
 	margin-right: 20px;
+    border-radius: 20px;
 }
 
 .informacion {
@@ -76,6 +78,7 @@ body {
     text-align: center;
     float: center;
 	margin-right: 20px;
+    border-radius: 20px;
 }
 
 .equipoActivo {
@@ -90,6 +93,7 @@ body {
     text-align: center;
     float: center;
 	margin-right: 20px;
+    border-radius: 20px;
 }
 
 .elementoTipo {
@@ -104,6 +108,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .marca {
@@ -117,6 +122,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .equipoActivo2 {
@@ -131,6 +137,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .equipo {
@@ -144,6 +151,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .register {

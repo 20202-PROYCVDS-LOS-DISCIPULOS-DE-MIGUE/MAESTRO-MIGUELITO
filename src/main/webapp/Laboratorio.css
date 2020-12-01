@@ -50,6 +50,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .informacion {
@@ -63,6 +64,7 @@ body {
     text-align: center;
     float: center;
     margin-right: 20px;
+    border-radius: 20px;
 }
 
 .register {
@@ -77,6 +79,7 @@ body {
     background-color: #FFFFFF;
     float: center;
     border-radius: 8px;
+    border-radius: 20px;
 }
 
 .columns{
