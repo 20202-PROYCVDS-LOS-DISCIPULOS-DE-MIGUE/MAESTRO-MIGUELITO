@@ -12,12 +12,11 @@ public class ElementoServiciosImpl implements ElementoServicios {
     @Inject
     private ElementoDAO elementoDAO;
 
-
-    @Override
-    public void registrarElemento(String tipo, String marca, boolean activo,int equipo) throws PersistenceException {
+@Override
+    public void registrarElemento(String tipo, String marca, boolean activo) throws PersistenceException {
         try 
 		{
-			elementoDAO.registrarElemento(tipo, marca, activo, equipo);
+			elementoDAO.registrarElemento(tipo, marca, activo);
 		} catch (PersistenceException e) 
 		{
 			throw new PersistenceException("Error agregando el elemento");
@@ -29,7 +28,8 @@ public class ElementoServiciosImpl implements ElementoServicios {
         return elementoDAO.getElemento(idElemento);
     }
 
-    public ArrayList<Elemento>getElementos()throws PersistenceException {
+    @Override
+    public ArrayList<Elemento> getElementos()throws PersistenceException{
         return elementoDAO.getElementos();
     }
 

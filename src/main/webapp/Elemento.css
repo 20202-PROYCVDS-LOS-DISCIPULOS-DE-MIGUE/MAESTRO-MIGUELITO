@@ -34,13 +34,28 @@ body {
 .subTitle2 {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: rgba(27, 183, 83, 0.9);
+	background-color: #FF9002;
     margin-right: 250px;
     border-radius: 20px;
 }
 
-.ip {
-	margin-top: 20px;
+.elementoTipo {
+    margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 15;
+    height: 28px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.marca{
+    margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 15px;
     text-transform: uppercase;
@@ -53,36 +68,8 @@ body {
     border-radius: 20px;
 }
 
-.laboratorio {
-    margin-right: 10px;
-    font-family: Bahnschrift;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #C11626;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-	margin-right: 20px;
-    border-radius: 20px;
-}
-
-.informacion {
-	margin-top: 20px;
-    font-family: Bahnschrift;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: #FFFFFF;    
-    background-color: #C11626;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-	margin-right: 20px;
-    border-radius: 20px;
-}
-
-.equipoActivo {
-	margin-top: 20px;
+.equipoActivo{
+    margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 15;
     height: 28px;
@@ -92,7 +79,21 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
-	margin-right: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.equipo{
+    margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+    margin-right: 20px;
     border-radius: 20px;
 }
 
@@ -124,7 +125,7 @@ body {
     color: #FFFFFF;
     width: 200px;
     height: 30px;
-    background-color: #1BB753;
+    background-color:#FF9002;
     float: right;
     border-radius: 20px;
     border: 0px solid;

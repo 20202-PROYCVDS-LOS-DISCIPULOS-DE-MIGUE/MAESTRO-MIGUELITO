@@ -1,5 +1,6 @@
 package edu.eci.cvds.view;
 
+import com.google.inject.Inject;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
 import edu.eci.cvds.samples.services.LaboratorioServicios;
@@ -25,13 +26,14 @@ public class LaboratorioBean {
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     
     
-    public LaboratorioServicios getElementoServices(){
+    public LaboratorioServicios getLaboratorioServices(){
         return laboratorioServicios;
     }
 
     public void setLaboratorioServices(LaboratorioServicios laboratorioServicios){
         this.laboratorioServicios=laboratorioServicios;
     }
+	
     public String getNombre() {
         return nombre;
     }

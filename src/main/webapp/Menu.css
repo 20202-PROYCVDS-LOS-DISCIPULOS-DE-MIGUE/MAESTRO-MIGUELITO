@@ -29,10 +29,16 @@ body {
 .subTitle2 {
     color: #FFFFFF;
     font-size: 25px;
-    background-color: rgba(183, 27, 28, 0.9);
+    background-color: #2443F3;
 }
 
 .subTitle3 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: #B71B1C;
+}
+
+.subTitle4 {
     color: #FFFFFF;
     font-size: 25px;
     background-color: rgba(0, 128, 0, 0.9);
@@ -41,7 +47,7 @@ body {
 .subTitle4 {
     color: #FFFFFF;
     font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #008000;
 }
 
 .nextWindow1 {
@@ -68,7 +74,7 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 30px;
-    background-color: #B71B1C;
+    background-color: #2443F3;
     float: center;
     border-radius: 20px;
     border: 0px solid;
@@ -83,12 +89,27 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 30px;
-    background-color: #008000;
+    background-color:#B71B1C;
     float: center;
     border-radius: 20px;
     border: 0px solid;
 }
 
+.nextWindow4{
+	margin-top: 10px;
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    background-color: #008000;
+    float: center;
+    border-radius: 20px;
+    border: 0px solid;
+}
+	
 .backWindow {
 	font-size: 14px;
     font-family: Bahnschrift;

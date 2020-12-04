@@ -1,9 +1,6 @@
 package edu.eci.cvds.view;
 
 import edu.eci.cvds.exceptions.PersistenceException;
-import edu.eci.cvds.samples.entities.Elemento;
-import edu.eci.cvds.samples.entities.Equipo;
-import edu.eci.cvds.samples.entities.Laboratorio;
 import edu.eci.cvds.samples.entities.Novedad;
 import edu.eci.cvds.samples.services.EquipoServicios;
 import edu.eci.cvds.samples.services.NovedadServicios;
@@ -30,7 +27,9 @@ public class NovedadBean {
     private String titulo;
     private String detalle;
     private String responsable;
-    private int registro;
+    private int equipo;
+	private int elemento;
+	private int laboratorio;
 	private ArrayList<Novedad>novedades=new ArrayList<Novedad>();
 
 	public void setNovedadServices(NovedadServicios novedadServicios){
@@ -81,17 +80,33 @@ public class NovedadBean {
         this.responsable = responsable;
     }
 
-    public int getRegistro() {
-        return registro;
+    public int getEquipo() {
+        return equipo;
     }
 
-    public void setRegistro(int registro) {
-        this.registro = registro;
+    public void setEquipo(int equipo) {
+        this.equipo = equipo;
+    }
+	
+	public int getElemento() {
+        return elemento;
     }
 
-    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro)throws PersistenceException{
+    public void setElemento(int elemento) {
+        this.elemento = elemento;
+    }
+	
+	public int getLaboratorio() {
+        return laboratorio;
+    }
+
+    public void setLaboratorio(int laboratorio) {
+        this.laboratorio = laboratorio;
+    }
+
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio)throws PersistenceException{
         try{
-			novedadServicios.registrarNovedad(fecha,titulo,detalle,responsable,registro);
+			novedadServicios.registrarNovedad(fecha,titulo,detalle,responsable,equipo,elemento,laboratorio);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar novedad", "Registro de novedad exitoso"));
         }catch (PersistenceException ex){

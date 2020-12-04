@@ -5,7 +5,6 @@ import edu.eci.cvds.sampleprj.dao.EquipoDAO;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Equipo;
 import edu.eci.cvds.samples.services.EquipoServicios;
-
 import java.util.ArrayList;
 
 public class EquipoServiciosImpl implements EquipoServicios {
@@ -14,10 +13,10 @@ public class EquipoServiciosImpl implements EquipoServicios {
 
 
     @Override
-    public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException {
+    public void registrarEquipo(String ip, String informacion, boolean activo) throws PersistenceException {
         try 
 		{
-			equipoDAO.registrarEquipo(ip, informacion, activo, laboratorio);
+			equipoDAO.registrarEquipo(ip, informacion, activo);
 		} catch (PersistenceException e) 
 		{
 			throw new PersistenceException("Error agregando el equipo");

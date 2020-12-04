@@ -10,7 +10,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import java.sql.Time;
 import java.util.ArrayList;
 
 @SuppressWarnings("deprecation")
@@ -25,7 +24,7 @@ public class ElementoBean {
     private String marca;
     private boolean activo;
     private int equipo;
-    private ArrayList<Elemento>elementos= new ArrayList<Elemento>();;
+    private ArrayList<Elemento>elementos= new ArrayList<Elemento>();
 
     public ElementoServicios getElementoServices(){
         return elementoServicios;
@@ -75,23 +74,26 @@ public class ElementoBean {
         this.equipo = equipo;
     }
 
-
-    public void registrarElemento(String tipo,String marca,boolean activo,int equipo)throws PersistenceException{
+	public void registrarElemento(String tipo,String marca,boolean activo)throws PersistenceException{
         try{
-            elementoServicios.registrarElemento(tipo,marca,activo,equipo);
+			elementoServicios.registrarElemento(tipo,marca,activo);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar elemento", "Registro del elemento exitoso"));
         }catch (PersistenceException ex){
             FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar elemento", "No se pudo registrar el elemento"));
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar equipo", "No se pudo registrar el elemento"));
         }
     }
-    public ArrayList<Elemento> getElementos()throws PersistenceException {
-        elementos=elementoServicios.getElementos();
-        return elementos;
+    public ArrayList<Elemento> getElementos()throws PersistenceException{
+		try{
+			ArrayList<Elemento> elementos = elementoServicios.getElementos();
+		}catch(PersistenceException ex){
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipo", "No se pudo consultar el elemento"));
+		}
+        return elementoServicios.getElementos();
     }
- 
-	public void setElementos(ArrayList<Elemento>elementos){
+	public void setElementos(ArrayList<Elemento> elementos){
         this.elementos=elementos;
     }
 }
