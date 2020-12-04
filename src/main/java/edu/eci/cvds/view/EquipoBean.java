@@ -2,12 +2,8 @@ package edu.eci.cvds.view;
 
 
 import com.google.inject.Inject;
-import edu.eci.cvds.view.ElementoBean;
 import edu.eci.cvds.exceptions.PersistenceException;
-import edu.eci.cvds.samples.entities.Elemento;
 import edu.eci.cvds.samples.entities.Equipo;
-import edu.eci.cvds.samples.entities.Laboratorio;
-import edu.eci.cvds.samples.services.ElementoServicios;
 import edu.eci.cvds.samples.services.EquipoServicios;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.primefaces.PrimeFaces;
@@ -78,11 +74,9 @@ public class EquipoBean {
     public void setLaboratorio(int laboratorio) {
         this.laboratorio = laboratorio;
     }
-
-
-    public void registrarEquipo(String ip,String informacion,boolean activo,int laboratorio)throws PersistenceException{
+    public void registrarEquipo(String ip,String informacion,boolean activo)throws PersistenceException{
         try{
-			equipoServicios.registrarEquipo(ip,informacion,activo,laboratorio);
+			equipoServicios.registrarEquipo(ip,informacion,activo);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar equipo", "Registro del equipo exitoso"));
         }catch (PersistenceException ex){
@@ -97,6 +91,7 @@ public class EquipoBean {
 	public void setEquipos(ArrayList<Equipo>equipos){
         this.equipos=equipos;
     }
+	
 }
 
 

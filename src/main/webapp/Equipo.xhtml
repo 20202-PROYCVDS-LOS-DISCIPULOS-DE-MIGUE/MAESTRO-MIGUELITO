@@ -31,10 +31,16 @@
 						<f:selectItem itemLabel="Activo" itemValue="true" />
 						<f:selectItem itemLabel="Inactivo" itemValue="false" />
 					</h:selectOneMenu>
+<<<<<<< HEAD
 					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
 				</h:form>
 				<br/>
 				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion,activo,laboratorio)}"/>
+=======
+				</h:form>
+				<br/>
+				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion,activo)}"/>
+>>>>>>> e296ddd81abc651d7da6955803969628e607dedb
 			</div>
 			
 			<br/>

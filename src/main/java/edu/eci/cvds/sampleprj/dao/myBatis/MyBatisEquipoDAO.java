@@ -5,7 +5,6 @@ import edu.eci.cvds.sampleprj.dao.EquipoDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.EquipoMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Equipo;
-
 import java.util.ArrayList;
 
 public class MyBatisEquipoDAO implements EquipoDAO {
@@ -21,13 +20,15 @@ public class MyBatisEquipoDAO implements EquipoDAO {
             throw new PersistenceException("Error consultando equipo",e);
         }
     }
-    public void registrarEquipo(String ip,String informacion,boolean activo,int laboratorio) throws PersistenceException{
+	@Override
+    public void registrarEquipo(String ip,String informacion,boolean activo) throws PersistenceException{
         try{
-            equipoMapper.registrarEquipo(ip,informacion,activo,laboratorio);
+            equipoMapper.registrarEquipo(ip,informacion,activo);
         }catch (Exception e){
             throw new PersistenceException("Error registrando equipo",e);
         }
    }
+   @Override
    public ArrayList<Equipo> getEquipos()throws PersistenceException{
         try{
             return equipoMapper.getEquipos();
