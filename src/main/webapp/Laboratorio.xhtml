@@ -8,6 +8,7 @@
 		<title>Laboratorios</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="/Laboratorio.css?1.0" media="all"/>
+		<script type="text/javascript" src="Exportar.js"></script>
 	</h:head>
 
 	<h:body>
@@ -34,10 +35,11 @@
 
 			<br/>
 			<div class="subTitle2">
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorio')">Exportar Laboratorios</button>
 				<h3>Laboratorios Registrados</h3>
 			</div>
 			
-			<p:dataTable var="Laboratorios" value="#{laboratorioBean.getLaboratorios()}" paginator="true" rows="5"
+			<p:dataTable id="tableExcel" var="Laboratorios" value="#{laboratorioBean.getLaboratorios()}" paginator="false" rows="5"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 				

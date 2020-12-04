@@ -15,9 +15,9 @@ body {
 
 .title {
     margin-top: -47px;
-    color: #F1F1F2;
+    color: #FFFFFF;
     font-size: 35px;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
 .subTitle1 {
@@ -29,13 +29,13 @@ body {
 .subTitle2 {
     color: #FFFFFF;
     font-size: 25px;
-    background-color: #2443F3;
+    background-color: rgba(36, 67, 243, 0.9);
 }
 
 .subTitle3 {
     color: #FFFFFF;
     font-size: 25px;
-    background-color: #B71B1C;
+    background-color: rgba(183, 27, 28, 0.9);
 }
 
 .subTitle4 {
@@ -44,10 +44,10 @@ body {
     background-color: rgba(0, 128, 0, 0.9);
 }
 
-.subTitle4 {
+.subTitle5 {
     color: #FFFFFF;
     font-size: 18px;
-    background-color: #008000;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .nextWindow1 {
@@ -95,7 +95,7 @@ body {
     border: 0px solid;
 }
 
-.nextWindow4{
+.nextWindow4 {
 	margin-top: 10px;
 	font-size: 14px;
     font-family: Bahnschrift;

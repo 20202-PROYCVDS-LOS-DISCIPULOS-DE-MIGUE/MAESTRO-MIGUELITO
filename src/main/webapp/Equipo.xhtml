@@ -7,7 +7,8 @@
 	<h:head>
 		<title>Equipos</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/Equipo.css?1.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/Equipo.css?2.0" media="all"/>
+		<script type="text/javascript" src="Exportar.js"></script>
 	</h:head>
 
 	<h:body>
@@ -19,7 +20,7 @@
 				</a>
 			</div>
 			<div class="subTitle">
-				<h2>Registrar Equipo</h2>
+				<h3>Registrar Equipo</h3>
 			</div>
 
 			<div>
@@ -34,9 +35,10 @@
 			
 			<br/>
 			<div class="subTitle2">
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorio')">Exportar Equipos</button>
 				<h3>Equipos Registrados</h3>
 			</div>
-			<p:dataTable var="Equipos" value="#{equipoBean.getEquipos()}" paginator="true" rows="5"
+			<p:dataTable id="tableExcel" var="Equipos" value="#{equipoBean.getEquipos()}" paginator="false" rows="5"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 
