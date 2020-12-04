@@ -5,14 +5,12 @@
 
 <mapper namespace="edu.eci.cvds.sampleprj.dao.myBatis.mappers.NovedadMapper">
     <resultMap type="Novedad" id="NovedadResultado">
-    <id property="idNovedad" column="idNovedad"/>
+    	<id property="idNovedad" column="idNovedad"/>
 	<result property="fecha" column="fecha"/>
-    <result property="titulo" column="titulo"/>
-    <result property="detalle" column="detalle"/>
+    	<result property="titulo" column="titulo"/>
+    	<result property="detalle" column="detalle"/>
 	<result property="responsable" column="responsable"/>
-    <result property="equipo" column="equipo"/>
-	<result property="elemento" column="elemento"/>
-	<result property="laboratorio" column="laboratorio"/>
+    	<result property="registro" column="registro"/>
     </resultMap>
 
     <select id="getNovedades" resultMap="NovedadResultado" parameterType="map">    
@@ -20,7 +18,7 @@
     </select>
 
     <insert id="registrarNovedad" parameterType="map">
-        INSERT INTO "novedades"(fecha, titulo, detalle, responsable, equipo, elemento, laboratorio)
-		VALUES( #{fecha}, #{titulo,}, #{detalle}, #{responsable},#{equipo},#{elemento},#{laboratorio});
+        INSERT INTO "novedades"(fecha, titulo, detalle, responsable, registro)
+		VALUES( #{fecha}, #{titulo,}, #{detalle}, #{responsable},#{registro});
     </insert>
 </mapper>

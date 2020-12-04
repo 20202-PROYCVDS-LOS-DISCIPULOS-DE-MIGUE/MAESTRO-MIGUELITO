@@ -17,7 +17,7 @@
     </select>
 
     <insert id="registrarEquipo" parameterType="map">
-        INSERT INTO "equipos"(ip, informacion, activo)
-		VALUES(#{ip}, #{informacion}, #{activo});
+        INSERT INTO "equipos"(ip, informacion, activo, laboratorio)
+		VALUES(#{ip}, #{informacion}, #{activo}, #{laboratorio});
     </insert>
 </mapper>

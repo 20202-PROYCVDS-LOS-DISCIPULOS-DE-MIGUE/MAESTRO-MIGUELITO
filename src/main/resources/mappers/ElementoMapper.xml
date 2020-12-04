@@ -17,7 +17,7 @@
     </select>
 
     <insert id="registrarElemento" parameterType="map">
-        INSERT INTO "elementos"(tipo, marca, activo)
-		VALUES(#{tipo}, #{marca}, #{activo});
+        INSERT INTO "elementos" (tipo, marca, activo, equipo)
+		VALUES(#{tipo}, #{marca}, #{activo}, #{equipo});
     </insert>
 </mapper>
