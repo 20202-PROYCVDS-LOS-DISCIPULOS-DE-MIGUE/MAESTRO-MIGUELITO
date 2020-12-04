@@ -22,6 +22,7 @@ public class MyBatisElementoDAO implements ElementoDAO {
             throw new PersistenceException("Error consultando elemento",e);
         }
     }
+	@Override
     public void registrarElemento(String tipo,String marca,boolean activo,int equipo) throws PersistenceException{
         try{
             elementoMapper.registrarElemento(tipo,marca,activo,equipo);
@@ -29,6 +30,7 @@ public class MyBatisElementoDAO implements ElementoDAO {
             throw new PersistenceException("Error registrando elemento",e);
         }
     }
+	@Override
     public ArrayList<Elemento>getElementos()throws PersistenceException{
         try{
             return elementoMapper.getElementos();

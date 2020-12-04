@@ -10,25 +10,25 @@ CREATE TABLE IF NOT EXISTS "usuarios" (
 );
 ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "laboratorios" (
-	idlaboratorio INT NOT NULL,
+	idlaboratorio SERIAL PRIMARY KEY,
 	nombre VARCHAR(30)NOT NULL,
 	informacion VARCHAR(100)NOT NULL
 );
 ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "equipos"(
-	idEquipo INT NOT NULL,
+	idEquipo SERIAL PRIMARY KEY,
 	ip VARCHAR(30)NOT NULL,
 	informacion VARCHAR(100)NOT NULL,
 	activo BOOLEAN NOT NULL,
-	laboratorio INT NOT NULL
+	laboratorio INT
 );
 ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "elementos"(
-	idElemento INT NOT NULL,
+	idElemento SERIAL PRIMARY KEY,
 	tipo VARCHAR(30)NOT NULL,
 	marca VARCHAR(30)NOT NULL,
 	activo BOOLEAN NOT NULL,
-	equipo INT NOT NULL
+	equipo INT
 );
 ---------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS "novedades"(
@@ -36,8 +36,10 @@ CREATE TABLE IF NOT EXISTS "novedades"(
 	fecha DATE NOT NULL,
 	titulo VARCHAR(20)NOT NULL,
 	detalle VARCHAR(100) NOT NULL,
-	responsable VARCHAR(50) NOT NULL,
-	registro INT NOT NULL
+	responsable VARCHAR(50),
+	equipo INT,
+	elemento INT,
+	laboratorio INT
 );
 
 ---------------------------------------------------------------------
@@ -49,7 +51,7 @@ ALTER TABLE "equipos" ADD CONSTRAINT UK_Equipos UNIQUE (ip);
 ALTER TABLE "novedades" ADD CONSTRAINT FK_Novedades_Per FOREIGN KEY(responsable) REFERENCES "usuarios"(documento);
 ALTER TABLE "equipos" ADD CONSTRAINT FK_Equipos_Lab FOREIGN KEY(laboratorio) REFERENCES "laboratorios"(idLaboratorio);
 ALTER TABLE "elementos" ADD CONSTRAINT FK_elementos_Eq FOREIGN KEY(equipo) REFERENCES "equipos"(idEquipo);
-ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Eq FOREIGN KEY(registro) REFERENCES "equipos"(idEquipo);
-ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_elem FOREIGN KEY(registro) REFERENCES "elementos"(idElemento);
-ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Lab FOREIGN KEY(registro) REFERENCES "laboratorios"(idLaboratorio);
+ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Eq FOREIGN KEY(equipo) REFERENCES "equipos"(idEquipo);
+ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_elem FOREIGN KEY(elemento) REFERENCES "elementos"(idElemento);
+ALTER TABLE "novedades" ADD CONSTRAINT FK_novedades_Lab FOREIGN KEY(laboratorio) REFERENCES "laboratorios"(idLaboratorio);
 ------------------------------------------------------------------------

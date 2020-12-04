@@ -14,6 +14,9 @@
 		<div class="menuPresentation">
 			<div class="title">
 				<h1>Laboratorios</h1>
+				<a href="Menu.xhtml">
+					<input class="backWindow" type="button" value="Volver"></input>
+				</a>
 			</div>
 			<div class="subTitle">
 				<h3>Registrar Laboratorio</h3>
@@ -40,7 +43,7 @@
 				
 				<p:column class="columns" filterBy="#{Laboratorios.idLaboratorio}" sortBy="#{Laboratorios.idLaboratorio}">
 					<f:facet name="header">
-						<h:outputText value="IdLabotario" />
+						<h:outputText value="IdLaboratorio" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.idLaboratorio}" />
 				</p:column>
@@ -58,13 +61,8 @@
 					<h:outputText value="#{Laboratorios.informacion}" />
 				</p:column>
 			</p:dataTable>
-			<br/>
-			<br/>
-	
-			<div class="laboratorio">
-				<a href="Menu.xhtml">
-					<input class="backWindow" type="button" value="Volver"></input>
-				</a>
+			<div class="subTitle4">
+				<p>Los discipulos del maestro miguelito ©</p>
 			</div>
 		</div>
 	</h:body>

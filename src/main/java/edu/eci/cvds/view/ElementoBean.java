@@ -75,7 +75,6 @@ public class ElementoBean {
         this.equipo = equipo;
     }
 
-
     public void registrarElemento(String tipo,String marca,boolean activo,int equipo)throws PersistenceException{
         try{
             elementoServicios.registrarElemento(tipo,marca,activo,equipo);

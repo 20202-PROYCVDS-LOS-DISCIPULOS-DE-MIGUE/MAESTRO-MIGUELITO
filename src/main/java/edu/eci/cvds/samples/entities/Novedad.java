@@ -17,22 +17,21 @@ public class Novedad implements Serializable
     private Date fecha;
     private String titulo;
     private String detalle;
-    private int responsable;
-    private int registro;
+    private String responsable;
+    private int equipo;
+	private int elemento;
+	private int laboratorio;
     
-    public Novedad() 
-    {
-        
-    }
-    
-    public Novedad(int idNovedad, Date fecha, String titulo, String detalle, int responsable, int registro)
+    public Novedad(int idNovedad, Date fecha, String titulo, String detalle, String responsable, int equipo, int elemento, int laboratorio)
     {
         this.idNovedad = idNovedad;
         this.fecha = fecha;
         this.titulo = titulo;
         this.detalle = detalle;
         this.responsable = responsable;
-        this.registro = registro;
+        this.equipo = equipo;
+		this.elemento = elemento;
+		this.laboratorio = laboratorio;
     }
     
     public int getIdNovedad ()
@@ -71,27 +70,43 @@ public class Novedad implements Serializable
         this.detalle = detalle;
     }
     
-    public int getResponsable ()
+    public String getResponsable ()
     {
         return responsable;
     }
-    public void setResponsable (int responsable)
+    public void setResponsable (String responsable)
     {
         this.responsable = responsable;
     }
     
-    public int getRegistro ()
+    public int getEquipo()
     {
-        return registro;
+        return equipo;
     }
-    public void setRegistro (int registro)
+    public void setEquipo(int equipo)
     {
-        this.registro = registro;
+        this.equipo = equipo;
+    }
+	public int getElemento()
+    {
+        return elemento;
+    }
+    public void setElemento(int elemento)
+    {
+        this.elemento = elemento;
+    }
+	public int getLaboratorio()
+    {
+        return laboratorio;
+    }
+    public void setLaboratorio(int laboratorio)
+    {
+        this.laboratorio = laboratorio;
     }
     
     @Override
     public String toString () 
     {
-        return "Novedad {idNovedad: " + idNovedad + ", Fecha: " + fecha + ", Titulo: " + titulo + ", Detalle: " + detalle +  ", Responsable: " + responsable + ", Registro: " + registro + "}";
+        return "Novedad {idNovedad: " + idNovedad + ", Fecha: " + fecha + ", Titulo: " + titulo + ", Detalle: " + detalle +  ", Responsable: " + responsable+",Equipo"+equipo+",Elemento"+elemento+",Laboratorio"+laboratorio+ "}";
     }
 }

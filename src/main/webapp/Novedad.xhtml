@@ -14,8 +14,11 @@
 		<div class="menuPresentation">
 			<div class="title">
 				<h1>Novedades</h1>
+				<a href="Menu.xhtml">
+					<input class="backWindow" type="button" value="Volver"></input>
+				</a>
 			</div>
-			<div class="subTitle2">
+			<div class="subTitle">
 				<h3>Novedades Registradas</h3>
 			</div>
 			
@@ -54,21 +57,27 @@
 					</f:facet>
 					<h:outputText value="#{Novedades.responsable}" />
 				</p:column>
-				<p:column class="columns" filterBy="#{Novedades.registro}" sortBy="#{Novedades.registro}">
+				<p:column class="columns" filterBy="#{Novedades.equipo}" sortBy="#{Novedades.equipo}">
 					<f:facet name="header">
-						<h:outputText value="registro" />
+						<h:outputText value="equipo" />
 					</f:facet>
-					<h:outputText value="#{Novedades.registro}" />
+					<h:outputText value="#{Novedades.equipo}" />
 				</p:column>
-				
+				<p:column class="columns" filterBy="#{Novedades.elemento}" sortBy="#{Novedades.elemento}">
+					<f:facet name="header">
+						<h:outputText value="elemento" />
+					</f:facet>
+					<h:outputText value="#{Novedades.elemento}" />
+				</p:column>
+				<p:column class="columns" filterBy="#{Novedades.laboratorio}" sortBy="#{Novedades.laboratorio}">
+					<f:facet name="header">
+						<h:outputText value="laboratorio" />
+					</f:facet>
+					<h:outputText value="#{Novedades.laboratorio}" />
+				</p:column>
 			</p:dataTable>
-			<br/>
-			<br/>
-	
-			<div class="novedad">
-				<a href="Menu.xhtml">
-					<input class="backWindow" type="button" value="Volver"></input>
-				</a>
+			<div class="subTitle4">
+				<p>Los discipulos del maestro miguelito ©</p>
 			</div>
 		</div>
 	</h:body>

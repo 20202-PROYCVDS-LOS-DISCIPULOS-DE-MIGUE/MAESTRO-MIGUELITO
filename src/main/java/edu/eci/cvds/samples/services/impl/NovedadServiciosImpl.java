@@ -14,8 +14,8 @@ public class NovedadServiciosImpl implements NovedadServicios {
     private NovedadDAO novedadDAO;
 	
     @Override
-    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro) throws PersistenceException {
-        novedadDAO.registrarNovedad(fecha,titulo,detalle,responsable,registro);
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException {
+        novedadDAO.registrarNovedad(fecha,titulo,detalle,responsable,equipo,elemento,laboratorio);
     }
 
     @Override

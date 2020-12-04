@@ -1,7 +1,7 @@
 body {
     margin : 0;
     padding : 0;
-    background-image : url(../img/LoginBackground.jpg);
+    background-image : url(../img/Login.jpg);
     background-size: cover;
     height: 100vh;
 }
@@ -17,22 +17,21 @@ body {
 
 .title {
     margin-top: -47px;
-    color: #F1F1F2;
+    color: #FFFFFF;
     font-size: 35px;
-    background-color: #011A27;
+        background-color: rgba(0, 0, 0, 1.0);
 }
-
 .subTitle {
-    color: #BCBABE;
+    margin-top: 25px;
+    color: #FFFFFF;
     font-size: 25px;
-    background-color: #063852;
+    background-color: rgba(0, 119, 129, 0.9);
 }
 
-.subTitle2 {
-    margin-top: 25px;
-    color: #F1F1F2;
+.subTitle4 {
+    color: #FFFFFF;
     font-size: 18px;
-    background-color: #011A27;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .documento {
@@ -44,6 +43,7 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
+    border-radius: 20px;
 }
 
 .contraseña {
@@ -55,6 +55,7 @@ body {
     font-weight: bold;
     text-align: center;
     float: center;
+    border-radius: 20px;
 }
 
 .ingresar {
@@ -68,4 +69,5 @@ body {
     height: 25px;
     background-color: #F1F1F2;
     float: center;
+    border-radius: 20px;
 }

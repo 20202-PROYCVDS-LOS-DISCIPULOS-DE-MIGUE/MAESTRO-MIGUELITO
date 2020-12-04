@@ -12,7 +12,6 @@ public class EquipoServiciosImpl implements EquipoServicios {
     @Inject
     private EquipoDAO equipoDAO;
 
-
     @Override
     public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException {
         try 

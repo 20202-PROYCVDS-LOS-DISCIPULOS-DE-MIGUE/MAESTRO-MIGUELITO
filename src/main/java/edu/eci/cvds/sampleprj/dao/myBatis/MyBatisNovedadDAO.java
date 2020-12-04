@@ -21,10 +21,10 @@ public class MyBatisNovedadDAO implements NovedadDAO{
             throw new PersistenceException("Error consultando novedad",e);
         }
     }
-    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int registro) throws PersistenceException{
+    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException{
         try{
             fecha=LocalDate.now();
-            novedadMapper.registrarNovedad(fecha,titulo,detalle,responsable,registro);
+            novedadMapper.registrarNovedad(fecha,titulo,detalle,responsable,equipo,elemento,laboratorio);
         }catch (Exception e){
             throw new PersistenceException("Error insertando Novedad",e);
         }

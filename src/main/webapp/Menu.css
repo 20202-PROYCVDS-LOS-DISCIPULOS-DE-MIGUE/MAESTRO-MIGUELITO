@@ -1,12 +1,12 @@
 body {
 	margin : 0;
 	padding : 0;
-	background-image : url(../img/Main.jpg);
+	background-image : url(../img/Menu.jpg);
 	background-size: cover;
 	height: 100vh;
 }
 
-.menuPresentation{
+.menuPresentation {
 	font-family: Bahnschrift;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -14,22 +14,40 @@ body {
 }
 
 .title {
-	margin-top: -47px;
-	color: #FFFFFF;
-	font-size: 35px;
-	background-color: #000000;
+    margin-top: -47px;
+    color: #F1F1F2;
+    font-size: 35px;
+    background-color: #000000;
 }
 
-.subTitle {
+.subTitle1 {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: #000000;
+	background-color: rgba(255, 146, 1, 0.9);
 }
 
 .subTitle2 {
-	margin-top: 25px;
-	color: #FFFFFF;
-	font-size: 18px;
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: #2443F3;
+}
+
+.subTitle3 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: #B71B1C;
+}
+
+.subTitle4 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(0, 128, 0, 0.9);
+}
+
+.subTitle4 {
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #008000;
 }
 
 .nextWindow1 {
@@ -43,7 +61,8 @@ body {
     height: 30px;
     background-color: #FF9002;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .nextWindow2 {
@@ -55,9 +74,10 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 30px;
-    background-color: #B71B1C;
+    background-color: #2443F3;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .nextWindow3 {
@@ -69,11 +89,27 @@ body {
     color: #FFFFFF;
     width: 150px;
     height: 30px;
-    background-color: #008000;
+    background-color:#B71B1C;
     float: center;
-    border-radius: 8px;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
+.nextWindow4{
+	margin-top: 10px;
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 150px;
+    height: 30px;
+    background-color: #008000;
+    float: center;
+    border-radius: 20px;
+    border: 0px solid;
+}
+	
 .backWindow {
 	font-size: 14px;
     font-family: Bahnschrift;
@@ -83,6 +119,11 @@ body {
     width: 200px;
     height: 30px;
     background-color: #1764BE;
-    float: center;
-    border-radius: 8px;
+    float: right;
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+.logos {
+   margin-left: 200px;
 }

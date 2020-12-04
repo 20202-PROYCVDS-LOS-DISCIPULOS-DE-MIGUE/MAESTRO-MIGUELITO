@@ -1,20 +1,15 @@
 body {
-	margin : 0;
-	padding : 0;
-	background-size: cover;
-	height: 100vh;
-	content:'';
-	background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url(../img/LaboratorioBackground.jpg);
+    margin : 0;
+    padding : 0;
+    background-image : url(../img/Novedad2.jpg);
+    background-size: cover;
+    height: 100vh;
 }
 
 ::placeholder { color: rgba(255, 255, 255, 0.1); }
 
-.menuPresentation{
+.menuPresentation
+{
 	font-family: Bahnschrift;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -31,12 +26,15 @@ body {
 .subTitle {
 	color: #FFFFFF;
 	font-size: 25px;
-	background-color: rgba(183, 27, 109, 0.5);
+	background-color: rgba(120, 120, 120, 0.9);
+    margin-left: 250px;
+    border-radius: 20px;
 }
 
 .columns{
 	color: #000000;
-	background-color: #FFFFFF;
+	background-color: rgba(255, 255, 255, 1.0);
+    font-family: Bahnschrift;
 }
 
 .backWindow {
@@ -48,6 +46,13 @@ body {
     width: 200px;
     height: 30px;
     background-color: #AA1B67;
-    float: center;
-    border-radius: 8px;
+    float: right;
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+.subTitle4 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.9);
 }

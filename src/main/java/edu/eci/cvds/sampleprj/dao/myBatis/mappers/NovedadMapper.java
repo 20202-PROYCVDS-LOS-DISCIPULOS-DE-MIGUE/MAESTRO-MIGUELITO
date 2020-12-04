@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public interface NovedadMapper {
-    public void registrarNovedad(@Param("fecha") LocalDate fecha, @Param("titulo")String titulo, @Param("detalle")String detalle, @Param("responsable")String responsable, @Param("registro")int registro);
+    public void registrarNovedad(@Param("fecha") LocalDate fecha, @Param("titulo")String titulo, @Param("detalle")String detalle, @Param("responsable")String responsable, @Param("equipo")int equipo, @Param("elemento")int elemento, @Param("laboratorio")int laboratorio);
     public Novedad getNovedad(int idNovedad);
     public ArrayList<Novedad> getNovedades();
 }
