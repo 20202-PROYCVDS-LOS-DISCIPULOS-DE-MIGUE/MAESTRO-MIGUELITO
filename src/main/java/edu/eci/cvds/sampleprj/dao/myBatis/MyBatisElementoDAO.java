@@ -15,28 +15,16 @@ public class MyBatisElementoDAO implements ElementoDAO {
     private ElementoMapper elementoMapper;
 
     @Override
-    public Elemento getElemento(int idElemento) throws PersistenceException {
-        try{
-            return elementoMapper.getElemento(idElemento);
-        }catch (Exception e){
-            throw new PersistenceException("Error consultando elemento",e);
-        }
+    public Elemento getElemento(int idElemento){
+        return elementoMapper.getElemento(idElemento);
     }
 	@Override
-    public void registrarElemento(String tipo,String marca,boolean activo,int equipo) throws PersistenceException{
-        try{
-            elementoMapper.registrarElemento(tipo,marca,activo,equipo);
-        }catch (Exception e){
-            throw new PersistenceException("Error registrando elemento",e);
-        }
+    public void registrarElemento(String tipo,String marca){
+        elementoMapper.registrarElemento(tipo,marca);
     }
 	@Override
-    public ArrayList<Elemento>getElementos()throws PersistenceException{
-        try{
-            return elementoMapper.getElementos();
-        }catch (Exception e){
-            throw new PersistenceException("Error consultando elementos",e);
-        }
+    public ArrayList<Elemento>getElementos(){
+        return elementoMapper.getElementos();
 	}
  
 }

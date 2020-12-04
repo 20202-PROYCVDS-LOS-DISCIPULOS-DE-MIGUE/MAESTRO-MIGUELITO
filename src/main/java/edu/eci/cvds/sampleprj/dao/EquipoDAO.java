@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface EquipoDAO{
 
-    public Equipo getEquipo(int idEquipo) throws PersistenceException;
-	public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException;
-    public ArrayList<Equipo> getEquipos()throws PersistenceException;
+    public Equipo getEquipo(int idEquipo);
+	public void registrarEquipo(String ip, String informacion);
+    public ArrayList<Equipo> getEquipos();
 }

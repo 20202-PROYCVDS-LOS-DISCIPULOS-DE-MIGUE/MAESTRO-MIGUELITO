@@ -6,7 +6,7 @@ import java.sql.Time;
 import java.util.ArrayList;
 
 public interface EquipoServicios {
-    public void registrarEquipo(String ip ,String informacion,boolean activo,int laboratorio)throws PersistenceException;
+    public void registrarEquipo(String ip ,String informacion)throws PersistenceException;
     public Equipo getEquipo(int idEquipo)throws PersistenceException;
     public ArrayList<Equipo> getEquipos()throws PersistenceException;
 }

@@ -32,14 +32,9 @@
 						<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
 					</h:selectOneMenu>
 					<p:inputText type="text" name="marca" class="marca" placeholder="marca" value="#{marca}"/>
-					<h:selectOneMenu class="equipoActivo" value="#{activo}">
-						<f:selectItem itemLabel="Activo" itemValue="true" />
-						<f:selectItem itemLabel="Inactivo" itemValue="false" />
-					</h:selectOneMenu>
-					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca,activo,equipo)}"/>
+				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca)}"/>
 			</div>
 			<br/>
 			
@@ -73,7 +68,7 @@
 
 				<p:column class="columns" filterBy="#{Elementos.activo}" sortBy="#{Elementos.activo}">
 					<f:facet name="header">
-						<h:outputText value="Activo" />
+						<h:outputText value="Disponible" />
 					</f:facet>
 					<h:outputText value="#{Elementos.activo}" />
 				</p:column>

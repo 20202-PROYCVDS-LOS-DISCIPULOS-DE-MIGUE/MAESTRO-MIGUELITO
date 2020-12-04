@@ -18,6 +18,6 @@
 
     <insert id="registrarEquipo" parameterType="map">
         INSERT INTO "equipos"(ip, informacion, activo, laboratorio)
-		VALUES(#{ip}, #{informacion}, #{activo}, #{laboratorio});
+		VALUES(#{ip}, #{informacion}, true, null);
     </insert>
 </mapper>

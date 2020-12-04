@@ -20,13 +20,9 @@ public class ElementoBean {
     //@Inject
     //private ElementoServicios elementoServicios;
     private ElementoServicios elementoServicios = ServiciosFactory.getInstance().getElementoServicios();
-    private int idElemento;
-    private String tipo;
-    private String marca;
-    private boolean activo;
-    private int equipo;
     private ArrayList<Elemento>elementos= new ArrayList<Elemento>();;
-
+	private Elemento elemento;
+	
     public ElementoServicios getElementoServices(){
         return elementoServicios;
     }
@@ -35,49 +31,10 @@ public class ElementoBean {
         this.elementoServicios=elementoServicios;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
-
-    public int getIdElemento() {
-        return idElemento;
-    }
-
-    public void setIdElemento(int idElemento) {
-        this.idElemento = idElemento;
-    }
-
-    public int getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(int equipo) {
-        this.equipo = equipo;
-    }
-
-    public void registrarElemento(String tipo,String marca,boolean activo,int equipo)throws PersistenceException{
+    
+    public void registrarElemento(String tipo,String marca)throws PersistenceException{
         try{
-            elementoServicios.registrarElemento(tipo,marca,activo,equipo);
+            elementoServicios.registrarElemento(tipo,marca);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar elemento", "Registro del elemento exitoso"));
         }catch (PersistenceException ex){
@@ -86,11 +43,25 @@ public class ElementoBean {
         }
     }
     public ArrayList<Elemento> getElementos()throws PersistenceException {
-        elementos=elementoServicios.getElementos();
-        return elementos;
+		try{
+			elementos = elementoServicios.getElementos();
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar elemento", "No se pudo consultar el elemento"));
+		}
+		return elementos;
     }
  
-	public void setElementos(ArrayList<Elemento>elementos){
-        this.elementos=elementos;
-    }
+	public Elemento getElemento(int idElemento) throws PersistenceException
+	{	
+		try{
+			elemento = elementoServicios.getElemento(idElemento);
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipo", "No se pudo consular el elemento"));
+		}
+		return elemento;
+	}
 }

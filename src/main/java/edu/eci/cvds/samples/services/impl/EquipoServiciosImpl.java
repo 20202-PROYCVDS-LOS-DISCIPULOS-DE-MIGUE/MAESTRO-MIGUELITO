@@ -13,14 +13,8 @@ public class EquipoServiciosImpl implements EquipoServicios {
     private EquipoDAO equipoDAO;
 
     @Override
-    public void registrarEquipo(String ip, String informacion, boolean activo, int laboratorio) throws PersistenceException {
-        try 
-		{
-			equipoDAO.registrarEquipo(ip, informacion, activo, laboratorio);
-		} catch (PersistenceException e) 
-		{
-			throw new PersistenceException("Error agregando el equipo");
-		}
+    public void registrarEquipo(String ip, String informacion) throws PersistenceException {
+        equipoDAO.registrarEquipo(ip, informacion);
     }
 
     @Override

@@ -24,11 +24,7 @@ public class EquipoBean {
     //@Inject
     //private EquipoServicios equipoServicios;
     private EquipoServicios equipoServicios = ServiciosFactory.getInstance().getEquipoServicios();
-    private int idEquipo;
-    private String ip;
-    private String informacion;
-    private boolean activo;
-    private int laboratorio;
+    private Equipo equipo;
     private ArrayList<Equipo>equipos;
 
     public EquipoServicios getEquipoServices(){
@@ -39,50 +35,9 @@ public class EquipoBean {
         this.equipoServicios=equipoServicios;
     }
 
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip){
-        this.ip = ip;
-    }
-
-    public String getInformacion() {
-        return informacion;
-    }
-
-    public void setInformacion(String informacion) {
-        this.informacion = informacion;
-    }
-
-    public boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(boolean activo) {
-        this.activo = activo;
-    }
-
-    public int getIdEquipo() {
-        return idEquipo;
-    }
-
-    public void setIdEquipo(int idEquipo) {
-        this.idEquipo = idEquipo;
-    }
-
-    public int getLaboratorio() {
-        return laboratorio;
-    }
-
-    public void setLaboratorio(int laboratorio) {
-        this.laboratorio = laboratorio;
-    }
-
-
-    public void registrarEquipo(String ip,String informacion,boolean activo,int laboratorio)throws PersistenceException{
+    public void registrarEquipo(String ip,String informacion)throws PersistenceException{
         try{
-			equipoServicios.registrarEquipo(ip,informacion,activo,laboratorio);
+			equipoServicios.registrarEquipo(ip,informacion);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar equipo", "Registro del equipo exitoso"));
         }catch (PersistenceException ex){
@@ -90,13 +45,28 @@ public class EquipoBean {
             context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Registrar equipo", "No se pudo registrar el equipo"));
         }
     }
-    public ArrayList<Equipo> getEquipos()throws PersistenceException{
-        ArrayList<Equipo>equipos=equipoServicios.getEquipos();
-        return equipoServicios.getEquipos();
+    public ArrayList<Equipo> getEquipos()throws PersistenceException {
+		try{
+			equipos = equipoServicios.getEquipos();
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipos", "No se pudo consultar los equipos"));
+		}
+		return equipos;
     }
-	public void setEquipos(ArrayList<Equipo>equipos){
-        this.equipos=equipos;
-    }
+ 
+	public Equipo getEquipo(int idEquipo) throws PersistenceException
+	{	
+		try{
+			equipo = equipoServicios.getEquipo(idEquipo);
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipo", "No se pudo consular el equipo"));
+		}
+		return equipo;
+	}
 }
 
 

@@ -27,14 +27,9 @@
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 					<p:inputText type="text" name="ip" class="ip" placeholder="ip" value="#{ip}"/>
 					<p:inputText type="text" name="informacion" class="informacion" placeholder="informacion" value="#{informacion}"/>
-					<h:selectOneMenu class="equipoActivo" value="#{activo}">
-						<f:selectItem itemLabel="Activo" itemValue="true" />
-						<f:selectItem itemLabel="Inactivo" itemValue="false" />
-					</h:selectOneMenu>
-					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion,activo,laboratorio)}"/>
+				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion)}"/>
 			</div>
 			
 			<br/>

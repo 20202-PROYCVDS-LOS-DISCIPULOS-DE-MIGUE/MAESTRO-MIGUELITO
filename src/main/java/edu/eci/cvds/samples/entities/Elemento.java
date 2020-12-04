@@ -19,13 +19,8 @@ public class Elemento implements Serializable
     private int equipo;
    
     
-    public Elemento(int idElemento, String tipo, String marca,boolean activo, int equipo)
-    {
-        this.idElemento = idElemento;
-        this.tipo = tipo;
-        this.marca = marca;
-		this.activo = activo;
-        this.equipo = equipo;
+    public Elemento()
+	{
     }
     
     public int getIdElemento ()

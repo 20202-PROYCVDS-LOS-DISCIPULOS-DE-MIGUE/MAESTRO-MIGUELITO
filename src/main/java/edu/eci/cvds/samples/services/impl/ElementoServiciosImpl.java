@@ -13,14 +13,8 @@ public class ElementoServiciosImpl implements ElementoServicios {
     private ElementoDAO elementoDAO;
 
     @Override
-    public void registrarElemento(String tipo, String marca, boolean activo,int equipo) throws PersistenceException {
-        try 
-		{
-			elementoDAO.registrarElemento(tipo,marca,activo,equipo);
-		} catch (PersistenceException e) 
-		{
-			throw new PersistenceException("Error agregando el elemento");
-		}
+    public void registrarElemento(String tipo, String marca) throws PersistenceException {
+        elementoDAO.registrarElemento(tipo,marca);
     }
 
     @Override

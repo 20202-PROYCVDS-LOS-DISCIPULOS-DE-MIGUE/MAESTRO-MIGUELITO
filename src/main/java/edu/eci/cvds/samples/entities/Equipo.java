@@ -22,15 +22,7 @@ public class Equipo implements Serializable
     {
         
     }
-    
-    public Equipo (int idequipo, String ip, String informacion,boolean activo, int laboratorio)
-    {
-        this.idequipo = idequipo;
-        this.ip = ip;
-        this.informacion = informacion;
-	this.activo = activo;
-        this.laboratorio = laboratorio;
-    }
+
     
     public int getIdEquipo ()
     {
