@@ -7,8 +7,11 @@
   
     <resultMap type='Laboratorio' id='LaboratorioResultado'>
     	<id property='idlaboratorio' column='idlaboratorio'/>
-	<result property='nombre' column='nombre'/>
-    	<result property='informacion' column='informacion'/>	
+		<result property='nombre' column='nombre'/>
+    	<result property='activo' column='activo'/>	
+		<result property='equiposAsociados' column='equiposAsociados'/>
+		<result property='fechaRegistro' column='fechaRegistro'/>
+		<result property='fechaCierre' column='fechaCierre'/>
     </resultMap>
 
     <select id="getLaboratorios" resultMap="LaboratorioResultado" parameterType="map">
@@ -19,6 +22,11 @@
         INSERT INTO laboratorios (nombre,activo,equiposAsociados,fechaRegistro)
 		VALUES(#{nombre},true,0,#{fechaRegistro});
     </insert>
+	
+	<update id="cerrarLaboratorio">
+  		UPDATE laboratorios SET activo=false,fechaCierre=#{fechaCierre}
+  		WHERE idLaboratorio=#{idLaboratorio} AND activo=true;
+  	</update>
 </mapper>
 
 

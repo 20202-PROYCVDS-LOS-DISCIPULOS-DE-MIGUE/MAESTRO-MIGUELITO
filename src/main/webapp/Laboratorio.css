@@ -68,6 +68,20 @@ body {
     border-radius: 20px;
 }
 
+.cerrar {
+    margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #14ABA7;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
 .columns {
 	color: #000000;
 	background-color: rgba(255, 255, 255, 1.0);

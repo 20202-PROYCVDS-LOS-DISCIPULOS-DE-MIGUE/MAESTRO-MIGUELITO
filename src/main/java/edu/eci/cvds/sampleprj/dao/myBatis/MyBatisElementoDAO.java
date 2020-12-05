@@ -5,8 +5,6 @@ import edu.eci.cvds.sampleprj.dao.ElementoDAO;
 import edu.eci.cvds.sampleprj.dao.myBatis.mappers.ElementoMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Elemento;
-
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class MyBatisElementoDAO implements ElementoDAO {
@@ -31,4 +29,15 @@ public class MyBatisElementoDAO implements ElementoDAO {
     public ArrayList<Elemento>getElementosDisponibles(){
         return elementoMapper.getElementosDisponibles();
 	}
+	
+	@Override
+	public void asociarElemento(int idElemento,int equipo){
+		elementoMapper.asociarElemento(idElemento,equipo);
+	}
+	
+	@Override
+	public void darDeBajaElemento(int idElemento){
+		elementoMapper.darDeBajaElemento(idElemento);
+	}
+	
 }

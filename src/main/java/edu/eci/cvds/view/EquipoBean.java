@@ -79,6 +79,43 @@ public class EquipoBean {
 		}
 		return equipo;
 	}
+	
+	public void asociarEquipo(int idEquipo, int laboratorio) throws PersistenceException
+	{	
+		try{
+			equipoServicios.asociarEquipo(idEquipo,laboratorio);
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Asociar equipo", "equipo asociado con éxito"));
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Asociar equipo", "No se pudo asociar el equipo"));
+		}
+	}
+	
+	public void darDeBajaEquipo(int idEquipo) throws PersistenceException
+	{	
+		try{
+			equipoServicios.darDeBajaEquipo(idEquipo);
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "dar De Baja equipo", "equipo dado de baja  con éxito"));
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "dar De Baja equipo", "No se pudo dar de baja el equipo"));
+		}
+	}
+	
+	public void desasociarEquipo(int idEquipo) throws PersistenceException
+	{
+		equipoServicios.desasociarEquipo(idEquipo);
+
+	}
+	
+	public ArrayList<Equipo> getEquiposAsociados(int  idLaboratorio) throws PersistenceException
+	{
+		return equipoServicios.getEquiposAsociados(idLaboratorio);
+	}
 }
 
 

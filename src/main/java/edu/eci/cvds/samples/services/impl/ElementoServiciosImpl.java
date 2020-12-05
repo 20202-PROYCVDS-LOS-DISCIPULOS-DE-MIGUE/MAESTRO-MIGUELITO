@@ -21,13 +21,22 @@ public class ElementoServiciosImpl implements ElementoServicios {
     public Elemento getElemento(int idElemento) throws PersistenceException {
         return elementoDAO.getElemento(idElemento);
     }
-
+	@Override
     public ArrayList<Elemento>getElementos()throws PersistenceException {
         return elementoDAO.getElementos();
     }
-	
+	@Override
 	public ArrayList<Elemento>getElementosDisponibles()throws PersistenceException {
         return elementoDAO.getElementosDisponibles();
     }
+	@Override
+	public void asociarElemento(int idElemento, int equipo) throws PersistenceException{
+		elementoDAO.asociarElemento(idElemento,equipo);
+	}
+	
+	@Override
+	public void darDeBajaElemento(int idElemento) throws PersistenceException{
+		elementoDAO.darDeBajaElemento(idElemento);
+	}
 
 }

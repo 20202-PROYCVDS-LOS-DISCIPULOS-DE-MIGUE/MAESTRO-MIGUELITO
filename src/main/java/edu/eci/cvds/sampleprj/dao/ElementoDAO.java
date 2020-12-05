@@ -9,5 +9,7 @@ public interface ElementoDAO {
     public Elemento getElemento(int idElemento);
     public ArrayList<Elemento> getElementos();
 	public ArrayList<Elemento> getElementosDisponibles();
+	public void asociarElemento(int idElemento,int equipo);
+	public void darDeBajaElemento(int idElemento);
 }
 

@@ -9,12 +9,17 @@
         <result property="ip" column="ip"/>
         <result property="informacion" column="informacion"/>
         <result property="activo" column="activo"/>
+		<result property="disponible" column="disponible"/>
         <result property="laboratorio" column="laboratorio"/>
     </resultMap>
 
     <select id="getEquipos" resultMap="EquipoResultado" parameterType="map">
         SELECT * FROM equipos;
     </select>
+	
+	<select id = "getEquiposAsociados" resultMap = "EquipoResultado" parameterType = "map">
+  		SELECT * FROM equipos WHERE laboratorio = #{idLaboratorio};
+  	</select>
 	
 	<select id="getEquiposDisponibles" resultMap="EquipoResultado" parameterType="map">
         SELECT * FROM equipos WHERE disponible=true ;
@@ -24,4 +29,19 @@
         INSERT INTO "equipos"(ip, informacion, activo,disponible, laboratorio)
 		VALUES(#{ip}, #{informacion}, true,true, null);
     </insert>
+	
+	<update id="asociarEquipo">
+  		UPDATE equipos SET laboratorio=#{laboratorio},disponible=false
+  		WHERE idEquipo=#{idEquipo} AND disponible=true;
+  	</update>
+	
+	<update id="desasociarEquipo">
+  		UPDATE equipos SET laboratorio=null,disponible=false
+  		WHERE idEquipo=#{idEquipo} AND disponible=true;
+  	</update>
+	
+	<update id="darDeBajaEquipo">
+  		UPDATE equipos SET activo=false
+  		WHERE idEquipo=#{idEquipo} AND activo=true;
+  	</update>
 </mapper>
