@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="subTitle">
-				<h2>Registrar Elemento</h2>
+				<h3>Registrar Elemento</h3>
 			</div>
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
@@ -52,9 +52,10 @@
 			<br/>
 			
 			<div class="subTitle2">
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Elemento')">Exportar Elementos</button>
 				<h3>Elementos Registrados</h3>
 			</div>
-			<p:dataTable var="Elementos" value="#{elementoBean.getElementos()}" paginator="true" rows="5"
+			<p:dataTable id="tableExcel" var="Elementos" value="#{elementoBean.getElementos()}" paginator="false" rows="5"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	
