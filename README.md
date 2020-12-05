@@ -82,30 +82,35 @@ Usamos durante estas ultimas semanas se realizo el desarrollo del proyecto por m
 ## backlog del proyecto
 A continuacion veremos el avance obtenido durante el tiempo reglamentario de cada SPRINT.
 
-![](/src/main/webapp/img/back.png)
+![](/src/main/webapp/img/back.PNG)
 
 # Sprints
 
 ## Sprint 1
+En el primer sprint planteamos nuestros objetivos los cuales logramos ir solucionando pero llegamos a la parte de implementación de Apache shiro el cual nos caso no unos si no 
+muchos problemas por lo cual nuestro ritmo de desarrollo bajo considerablemente.
+
 ### sprint-backlog
-![](/src/main/webapp/img/sp1.png)
+![](/src/main/webapp/img/sp1.PNG)
 
 ### sprint-burndown chart
-![](/src/main/webapp/img/back1.png)
+![](/src/main/webapp/img/back1.PNG)
 
 ## Sprint 2
+En el segundo sprint logramos cumplir muy pocas de las metas propuestas debido a las fallas frecuentes en la asistencia de mi compañero por problemas personales lo cual nos obligo a bajar el tiempo de desarrollo del sprint.
 ### sprint-backlog
-![](/src/main/webapp/img/sp2.png)
+![](/src/main/webapp/img/sp2.PNG)
 
 ### sprint-burndown chart
-![](/src/main/webapp/img/back2.png)
+![](/src/main/webapp/img/back2.PNG)
 
 ## Sprint 3
+En el tercer sprint logramos terminar mas del 80% del desarrollo del proyecto aunque no se evidencie en el respectivo backlog debido a que logramos culminarlo despues del tiempo propuesto donde nuestro mayor desafio fueron la implementacion del exportar documento y la implementación de las graficas.
 ### sprint-backlog
-![](/src/main/webapp/img/sp3.png)
+![](/src/main/webapp/img/sp3.PNG)
 
 ### sprint-burndown chart
-![](/src/main/webapp/img/back3.png)
+![](/src/main/webapp/img/back3.PNG)
 
 # Reporte de análisis estático de código
 ## Codacy
