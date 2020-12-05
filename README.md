@@ -43,6 +43,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
    1. Registrar equipo: esta funcionalidad nos ayudara a registrar un equipo con solo la ip del equipo y su informacion.
    2. Consultar equipos: esta funcionalidad consulta los equipos que se encuentran registrados.
    3. Exportar equipos: esta funcionalidad permite exportar en forma de archivo la consulta de equipos registrados.
+   4. Dar de baja: esta funcionalida permite dar de baja el equipo.
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
@@ -54,6 +55,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
    2. Consultar elementos: esta funcionalidad consulta los elementos que se encuentran registrados.
    3. Exportar elementos: esta funcionalidad permite exportar en forma de archivo la consulta de elementos registrados.
    4. Asociar elemento: esta funcionalidad permite Asociar el elemento con un equipo en particular.
+   5. Dar de baja: esta funcionalida permite dar de baja el equipo.
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
@@ -64,6 +66,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
    1. Registrar Laboratorio: esta funcionalidad nos ayudara a registrar un Laboratorio con solo su nombre.
    2. Consultar Laboratorios: esta funcionalidad consulta los Laboratorios que se encuentran registrados.
    3. Exportar Laboratorios: esta funcionalidad permite exportar en forma de archivo la consulta de Laboratorios registrados.
+   4. Dar de baja: esta funcionalida permite dar de baja el equipo.
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
