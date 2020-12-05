@@ -82,11 +82,11 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
 
 Modelo E-R.
 
-![](diseño/md.png)
+![](diseño/bd.png)
 
 Diagrama de clases
 
-![](diseño/bd.jpeg)
+![](diseño/md.png)
 
 # *Descripción de la arquitectura y tecnología usadas durante el proyecto:*
 
