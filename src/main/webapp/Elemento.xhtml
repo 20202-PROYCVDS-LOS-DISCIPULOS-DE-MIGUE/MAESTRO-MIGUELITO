@@ -7,7 +7,7 @@
 	<h:head>
 		<title>Elementos</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/Elemento.css?1.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/Elemento.css?2.0" media="all"/>
 		<script type="text/javascript" src="Exportar.js"></script>
 	</h:head>
 	<h:body>
@@ -61,7 +61,7 @@
 				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Elemento')">Exportar Elementos</button>
 				<h3>Elementos Registrados</h3>
 			</div>
-			<p:dataTable id="tableExcel" var="Elementos" value="#{elementoBean.getElementos()}" selectionMode="single" selection="#{ElementoBean.elemento}" rowKey="#{Elementos.idElemento}" paginator="false"
+			<p:dataTable id="tableExcel" var="Elementos" value="#{elementoBean.getElementos()}" paginator="false"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	
@@ -106,11 +106,7 @@
 					</f:facet>
 					<h:outputText value="#{Elementos.equipo}" />
 				</p:column>
-			</p:dataTable>
-			<br/>
-			<div>
-				<p:commandButton class="bajar" type="submit" value="Dar baja de elemento" actionListener="#{ElementoBean.eliminarElemento()}"></p:commandButton>  
-			</div>
+			</p:dataTable>			
 			<div class="subTitle4">
 				<p>Los discipulos del maestro miguelito ©</p>
 			</div>

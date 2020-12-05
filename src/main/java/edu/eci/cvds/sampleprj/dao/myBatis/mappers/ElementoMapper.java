@@ -10,6 +10,5 @@ public interface ElementoMapper {
 	public void darDeBajaElemento(@Param("idElemento")int idElemento);
     public Elemento getElemento(@Param("idElemento")int idElemento);
     public ArrayList<Elemento> getElementos();
-    public ArrayList<Elemento> getElementosDisponibles();
-    public void eliminarElemento(@Param("idElemento")int idElemento, @Param("marca")String marca);
+	public ArrayList<Elemento> getElementosDisponibles();
 }
