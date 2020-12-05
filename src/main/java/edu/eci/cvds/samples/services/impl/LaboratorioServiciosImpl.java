@@ -14,8 +14,8 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 
 	@Override
 	public void registrarLaboratorio(String nombre) throws PersistenceException {	
-			laboratorioDAO.registrarLaboratorio(nombre);
-		}
+		laboratorioDAO.registrarLaboratorio(nombre);
+	}
 
 
 	@Override
@@ -26,6 +26,11 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 	@Override
 	public ArrayList<Laboratorio> getLaboratorios() throws PersistenceException {
 		return laboratorioDAO.getLaboratorios();
+	}
+	
+	@Override
+	public void cerrarLaboratorio(int idLaboratorio) throws PersistenceException{
+		laboratorioDAO.cerrarLaboratorio(idLaboratorio);
 	}
 
 

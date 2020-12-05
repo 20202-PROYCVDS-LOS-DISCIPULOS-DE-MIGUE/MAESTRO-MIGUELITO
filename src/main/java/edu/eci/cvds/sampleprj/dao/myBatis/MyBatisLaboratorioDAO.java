@@ -16,11 +16,7 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
 
     @Override
     public Laboratorio getLaboratorio(int idlaboratorio) throws PersistenceException {
-        try{
-            return laboratorioMapper.getLaboratorio(idlaboratorio);
-        }catch (Exception e){
-            throw new PersistenceException("Error consultando laboratorios",e);
-        }
+        return laboratorioMapper.getLaboratorio(idlaboratorio);
     }
 
     @Override
@@ -35,10 +31,16 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
 
     @Override
     public ArrayList<Laboratorio>getLaboratorios()throws PersistenceException{
+        return laboratorioMapper.getLaboratorios();
+    }
+	
+	@Override
+    public void cerrarLaboratorio(int idLaboratorio) throws PersistenceException{
         try{
-            return laboratorioMapper.getLaboratorios();
+			LocalDate fechaCierre = LocalDate.now();
+            laboratorioMapper.cerrarLaboratorio(idLaboratorio,fechaCierre);
         }catch (Exception e){
-            throw new PersistenceException("Error consultando laboratorios",e);
+            throw new PersistenceException("Error cerrando laboratorio",e);
         }
     }
 

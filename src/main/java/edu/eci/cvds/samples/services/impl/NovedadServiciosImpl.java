@@ -14,12 +14,17 @@ public class NovedadServiciosImpl implements NovedadServicios {
     private NovedadDAO novedadDAO;
 	
     @Override
-    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException {
-        novedadDAO.registrarNovedad(fecha,titulo,detalle,responsable,equipo,elemento,laboratorio);
+    public void registrarNovedad(String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException {
+        novedadDAO.registrarNovedad(titulo,detalle,responsable,equipo,elemento,laboratorio);
     }
 
     @Override
     public ArrayList<Novedad> getNovedades() throws PersistenceException {
         return novedadDAO.getNovedades();
+    }
+	
+	@Override
+    public Novedad getNovedad(int idNovedad) throws PersistenceException {
+        return novedadDAO.getNovedad(idNovedad);
     }
 }

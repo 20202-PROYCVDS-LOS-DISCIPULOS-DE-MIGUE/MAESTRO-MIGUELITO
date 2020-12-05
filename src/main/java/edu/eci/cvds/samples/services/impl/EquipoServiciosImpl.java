@@ -28,8 +28,28 @@ public class EquipoServiciosImpl implements EquipoServicios {
     }
 	
 	@Override
-    public ArrayList<Equipo>getEquiposDisponibles()throws PersistenceException{
+    public ArrayList<Equipo> getEquiposDisponibles()throws PersistenceException{
         return equipoDAO.getEquiposDisponibles();
     }
+	
+	@Override
+    public ArrayList<Equipo> getEquiposAsociados(int idLaboratorio)throws PersistenceException{
+        return equipoDAO.getEquiposAsociados(idLaboratorio);
+    }
+	
+	@Override
+	public void desasociarEquipo(int idEquipo) throws PersistenceException{
+		equipoDAO.desasociarEquipo(idEquipo);
+	}
+	
+	@Override
+	public void asociarEquipo(int idEquipo, int laboratorio) throws PersistenceException{
+		equipoDAO.asociarEquipo(idEquipo,laboratorio);
+	}
+	
+	@Override
+	public void darDeBajaEquipo(int idEquipo) throws PersistenceException{
+		equipoDAO.darDeBajaEquipo(idEquipo);
+	}
 
 }

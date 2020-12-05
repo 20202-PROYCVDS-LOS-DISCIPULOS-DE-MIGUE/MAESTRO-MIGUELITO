@@ -7,7 +7,7 @@
 	<h:head>
 		<title>Asociar Equipo</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/AsociarEquipo.css?1.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/AsociarEquipo.css?2.0" media="all"/>
 	</h:head>
 
 	<h:body>
@@ -20,22 +20,27 @@
 			</div>
 
 			<div class="subTitle">
-				<h2>Asociar Equipo</h2>
+				<h3>Asociar Equipo</h3>
 			</div>
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
+					<p:inputText type="number" name="idEquipo" class="idEquipo" placeholder="idEquipo" value="#{idEquipo}"/>
 					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
+					<p:growl id="message" showDetail="true"/>
+					<p:commandButton value="Asociar Equipo" action = "#{equipoBean.asociarEquipo(idEquipo,laboratorio)}">
+						<p:confirm header="Confirmación" message="Está seguro de asociar este equipo?" icon="ui-icon-alert"/>
+					</p:commandButton>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+						<p:commandButton value="no" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+					</p:confirmDialog>
 				</h:form>
-				<br/>
 			</div>
-			<br/>
-			
 			<div class="subTitle2">
-				<h3>Equipos Disponibles</h3>
+				<h3>Elementos Disponibles</h3>
 			</div>
-			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="true"
+			<p:dataTable var="Equipos" value="#{equipoBean.getEquiposDisponibles()}" paginator="false"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	

@@ -69,6 +69,20 @@ body {
     border-radius: 20px;
 }
 
+.idElemento{
+    margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
 .nextWindow1 {
 	margin-top: 10px;
 	font-size: 14px;
@@ -80,6 +94,21 @@ body {
     height: 30px;
     background-color: #FF9002;
     float: center;
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+.nextWindow2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 160px;
+    height: 30px;
+    background-color: #FF9002;
+    float: left;
     border-radius: 20px;
     border: 0px solid;
 }

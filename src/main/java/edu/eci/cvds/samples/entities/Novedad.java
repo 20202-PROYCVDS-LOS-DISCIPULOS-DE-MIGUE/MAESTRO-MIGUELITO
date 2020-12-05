@@ -22,16 +22,8 @@ public class Novedad implements Serializable
 	private int elemento;
 	private int laboratorio;
     
-    public Novedad(int idNovedad, Date fecha, String titulo, String detalle, String responsable, int equipo, int elemento, int laboratorio)
+    public Novedad()
     {
-        this.idNovedad = idNovedad;
-        this.fecha = fecha;
-        this.titulo = titulo;
-        this.detalle = detalle;
-        this.responsable = responsable;
-        this.equipo = equipo;
-		this.elemento = elemento;
-		this.laboratorio = laboratorio;
     }
     
     public int getIdNovedad ()

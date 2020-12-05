@@ -32,6 +32,17 @@
 						<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
 					</h:selectOneMenu>
 					<p:inputText type="text" name="marca" class="marca" placeholder="marca" value="#{marca}"/>
+					<br/>
+					<br/>
+					<p:inputText type="number" name="idElemento" class="idElemento" placeholder="idElemento" value="#{idElemento}"/>
+					<p:growl id="message" showDetail="true"/>
+					<p:commandButton value="darDeBaja Elemento" action = "#{elementoBean.darDeBajaElemento(idElemento)}">
+						<p:confirm header="Confirmación" message="Está seguro de dar de baja este elemento?" icon="ui-icon-alert"/>
+					</p:commandButton>
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+						<p:commandButton value="no" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+					</p:confirmDialog>
 				</h:form>
 				<br/>
 				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca)}"/>
@@ -39,14 +50,9 @@
 			<br/>
 			
 			<div class="options">	
-				<div class="option">
-					<div class="subTitle1">
-					</div>
-					<a href="AsociarElemento.xhtml">
-						<input class="nextWindow1" type="button" value="Asociar Elementos"></input>
-					</a>
-				</div>
-		
+				<a href="AsociarElemento.xhtml">
+					<input class="nextWindow2" type="button" value="Asociar Elementos"></input>
+				</a>		
 			</div>
 			
 			<br/>

@@ -9,6 +9,7 @@
         <result property="tipo" column="tipo"/>
     	<result property="marca" column="marca"/>
         <result property="activo" column="activo"/>
+		<result property="disponible" column="disponible"/>
     	<result property="equipo" column="equipo"/>
     </resultMap>
     
@@ -25,5 +26,14 @@
 		VALUES(#{tipo}, #{marca}, true,true,null);
     </insert>
 	
+	<update id="asociarElemento">
+  		UPDATE elementos SET equipo=#{equipo},disponible=false
+  		WHERE idElemento=#{idElemento} AND disponible=true;
+  	</update>
+	
+	<update id="darDeBajaElemento">
+  		UPDATE elementos SET activo=false
+  		WHERE idElemento=#{idElemento} AND activo=true;
+  	</update>
 	
 </mapper>

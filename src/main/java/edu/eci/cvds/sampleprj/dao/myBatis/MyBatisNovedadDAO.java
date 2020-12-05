@@ -15,23 +15,20 @@ public class MyBatisNovedadDAO implements NovedadDAO{
 
     @Override
     public Novedad getNovedad(int idNovedad) throws PersistenceException {
-        try{
-            return novedadMapper.getNovedad(idNovedad);
-        }catch (Exception e){
-            throw new PersistenceException("Error consultando novedad",e);
-        }
+        return novedadMapper.getNovedad(idNovedad);
     }
-    public void registrarNovedad(LocalDate fecha,String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException{
+	@Override
+    public void registrarNovedad(String titulo,String detalle,String responsable,int equipo,int elemento,int laboratorio) throws PersistenceException{
         try{
-            fecha=LocalDate.now();
+            LocalDate fecha=LocalDate.now();
             novedadMapper.registrarNovedad(fecha,titulo,detalle,responsable,equipo,elemento,laboratorio);
         }catch (Exception e){
             throw new PersistenceException("Error insertando Novedad",e);
         }
     }
 
-    @Override
-    public ArrayList<Novedad> getNovedades() {
-        return novedadMapper.getNovedades();
+	@Override
+    public ArrayList<Novedad> getNovedades() throws PersistenceException{
+		return novedadMapper.getNovedades();
     }
 }

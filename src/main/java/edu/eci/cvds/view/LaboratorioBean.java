@@ -2,7 +2,9 @@ package edu.eci.cvds.view;
 
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
+import edu.eci.cvds.samples.entities.Equipo;
 import edu.eci.cvds.samples.services.LaboratorioServicios;
+import edu.eci.cvds.view.EquipoBean;
 import edu.eci.cvds.samples.services.ServiciosFactory;
 import org.primefaces.PrimeFaces;
 import javax.faces.application.FacesMessage;
@@ -20,8 +22,9 @@ public class LaboratorioBean {
     //private LaboratorioServicios laboratorioServicios;
 	private LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
+    private Laboratorio selectLaboratorio;
     
-    
+	
     public LaboratorioServicios getElementoServices(){
         return laboratorioServicios;
     }
@@ -29,6 +32,14 @@ public class LaboratorioBean {
     public void setLaboratorioServices(LaboratorioServicios laboratorioServicios){
         this.laboratorioServicios=laboratorioServicios;
     }
+	
+	public void setSelectLaboratorio(Laboratorio selectLaboratorio){
+		this.selectLaboratorio = selectLaboratorio;
+	}
+	
+	public Laboratorio getSelectLaboratorio(){
+		return selectLaboratorio;
+	}
     
     public void registrarLaboratorio(String nombre)throws PersistenceException{
         try{
@@ -48,4 +59,20 @@ public class LaboratorioBean {
 	public void setLaboratorios(ArrayList<Laboratorio>laboratorios){
         this.laboratorios=laboratorios;
     }
+	
+	public void cerrarLaboratorio(int idLaboratorio) throws PersistenceException
+	{	
+		try{
+			laboratorioServicios.cerrarLaboratorio(idLaboratorio);
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Cerrar laboratorio", "laboratorio cerrado  con éxito"));
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Cerrar laboratorio", "No se pudo cerrar el laboratorio"));
+		}
+	}
+	
+	
+	
 }

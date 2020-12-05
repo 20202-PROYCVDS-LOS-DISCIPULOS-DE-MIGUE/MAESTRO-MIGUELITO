@@ -68,6 +68,20 @@ body {
     border-radius: 20px;
 }
 
+.idEquipo {
+	margin-top: 20px;
+    font-family: Bahnschrift;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+    background-color: #C11626;
+    font-weight: bold;
+    text-align: center;
+    float: center;
+	margin-right: 20px;
+    border-radius: 20px;
+}
+
 .register {
 	margin-top: 10px;
 	font-size: 14px;
@@ -97,7 +111,22 @@ body {
     border: 0px solid;
 }
 
-.columns{
+.nextWindow2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 160px;
+    height: 30px;
+    background-color: #1BB753;
+    float: left;
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+.columns {
 	color: #000000;
 	background-color: rgba(255, 255, 255, 1.0);
     font-family: Bahnschrift;
