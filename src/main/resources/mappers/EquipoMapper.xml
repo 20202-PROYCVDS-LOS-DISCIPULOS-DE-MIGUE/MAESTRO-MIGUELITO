@@ -36,8 +36,8 @@
   	</update>
 	
 	<update id="desasociarEquipo">
-  		UPDATE equipos SET laboratorio=null,disponible=false
-  		WHERE idEquipo=#{idEquipo} AND disponible=true;
+  		UPDATE equipos SET laboratorio=null,disponible=true
+  		WHERE idEquipo=#{idEquipo} AND disponible=false;
   	</update>
 	
 	<update id="darDeBajaEquipo">

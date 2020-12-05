@@ -26,7 +26,10 @@
 				<h:form id="signup-form" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 					<p:inputText type="text" name="nombre" class="nombre" placeholder="Nombre" value="#{nombre}"/>
-					<p:inputText type="text" name="idLaboratorio" class="idLaboratorio" placeholder="idLaboratorio" value="#{idLaboratorio}"/>
+					<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre)}"/>
+					<br/>
+					<br/>
+					<p:inputText type="number" name="idLaboratorio" class="idLaboratorio" placeholder="idLaboratorio" value="#{idLaboratorio}"/>
 			<p:growl id="message" showDetail="true"/>
 					<p:commandButton value="Cerrar Laboratorio" action = "#{laboratorioBean.cerrarLaboratorio(idLaboratorio)}">
 						<p:confirm header="Confirmación" message="Está seguro de cerrar este laboratorio?" icon="ui-icon-alert"/>
@@ -36,8 +39,6 @@
 						<p:commandButton value="no" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
 					</p:confirmDialog>
 				</h:form>
-				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre)}"/>
 			</div>
 
 			<br/>

@@ -23,6 +23,8 @@ public class LaboratorioBean {
 	private LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     private Laboratorio selectLaboratorio;
+	private ArrayList<Equipo> equipos;
+	private EquipoBean equipoBean;
     
 	
     public LaboratorioServicios getElementoServices(){

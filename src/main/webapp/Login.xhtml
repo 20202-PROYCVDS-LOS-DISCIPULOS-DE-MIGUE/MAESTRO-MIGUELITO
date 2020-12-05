@@ -25,8 +25,8 @@
 			<h:form id="signup-form" method="post" action="#">
 				<div>
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<p:inputText class="documento" type="text" name="documento" placeholder="Documento" value="#{loginBean.documento}"/>
-					<p:inputText class="contraseña" type="password" name="contraseña" placeholder="Contraseña" value="#{loginBean.contraseña}"/>
+					<p:inputText class="documento" type="text" name="documento" placeholder="documento" value="#{loginBean.documento}"/>
+					<p:inputText class="contraseña" type="password" name="contraseña" placeholder="contraseña" value="#{loginBean.contraseña}"/>
 				</div>
 				<div>
 					<p:commandButton class="ingresar" type="submit" value="Entrar" action="#{loginBean.login()}"/>

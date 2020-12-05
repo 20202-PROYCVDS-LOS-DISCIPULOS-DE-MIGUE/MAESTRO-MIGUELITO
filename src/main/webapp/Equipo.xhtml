@@ -27,12 +27,12 @@
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 					<p:inputText type="text" name="ip" class="ip" placeholder="ip" value="#{ip}"/>
 					<p:inputText type="text" name="informacion" class="informacion" placeholder="informacion" value="#{informacion}"/>
-			
+					<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion)}"/>
 					<br/>
 					<br/>
 					<p:inputText type="number" name="idEquipo" class="idEquipo" placeholder="idEquipo" value="#{idEquipo}"/>
 					<p:growl id="message" showDetail="true"/>
-					<p:commandButton value="darDeBaja Equipo" action = "#{equipoBean.darDeBajaEquipo(idEquipo)}">
+					<p:commandButton value="Dar de Baja Equipo" action = "#{equipoBean.darDeBajaEquipo(idEquipo)}">
 						<p:confirm header="Confirmación" message="Está seguro de dar de baja este equipo?" icon="ui-icon-alert"/>
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -41,7 +41,7 @@
 					</p:confirmDialog>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion)}"/>
+				
 			</div>
 			
 			<br/>

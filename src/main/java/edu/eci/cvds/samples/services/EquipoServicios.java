@@ -11,6 +11,6 @@ public interface EquipoServicios {
     public ArrayList<Equipo> getEquipos()throws PersistenceException;
 	public ArrayList<Equipo> getEquiposDisponibles()throws PersistenceException;
 	public void asociarEquipo(int idEquipo, int laboratorio) throws PersistenceException;
-	public void desasociarEquipo(int idEquipoo) throws PersistenceException;
+	public void desasociarEquipo(int idEquipo) throws PersistenceException;
 	public void darDeBajaEquipo(int idEquipo)throws PersistenceException;
 }
