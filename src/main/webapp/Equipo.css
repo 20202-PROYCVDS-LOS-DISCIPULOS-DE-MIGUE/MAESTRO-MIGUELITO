@@ -18,14 +18,14 @@ body {
 
 .title {
     margin-top: -47px;
-    color: #F1F1F2;
+    color: #FFFFFF;
     font-size: 35px;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
 .subTitle {
-	color: #FFFFFF;
-	font-size: 25px;
+    color: #FFFFFF;
+    font-size: 25px;
 	background-color: rgba(193, 24, 39, 0.9);
     margin-left: 250px;
     border-radius: 20px;
@@ -53,19 +53,6 @@ body {
     border-radius: 20px;
 }
 
-.laboratorio {
-    margin-right: 10px;
-    font-family: Bahnschrift;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    background-color: #C11626;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-	margin-right: 20px;
-    border-radius: 20px;
-}
 
 .informacion {
 	margin-top: 20px;
@@ -73,21 +60,6 @@ body {
     font-size: 15px;
     text-transform: uppercase;
     color: #FFFFFF;    
-    background-color: #C11626;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-	margin-right: 20px;
-    border-radius: 20px;
-}
-
-.equipoActivo {
-	margin-top: 20px;
-    font-family: Bahnschrift;
-    font-size: 15;
-    height: 28px;
-    text-transform: uppercase;
-    color: #FFFFFF;
     background-color: #C11626;
     font-weight: bold;
     text-align: center;
@@ -108,6 +80,21 @@ body {
     background-color: #FFFFFF;
     float: center;
     border-radius: 20px;
+}
+
+.nextWindow {
+	margin-top: 10px;
+	font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 110px;
+    height: 30px;
+    background-color: #FF9002;
+    float: center;
+    border-radius: 20px;
+    border: 0px solid;
 }
 
 .columns{
@@ -132,6 +119,20 @@ body {
 
 .subTitle4 {
     color: #FFFFFF;
-    font-size: 25px;
+    font-size: 18px;
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.option {
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(193, 24, 39, 1.0);
+    float: left;
+    border-radius: 20px;
+    border: 0px solid;
 }

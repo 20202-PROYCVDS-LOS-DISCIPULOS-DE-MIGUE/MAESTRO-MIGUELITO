@@ -19,9 +19,6 @@ public class LaboratorioBean {
 	//@Inject
     //private LaboratorioServicios laboratorioServicios;
 	private LaboratorioServicios laboratorioServicios= ServiciosFactory.getInstance().getLaboratorioServicios();
-	private int idlaboratorio;
-    private String nombre;
-    private String informacion;
     private ArrayList<Laboratorio>laboratorios=new ArrayList<Laboratorio>();
     
     
@@ -32,31 +29,10 @@ public class LaboratorioBean {
     public void setLaboratorioServices(LaboratorioServicios laboratorioServicios){
         this.laboratorioServicios=laboratorioServicios;
     }
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public int getIdLaboratorio() {
-        return idlaboratorio;
-    }
-
-    public void setIdLaboratorio(int idlaboratorio) {
-        this.idlaboratorio = idlaboratorio;
-    }
     
-    public String getInformacion() {
-        return informacion;
-    }
-
-    public void setInformacion(String informacion) {
-        this.informacion = informacion;
-    }
-    public void registrarLaboratorio(String nombre, String informacion)throws PersistenceException{
+    public void registrarLaboratorio(String nombre)throws PersistenceException{
         try{
-            laboratorioServicios.registrarLaboratorio(nombre,informacion);
+            laboratorioServicios.registrarLaboratorio(nombre);
             FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Registrar laboratorio", "Registro del laboratorio exitoso"));
         }catch (PersistenceException e){

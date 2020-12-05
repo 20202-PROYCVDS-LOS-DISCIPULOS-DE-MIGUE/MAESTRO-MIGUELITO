@@ -6,7 +6,7 @@ import edu.eci.cvds.sampleprj.dao.myBatis.mappers.LaboratorioMapper;
 import edu.eci.cvds.exceptions.PersistenceException;
 import edu.eci.cvds.samples.entities.Laboratorio;
 import org.mybatis.guice.transactional.Transactional;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MyBatisLaboratorioDAO implements LaboratorioDAO{
@@ -24,9 +24,10 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO{
     }
 
     @Override
-    public void registrarLaboratorio(String nombre,String informacion) throws PersistenceException{
+    public void registrarLaboratorio(String nombre) throws PersistenceException{
         try{
-            laboratorioMapper.registrarLaboratorio(nombre,informacion);
+			LocalDate fechaRegistro = LocalDate.now();
+            laboratorioMapper.registrarLaboratorio(nombre,fechaRegistro);
         }catch (Exception e){
             throw new PersistenceException("Error registrando laboratorio",e);
         }

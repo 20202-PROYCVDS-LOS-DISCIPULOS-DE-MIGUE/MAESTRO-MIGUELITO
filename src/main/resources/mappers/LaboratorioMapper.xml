@@ -16,8 +16,8 @@
     </select>
 
     <insert id="registrarLaboratorio" parameterType="map">
-        INSERT INTO laboratorios (nombre, informacion)
-		VALUES(#{nombre}, #{informacion});
+        INSERT INTO laboratorios (nombre,activo,equiposAsociados,fechaRegistro)
+		VALUES(#{nombre},true,0,#{fechaRegistro});
     </insert>
 </mapper>
 

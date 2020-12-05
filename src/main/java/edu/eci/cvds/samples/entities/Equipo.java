@@ -16,6 +16,7 @@ public class Equipo implements Serializable
     private String ip;
     private String informacion;
     private boolean activo;
+	private boolean disponible;
     private int laboratorio;
     
     public Equipo() 
@@ -59,6 +60,15 @@ public class Equipo implements Serializable
     {
         this.activo = activo;
     }
+	
+	public boolean getDisponibleo()
+    {
+        return disponible;
+    }
+    public void setDisponible(boolean disponible)
+    {
+        this.disponible = disponible;
+    }
     
     public int getLaboratorio ()
     {
@@ -72,6 +82,6 @@ public class Equipo implements Serializable
     @Override
     public String toString () 
     {
-        return "Equipos {idequipo: " + idequipo + ", ip: " + ip + ", Información: " + informacion + ",activo:"+activo+", Laboratorio: " + laboratorio + "}";
+        return "Equipos {idequipo: " + idequipo + ", ip: " + ip + ", Información: " + informacion + ",activo:"+activo+",disponible:"+disponible+", Laboratorio: " + laboratorio + "}";
     }
 }

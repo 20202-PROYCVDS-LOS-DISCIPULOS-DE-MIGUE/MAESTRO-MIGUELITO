@@ -18,9 +18,9 @@ body {
 
 .title {
     margin-top: -47px;
-    color: #F1F1F2;
+    color: #FFFFFF;
     font-size: 35px;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
 .subTitle {
@@ -32,9 +32,9 @@ body {
 }
 
 .subTitle2 {
-	color: #FFFFFF;
-	font-size: 25px;
-	background-color: rgba(20, 179, 182, 0.8);
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(20, 179, 182, 0.8);
     margin-right: 250px;
     border-radius: 20px;
 }
@@ -45,20 +45,6 @@ body {
     font-size: 14px;
     text-transform: uppercase;
     color: #FFFFFF;
-    background-color: #14ABA7;
-    font-weight: bold;
-    text-align: center;
-    float: center;
-    margin-right: 20px;
-    border-radius: 20px;
-}
-
-.informacion {
-	margin-top: 20px;
-    font-family: Bahnschrift;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #FFFFFF;    
     background-color: #14ABA7;
     font-weight: bold;
     text-align: center;
@@ -82,10 +68,11 @@ body {
     border-radius: 20px;
 }
 
-.columns{
+.columns {
 	color: #000000;
 	background-color: rgba(255, 255, 255, 1.0);
-    font-family: Bahnschrift;}
+    font-family: Bahnschrift;
+}
 
 .backWindow {
 	font-size: 14px;
@@ -103,6 +90,20 @@ body {
 
 .subTitle4 {
     color: #FFFFFF;
-    font-size: 25px;
+    font-size: 18px;
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.option {
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(183, 27, 109, 1.0);
+    float: left;
+    border-radius: 20px;
+    border: 0px solid;
 }

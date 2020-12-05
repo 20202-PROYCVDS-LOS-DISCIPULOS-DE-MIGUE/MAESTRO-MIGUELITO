@@ -8,8 +8,8 @@
 		<title>Laboratorios</title>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="/Laboratorio.css?1.0" media="all"/>
+		<script type="text/javascript" src="Exportar.js"></script>
 	</h:head>
-
 	<h:body>
 		<div class="menuPresentation">
 			<div class="title">
@@ -26,10 +26,9 @@
 				<h:form id="signup-form" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 					<p:inputText type="text" name="nombre" class="nombre" placeholder="Nombre" value="#{nombre}"/>
-					<p:inputText type="text" name="informacion" class="informacion" placeholder="Información" value="#{informacion}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre,informacion)}"/>
+				<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre)}"/>
 			</div>
 
 			<br/>
@@ -54,11 +53,32 @@
 					</f:facet>
 					<h:outputText value="#{Laboratorios.nombre}" />
 				</p:column>
-				<p:column class="columns" filterBy="#{Laboratorios.informacion}" sortBy="#{Laboratorios.informacion}">
+				<p:column class="columns" filterBy="#{Laboratorios.activo}" sortBy="#{Laboratorios.activo}">
 					<f:facet name="header">
-						<h:outputText value="Información" />
+						<h:outputText value="Activo" />
 					</f:facet>
-					<h:outputText value="#{Laboratorios.informacion}" />
+					<h:outputText value="#{Laboratorios.activo}" />
+				</p:column>
+				
+				<p:column class="columns" filterBy="#{Laboratorios.equiposAsociados}" sortBy="#{Laboratorios.equiposAsociados}">
+					<f:facet name="header">
+						<h:outputText value="EquiposAsociados" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.equiposAsociados}" />
+				</p:column>
+				
+				<p:column class="columns" filterBy="#{Laboratorios.fechaRegistro}" sortBy="#{Laboratorios.fechaRegistro}">
+					<f:facet name="header">
+						<h:outputText value="FechaRegistro" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.fechaRegistro}" />
+				</p:column>
+				
+				<p:column class="columns" filterBy="#{Laboratorios.fechaCierre}" sortBy="#{Laboratorios.fechaCierre}">
+					<f:facet name="header">
+						<h:outputText value="FechaCierre" />
+					</f:facet>
+					<h:outputText value="#{Laboratorios.fechaCierre}" />
 				</p:column>
 			</p:dataTable>
 			<div class="subTitle4">
@@ -66,4 +86,16 @@
 			</div>
 		</div>
 	</h:body>
+	
 </html>
+
+
+
+
+
+
+
+
+
+
+

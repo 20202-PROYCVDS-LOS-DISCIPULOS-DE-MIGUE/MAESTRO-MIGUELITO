@@ -5,54 +5,40 @@
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<title>Equipos</title>
+		<title>Asociar Equipo</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/Equipo.css?2.0" media="all"/>
-		<script type="text/javascript" src="Exportar.js"></script>
+		<link rel="stylesheet" type="text/css" href="/AsociarEquipo.css?1.0" media="all"/>
 	</h:head>
+
 	<h:body>
 		<div class="menuPresentation">
 			<div class="title">
 				<h1>Equipos</h1>
-				<a href="Menu.xhtml">
+				<a href="Equipo.xhtml">
 					<input class="backWindow" type="button" value="Volver"></input>
 				</a>
 			</div>
-			<div class="subTitle">
-				<h2>Registrar Equipo</h2>
-			</div>
 
+			<div class="subTitle">
+				<h2>Asociar Equipo</h2>
+			</div>
 			<div>
-				<h:form id="signup-form" method="post" action="#">
+				<h:form id="signup-form2" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<p:inputText type="text" name="ip" class="ip" placeholder="ip" value="#{ip}"/>
-					<p:inputText type="text" name="informacion" class="informacion" placeholder="informacion" value="#{informacion}"/>
+					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
+					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion)}"/>
-			</div>
-			
-			<br/>
-			
-			<div class="options">	
-				<div class="option">
-					<div class="subTitle1">
-					</div>
-					<a href="AsociarEquipo.xhtml">
-						<input class="nextWindow" type="button" value="Asociar Equipos"></input>
-					</a>
-				</div>
-		
 			</div>
 			<br/>
 			
 			<div class="subTitle2">
-				<h3>Equipos Registrados</h3>
+				<h3>Equipos Disponibles</h3>
 			</div>
-			<p:dataTable var="Equipos" value="#{equipoBean.getEquipos()}" paginator="true" rows="5"
+			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="true" rows="5"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
-
+	
 				<p:column class="columns" filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
 						<h:outputText value="IdEquipo"/>
@@ -94,37 +80,10 @@
 					</f:facet>
 					<h:outputText value="#{Equipos.laboratorio}" />
 				</p:column>
-			</p:dataTable>
-						
+			</p:dataTable>			
 			<div class="subTitle4">
 				<p>Los discipulos del maestro miguelito ©</p>
 			</div>
 		</div>
 	</h:body>
-	
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

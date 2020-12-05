@@ -25,7 +25,11 @@ public class EquipoServiciosImpl implements EquipoServicios {
     @Override
     public ArrayList<Equipo>getEquipos()throws PersistenceException{
         return equipoDAO.getEquipos();
-
+    }
+	
+	@Override
+    public ArrayList<Equipo>getEquiposDisponibles()throws PersistenceException{
+        return equipoDAO.getEquiposDisponibles();
     }
 
 }

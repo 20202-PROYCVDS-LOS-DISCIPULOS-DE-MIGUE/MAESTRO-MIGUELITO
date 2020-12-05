@@ -23,4 +23,7 @@ public class MyBatisEquipoDAO implements EquipoDAO {
    public ArrayList<Equipo> getEquipos(){
         return equipoMapper.getEquipos();
    }
+   public ArrayList<Equipo> getEquiposDisponibles(){
+        return equipoMapper.getEquiposDisponibles();
+   }
 }

@@ -20,7 +20,8 @@ public class ElementoBean {
     //@Inject
     //private ElementoServicios elementoServicios;
     private ElementoServicios elementoServicios = ServiciosFactory.getInstance().getElementoServicios();
-    private ArrayList<Elemento>elementos= new ArrayList<Elemento>();;
+    private ArrayList<Elemento>elementos= new ArrayList<Elemento>();
+	private ArrayList<Elemento>elementosDisponibles = new ArrayList<Elemento>();
 	private Elemento elemento;
 	
     public ElementoServicios getElementoServices(){
@@ -51,6 +52,17 @@ public class ElementoBean {
             context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar elemento", "No se pudo consultar el elemento"));
 		}
 		return elementos;
+    }
+	
+	public ArrayList<Elemento> getElementosDisponibles()throws PersistenceException {
+		try{
+			elementosDisponibles = elementoServicios.getElementosDisponibles();
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar elemento", "No se pudo consultar el elemento"));
+		}
+		return elementosDisponibles;
     }
  
 	public Elemento getElemento(int idElemento) throws PersistenceException

@@ -9,4 +9,5 @@ public interface EquipoMapper {
     public void registrarEquipo(@Param("ip")String ip,@Param("informacion")String informacion);
     public Equipo getEquipo(int idEquipo);
     public ArrayList<Equipo> getEquipos();
+	public ArrayList<Equipo> getEquiposDisponibles();
 }

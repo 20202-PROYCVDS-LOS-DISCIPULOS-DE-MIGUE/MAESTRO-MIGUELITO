@@ -25,5 +25,9 @@ public class ElementoServiciosImpl implements ElementoServicios {
     public ArrayList<Elemento>getElementos()throws PersistenceException {
         return elementoDAO.getElementos();
     }
+	
+	public ArrayList<Elemento>getElementosDisponibles()throws PersistenceException {
+        return elementoDAO.getElementosDisponibles();
+    }
 
 }

@@ -26,5 +26,9 @@ public class MyBatisElementoDAO implements ElementoDAO {
     public ArrayList<Elemento>getElementos(){
         return elementoMapper.getElementos();
 	}
- 
+	
+	@Override
+    public ArrayList<Elemento>getElementosDisponibles(){
+        return elementoMapper.getElementosDisponibles();
+	}
 }

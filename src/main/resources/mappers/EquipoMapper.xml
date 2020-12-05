@@ -15,9 +15,13 @@
     <select id="getEquipos" resultMap="EquipoResultado" parameterType="map">
         SELECT * FROM equipos;
     </select>
+	
+	<select id="getEquiposDisponibles" resultMap="EquipoResultado" parameterType="map">
+        SELECT * FROM equipos WHERE disponible=true ;
+    </select>
 
     <insert id="registrarEquipo" parameterType="map">
-        INSERT INTO "equipos"(ip, informacion, activo, laboratorio)
-		VALUES(#{ip}, #{informacion}, true, null);
+        INSERT INTO "equipos"(ip, informacion, activo,disponible, laboratorio)
+		VALUES(#{ip}, #{informacion}, true,true, null);
     </insert>
 </mapper>

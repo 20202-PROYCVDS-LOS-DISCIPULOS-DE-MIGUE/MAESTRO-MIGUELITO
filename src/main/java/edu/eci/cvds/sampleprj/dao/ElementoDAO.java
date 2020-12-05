@@ -8,5 +8,6 @@ public interface ElementoDAO {
     public void registrarElemento(String tipo,String marca);
     public Elemento getElemento(int idElemento);
     public ArrayList<Elemento> getElementos();
+	public ArrayList<Elemento> getElementosDisponibles();
 }
 

@@ -1,15 +1,14 @@
 body {
     margin : 0;
     padding : 0;
-    background-image : url(../img/Novedad2.jpg);
+    background-image : url(../img/Novedad.jpg);
     background-size: cover;
     height: 100vh;
 }
 
 ::placeholder { color: rgba(255, 255, 255, 0.1); }
 
-.menuPresentation
-{
+.menuPresentation {
 	font-family: Bahnschrift;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -17,10 +16,10 @@ body {
 }
 
 .title {
-	margin-top: -47px;
-	color: #FFFFFF;
-	font-size: 35px;
-	background-color: #000000;
+    margin-top: -47px;
+    color: #FFFFFF;
+    font-size: 35px;
+    background-color: rgba(0, 0, 0, 1.0);
 }
 
 .subTitle {
@@ -31,7 +30,15 @@ body {
     border-radius: 20px;
 }
 
-.columns{
+.subTitle2 {
+    color: #FFFFFF;
+    font-size: 25px;
+    background-color: rgba(183, 27, 109, 1.0);
+    margin-right: 250px;
+    border-radius: 20px;
+}
+
+.columns {
 	color: #000000;
 	background-color: rgba(255, 255, 255, 1.0);
     font-family: Bahnschrift;
@@ -45,7 +52,7 @@ body {
     color: #FFFFFF;
     width: 200px;
     height: 30px;
-    background-color: #AA1B67;
+    background-color: rgba(183, 27, 109, 1.0);
     float: right;
     border-radius: 20px;
     border: 0px solid;
@@ -53,6 +60,20 @@ body {
 
 .subTitle4 {
     color: #FFFFFF;
-    font-size: 25px;
+    font-size: 18px;
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+.option {
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 200px;
+    height: 30px;
+    background-color: rgba(120, 120, 120, 1.0);
+    float: left;
+    border-radius: 20px;
+    border: 0px solid;
 }

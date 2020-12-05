@@ -9,5 +9,5 @@ public interface ElementoServicios {
     public void registrarElemento(String tipo ,String marca)throws PersistenceException;
     public Elemento getElemento(int idElemento)throws PersistenceException;
     public ArrayList<Elemento> getElementos() throws PersistenceException;
- 
+	public ArrayList<Elemento> getElementosDisponibles() throws PersistenceException;
 }

@@ -16,6 +16,7 @@ public class Elemento implements Serializable
     private String tipo;
     private String marca;
     private boolean activo;
+	private boolean disponible;
     private int equipo;
    
     
@@ -27,7 +28,7 @@ public class Elemento implements Serializable
     {
         return idElemento;
     }
-    public void setIdElemento (int idElementos)
+    public void setIdElemento (int idElemento)
     {
         this.idElemento = idElemento;
     }
@@ -58,6 +59,15 @@ public class Elemento implements Serializable
     {
         this.activo = activo;
     }
+	
+	public boolean getDisponible()
+    {
+        return disponible;
+    }
+    public void setDisponible(boolean disponible)
+    {
+        this.disponible = disponible;
+    }
     
     public int getEquipo ()
     {
@@ -71,6 +81,6 @@ public class Elemento implements Serializable
     @Override
     public String toString () 
     {
-        return "Elementos {idElemento: " + idElemento + ", Tipo: " + tipo + ", marca: " + marca +  ",activo:"+activo+", Equipo: " + equipo + "}";
+        return "Elementos {idElemento: " + idElemento + ", Tipo: " + tipo + ", marca: " + marca +  ",activo:"+activo+",disponible:"+disponible+", Equipo: " + equipo + "}";
     }
 }

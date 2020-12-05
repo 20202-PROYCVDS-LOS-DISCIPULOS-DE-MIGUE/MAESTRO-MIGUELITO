@@ -5,56 +5,37 @@
 	  xmlns:f="http://java.sun.com/jsf/core"
 	  xmlns:p="http://primefaces.org/ui">
 	<h:head>
-		<title>Elementos</title>
+		<title>Asociar Elemento</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/Elemento.css?2.0" media="all"/>
-		<script type="text/javascript" src="Exportar.js"></script>
+		<link rel="stylesheet" type="text/css" href="/AsociarElemento.css?1.0" media="all"/>
 	</h:head>
+
 	<h:body>
 		<div class="menuPresentation">
 			<div class="title">
 				<h1>Elementos</h1>
-				<a href="Menu.xhtml">
+				<a href="Elemento.xhtml">
 					<input class="backWindow" type="button" value="Volver"></input>
 				</a>
 			</div>
 
 			<div class="subTitle">
-				<h2>Registrar Elemento</h2>
+				<h2>Asociar Elementos</h2>
 			</div>
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<h:selectOneMenu class="elementoTipo" value="#{tipo}">
-						<f:selectItem itemLabel="Teclado" itemValue="Teclado"/>
-						<f:selectItem itemLabel="Monitor" itemValue="Monitor"/>
-						<f:selectItem itemLabel="Torre" itemValue="Torre" />
-						<f:selectItem itemLabel="Mouse" itemValue="Mouse" />
-					</h:selectOneMenu>
-					<p:inputText type="text" name="marca" class="marca" placeholder="marca" value="#{marca}"/>
+					<p:inputText type="number" name="elemento" class="elemento" placeholder="elemento" value="#{elemento}"/>
+					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 				</h:form>
 				<br/>
-				<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca)}"/>
 			</div>
-			<br/>
-			
-			<div class="options">	
-				<div class="option">
-					<div class="subTitle1">
-					</div>
-					<a href="AsociarElemento.xhtml">
-						<input class="nextWindow1" type="button" value="Asociar Elementos"></input>
-					</a>
-				</div>
-		
-			</div>
-			
 			<br/>
 			
 			<div class="subTitle2">
-				<h3>Elementos Registrados</h3>
+				<h3>Elementos Disponibles</h3>
 			</div>
-			<p:dataTable var="Elementos" value="#{elementoBean.getElementos()}" paginator="true" rows="5"
+			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="true" rows="5"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	
@@ -106,5 +87,3 @@
 		</div>
 	</h:body>
 </html>
-
-

@@ -8,5 +8,5 @@ public interface ElementoMapper {
     public void registrarElemento(@Param("tipo")String tipo,@Param("marca")String marca);
     public Elemento getElemento(@Param("idElemento")int idElemento);
     public ArrayList<Elemento> getElementos();
-
+	public ArrayList<Elemento> getElementosDisponibles();
 }

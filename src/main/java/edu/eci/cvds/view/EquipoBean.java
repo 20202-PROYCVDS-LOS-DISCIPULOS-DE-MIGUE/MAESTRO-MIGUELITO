@@ -26,6 +26,7 @@ public class EquipoBean {
     private EquipoServicios equipoServicios = ServiciosFactory.getInstance().getEquipoServicios();
     private Equipo equipo;
     private ArrayList<Equipo>equipos;
+	private ArrayList<Equipo>equiposDisponibles;
 
     public EquipoServicios getEquipoServices(){
         return equipoServicios;
@@ -54,6 +55,17 @@ public class EquipoBean {
             context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipos", "No se pudo consultar los equipos"));
 		}
 		return equipos;
+    }
+	
+	public ArrayList<Equipo> getEquiposDisponibles()throws PersistenceException {
+		try{
+			equiposDisponibles = equipoServicios.getEquiposDisponibles();
+		} catch(PersistenceException e)
+		{
+			FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Consultar equipos", "No se pudo consultar los equipos"));
+		}
+		return equiposDisponibles;
     }
  
 	public Equipo getEquipo(int idEquipo) throws PersistenceException

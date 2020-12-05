@@ -13,8 +13,8 @@ public class LaboratorioServiciosImpl implements LaboratorioServicios{
 
 
 	@Override
-	public void registrarLaboratorio(String nombre, String informacion) throws PersistenceException {	
-			laboratorioDAO.registrarLaboratorio(nombre,informacion);
+	public void registrarLaboratorio(String nombre) throws PersistenceException {	
+			laboratorioDAO.registrarLaboratorio(nombre);
 		}
 
 

@@ -9,4 +9,5 @@ public interface EquipoDAO{
     public Equipo getEquipo(int idEquipo);
 	public void registrarEquipo(String ip, String informacion);
     public ArrayList<Equipo> getEquipos();
+	public ArrayList<Equipo> getEquiposDisponibles();
 }

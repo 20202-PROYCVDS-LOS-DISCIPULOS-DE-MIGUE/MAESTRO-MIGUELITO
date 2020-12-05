@@ -15,9 +15,15 @@
     <select id="getElementos" resultMap="ElementoResultado" parameterType="map">
         SELECT * FROM elementos;
     </select>
+	
+	<select id="getElementosDisponibles" resultMap="ElementoResultado" parameterType="map">
+        SELECT * FROM elementos WHERE disponible=true ;
+    </select>
 
     <insert id="registrarElemento" parameterType="map">
-        INSERT INTO "elementos" (tipo, marca, activo, equipo)
-		VALUES(#{tipo}, #{marca}, true,null);
+        INSERT INTO "elementos" (tipo, marca, activo,disponible, equipo)
+		VALUES(#{tipo}, #{marca}, true,true,null);
     </insert>
+	
+	
 </mapper>
