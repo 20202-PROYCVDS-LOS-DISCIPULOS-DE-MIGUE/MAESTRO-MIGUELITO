@@ -25,5 +25,9 @@
 		VALUES(#{tipo}, #{marca}, true,true,null);
     </insert>
 	
+	<update id="AsociarElemento" parameterType="map">
+        UPDATE elementos SET equipo = #{equipo},disponible=false
+		WHERE idElemento = #{idElemento} AND disponible=true;
+    </update>
 	
 </mapper>
