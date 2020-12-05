@@ -7,7 +7,7 @@
 	<h:head>
 		<title>Asociar Elemento</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/AsociarElemento.css?1.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/AsociarElemento.css?2.0" media="all"/>
 	</h:head>
 
 	<h:body>
@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="subTitle">
-				<h2>Asociar Elementos</h2>
+				<h3>Asociar Elementos</h3>
 			</div>
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
@@ -28,14 +28,12 @@
 					<p:inputText type="number" name="elemento" class="elemento" placeholder="elemento" value="#{elemento}"/>
 					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 				</h:form>
-				<br/>
 			</div>
-			<br/>
 			
 			<div class="subTitle2">
 				<h3>Elementos Disponibles</h3>
 			</div>
-			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="true"
+			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="false"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	

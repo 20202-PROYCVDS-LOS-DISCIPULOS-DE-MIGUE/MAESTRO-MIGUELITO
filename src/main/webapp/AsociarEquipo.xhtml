@@ -20,7 +20,7 @@
 			</div>
 
 			<div class="subTitle">
-				<h2>Asociar Equipo</h2>
+				<h3>Asociar Equipo</h3>
 			</div>
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
@@ -28,14 +28,12 @@
 					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 					<p:inputText type="number" name="laboratorio" class="laboratorio" placeholder="laboratorio" value="#{laboratorio}"/>
 				</h:form>
-				<br/>
 			</div>
-			<br/>
 			
 			<div class="subTitle2">
 				<h3>Equipos Disponibles</h3>
 			</div>
-			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="true"
+			<p:dataTable var="Elementos" value="#{elementoBean.getElementosDisponibles()}" paginator="false"
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 	

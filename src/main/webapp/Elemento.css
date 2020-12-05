@@ -84,6 +84,21 @@ body {
     border: 0px solid;
 }
 
+.nextWindow2 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    width: 160px;
+    height: 30px;
+    background-color: #FF9002;
+    float: left;
+    border-radius: 20px;
+    border: 0px solid;
+}
+
 .register {
 	margin-top: 10px;
 	font-size: 14px;

@@ -43,7 +43,6 @@ body {
     margin-top: 20px;
     font-family: Bahnschrift;
     font-size: 15;
-    height: 28px;
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
@@ -97,9 +96,9 @@ body {
     border-radius: 20px;
 }
 
-.columns{
-	color: #000000;
-	background-color: rgba(255, 255, 255, 1.0);
+.columns {
+    color: #000000;
+    background-color: rgba(255, 255, 255, 1.0);
     font-family: Bahnschrift;
 }
 
@@ -119,6 +118,6 @@ body {
 
 .subTitle4 {
     color: #FFFFFF;
-    font-size: 25px;
+    font-size: 18px;
     background-color: rgba(0, 0, 0, 0.9);
 }
