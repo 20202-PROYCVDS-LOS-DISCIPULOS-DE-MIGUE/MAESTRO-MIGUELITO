@@ -1,13 +1,11 @@
-# 2020-2-PROYCVDS-LOS-DISCIPULOS-DEL-MAESTRO-MIGUELITO
-
-
 <br></br>
 
-### La Plataforma Historial de Equipos
+# La Plataforma Historial de Equipos
 
 ## Proyecto Final: Ciclos de Vida de Desarrollo de Software 2020-2. 
 
 ## Dicipulos del Maestro Miguelito
+
 
 - Miguel Angel Rodriguez Siachoque (Team Developer)
 - James Alexander Torres Segura (Team Developer)
@@ -38,7 +36,7 @@ Modelo E-R.
 
 Diagrama de clases
 
-![](diseño/bd.png)
+![](diseño/bd.jpeg)
 
 ## *Descripción de la arquitectura y tecnología usadas durante el proyecto:*
 
@@ -79,6 +77,8 @@ Daniel Santiago Ducuara Ardila encargado de la implementacion BD y BACKEN
 https://tree.taiga.io/project/jamestorres99-historial-de-equipos-labinfo/backlog
 
 ## descripción de la Metodología.
+
+
 
 
 
