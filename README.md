@@ -46,7 +46,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
-![](/src/main/webapp/img/4.PNG)
+![](/src/main/webapp/img/5.PNG)
   
  - Al ingresar al apartado de Elementos obtendremos las siguientes funcionalidades como lo son:
   
@@ -57,7 +57,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
-![](/src/main/webapp/img/4.PNG)
+![](/src/main/webapp/img/6.PNG)
 
 - Al ingresar al apartado de Laboratorios tendremos varias funcionalidades como:
 
@@ -67,7 +67,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
   
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
-  ![](/src/main/webapp/img/4.PNG)
+  ![](/src/main/webapp/img/7.PNG)
   
   - Al ingresar al apartado de Novedades tendremos varias funcionalidades como:
 
@@ -76,7 +76,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
     
   ademas de esto podemos volver a la pagina principal para seguir usando el resto de nuestros servicios.
   
-    ![](/src/main/webapp/img/4.PNG)
+    ![](/src/main/webapp/img/8.PNG)
   
 # *Arquitectura y Diseño detallado:*
 
