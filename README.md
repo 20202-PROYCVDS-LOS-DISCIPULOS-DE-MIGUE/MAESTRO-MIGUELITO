@@ -82,7 +82,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
 
 Modelo E-R.
 
-![](diseño/bd.png)
+![](/src/main/webapp/img/bd.png)
 
 Diagrama de clases
 
