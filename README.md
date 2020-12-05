@@ -1,5 +1,3 @@
-<br></br>
-
 # La Plataforma Historial de Equipos
 
 ## Proyecto Final: Ciclos de Vida de Desarrollo de Software 2020-2. 
@@ -18,7 +16,7 @@
 - Julián Mauricio Velazco Briceño (Product Owner)
 - Oscar David Ospina Rodriguez (Product Owner)
 
-## Descripción del producto:
+# Descripción del producto:
 
 ## *Descripción general.*
 
@@ -27,6 +25,15 @@ El sistema, más allá de facilitar el registro de los equipos y novedades, es u
 El personal administrativo del laboratorio puede crear laboratorios, equipos y elementos, asociar unos a otros y registrar novedades para cada uno; además de tener una variedad de reportes que les permitirá tener el control administrativo de estos implementos.
 
 # *Manual de usuario:*
+
+
+
+
+
+
+
+
+
 
 # *Arquitectura y Diseño detallado:*
 
@@ -43,15 +50,17 @@ Diagrama de clases
 Durante la elaboracion del proyecto logramos dar uso en:
 
 - Capa de aplicación:
-  Google guice, apache shiro y maven
+  En esta capa usamos Google guice, apache shiro y maven de tal manera que desde el inicio de sesion hasta las consultas se lograran realizar con facilidad
+  y agilidad para tener un codigo eficiente y limpio.
   ![](/src/main/webapp/img/shiro.png)
 
 - Capa de presentación
-  primefaces, JSF 
+  En esta capa usamos primefaces y JSF este uso nos dara beneficios en la facilididad de la logica usada durante el proceso de visualizacion desde hacer mas agradable
+  las vistas hasta realizar y mostrar de manera eficiente los resultados de las consultas.
   ![](/src/main/webapp/img/jsf.jpg)
 
 - Capa de persistencia
-  En esta capa usamos MyBatis y una base de datos PostgreSQL
+  En esta capa usamos MyBatis y una base de datos PostgreSQL los cuales nos dara ese cambio y manejo de informacion provenientes de la base de datos lo cual nos dara una mayor   facilidad en el uso de los elementos obtenidos durante las consultas.
   ![](/src/main/webapp/img/sql.jpg)
 
 ## sistema de integración continua Circle Ci
