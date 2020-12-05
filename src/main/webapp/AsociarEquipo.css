@@ -42,7 +42,11 @@ body {
 .idEquipo {
     margin-top: 20px;
     font-family: Bahnschrift;
+<<<<<<< HEAD
     font-size: 15px;
+=======
+    font-size: 15;
+>>>>>>> 52237dc0af5f18e942d3d191081de6417965e8fa
     text-transform: uppercase;
     color: #FFFFFF;
     background-color: #C11626;
