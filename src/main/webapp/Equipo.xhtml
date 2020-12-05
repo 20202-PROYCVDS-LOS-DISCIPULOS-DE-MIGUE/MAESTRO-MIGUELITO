@@ -50,7 +50,7 @@
 				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorio')">Exportar Equipos</button>
 				<h3>Equipos Registrados</h3>
 			</div>
-			<p:dataTable id="tableExcel" var="Equipos" value="#{equipoBean.getEquipos()}" paginator="false" rows="5"
+			<p:dataTable id="tableExcel" var="Equipos" value="#{equipoBean.getEquipos()}" paginator="false" 
 				paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}{RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,15">
 

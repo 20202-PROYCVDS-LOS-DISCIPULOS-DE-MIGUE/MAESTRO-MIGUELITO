@@ -61,7 +61,7 @@ public class Equipo implements Serializable
         this.activo = activo;
     }
 	
-	public boolean getDisponibleo()
+	public boolean getDisponible()
     {
         return disponible;
     }
