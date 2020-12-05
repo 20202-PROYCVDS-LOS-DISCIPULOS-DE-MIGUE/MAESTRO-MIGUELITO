@@ -26,9 +26,9 @@ La Plataforma Historial de Equipos, es una herramienta donde el personal del lab
 El sistema, más allá de facilitar el registro de los equipos y novedades, es una valiosa base de conocimiento donde el personal del laboratorio, puede revisar el histórico de novedades que se le han realizado a cada elemento a través del tiempo durante todo su ciclo de vida útil. 
 El personal administrativo del laboratorio puede crear laboratorios, equipos y elementos, asociar unos a otros y registrar novedades para cada uno; además de tener una variedad de reportes que les permitirá tener el control administrativo de estos implementos.
 
-## *Manual de usuario:*
+# *Manual de usuario:*
 
-## *Arquitectura y Diseño detallado:*
+# *Arquitectura y Diseño detallado:*
 
 Modelo E-R.
 
@@ -38,7 +38,7 @@ Diagrama de clases
 
 ![](diseño/bd.jpeg)
 
-## *Descripción de la arquitectura y tecnología usadas durante el proyecto:*
+# *Descripción de la arquitectura y tecnología usadas durante el proyecto:*
 
 Durante la elaboracion del proyecto logramos dar uso en:
 
@@ -57,14 +57,11 @@ Durante la elaboracion del proyecto logramos dar uso en:
 ## sistema de integración continua Circle Ci
 [![CircleCI](https://circleci.com/gh/PDSW-ECI/base-proyectos.svg?style=svg)](https://app.circleci.com/pipelines/github/20202-PROYCVDS-LOS-DISCIPULOS-DE-MIGUE/MAESTRO-MIGUELITO)
 
-## Codacy
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9106912acf4e42f38eef7f27eb0c8522)](https://app.codacy.com/gh/20202-PROYCVDS-LOS-DISCIPULOS-DE-MIGUE/MAESTRO-MIGUELITO/dashboard)
-
 ## Enlace de la Pagina Web en Heroku
 [![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://los-discipulos-de-miguelito.herokuapp.com/Login.xhtml)
 
 
-## *Descripción del proceso:*
+# *Descripción del proceso:*
 
 Integrantes.
 
@@ -78,11 +75,38 @@ https://tree.taiga.io/project/jamestorres99-historial-de-equipos-labinfo/backlog
 
 ## descripción de la Metodología.
 
+Usamos durante estas ultimas semanas se realizo el desarrollo del proyecto por medio de Metodologia ágil SCRUM donde por medio de tres SPRINTS cada uno con un valor aproximado de dos semanas en donde se avanzo con el desarrollo y producion del proyecto.
 
+![](/src/main/webapp/img/a.png)
 
+## backlog del proyecto
+A continuacion veremos el avance obtenido durante el tiempo reglamentario de cada SPRINT.
 
+![](/src/main/webapp/img/back.png)
 
+# Sprints
 
+## Sprint 1
+### sprint-backlog
+![](/src/main/webapp/img/sp1.png)
 
+### sprint-burndown chart
+![](/src/main/webapp/img/back1.png)
 
+## Sprint 2
+### sprint-backlog
+![](/src/main/webapp/img/sp2.png)
 
+### sprint-burndown chart
+![](/src/main/webapp/img/back2.png)
+
+## Sprint 3
+### sprint-backlog
+![](/src/main/webapp/img/sp3.png)
+
+### sprint-burndown chart
+![](/src/main/webapp/img/back3.png)
+
+# Reporte de análisis estático de código
+## Codacy
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9106912acf4e42f38eef7f27eb0c8522)](https://app.codacy.com/gh/20202-PROYCVDS-LOS-DISCIPULOS-DE-MIGUE/MAESTRO-MIGUELITO/dashboard)
