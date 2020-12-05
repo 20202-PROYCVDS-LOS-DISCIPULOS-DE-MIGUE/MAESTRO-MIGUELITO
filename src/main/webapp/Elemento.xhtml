@@ -35,9 +35,9 @@
 					<p:commandButton class="register" type="submit" value="Registrar Elemento" action="#{elementoBean.registrarElemento(tipo,marca)}"/>
 					<br/>
 					<br/>
-					<p:inputText type="number" name="idElemento" class="idElemento" placeholder="idElemento" value="#{idElemento}"/>
+					<p:inputText type="number" name="idElemento" class="idElemento" placeholder="id Elemento" value="#{idElemento}"/>
 					<p:growl id="message" showDetail="true"/>
-					<p:commandButton value="Dar de Baja Elemento" action = "#{elementoBean.darDeBajaElemento(idElemento)}">
+					<p:commandButton class="bajar" value="Dar baja del Elemento" action = "#{elementoBean.darDeBajaElemento(idElemento)}">
 						<p:confirm header="Confirmación" message="Está seguro de dar de baja este elemento?" icon="ui-icon-alert"/>
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -58,7 +58,7 @@
 			<br/>
 			
 			<div class="subTitle2">
-				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Elemento')">Exportar Elementos</button>
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Elementos')">Exportar Elementos</button>
 				<h3>Elementos Registrados</h3>
 			</div>
 			<p:dataTable id="tableExcel" var="Elementos" value="#{elementoBean.getElementos()}" paginator="false"
@@ -67,7 +67,7 @@
 	
 				<p:column class="columns" filterBy="#{Elementos.idElemento}" sortBy="#{Elementos.idElemento}">
 					<f:facet name="header">
-						<h:outputText value="IdElemento" />
+						<h:outputText value="Id Elemento" />
 					</f:facet>
 					<h:outputText value="#{Elementos.idElemento}" />
 				</p:column>

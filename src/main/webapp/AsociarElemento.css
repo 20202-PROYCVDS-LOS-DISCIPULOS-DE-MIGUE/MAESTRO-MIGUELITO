@@ -67,6 +67,20 @@ body {
     border-radius: 20px;
 }
 
+.asociar {
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Bahnschrift;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+    width: 190px;
+    height: 30px;
+    background-color: #FFFFFF;
+    float: center;
+    border-radius: 20px;
+}
+
 .nextWindow{
 	margin-top: 10px;
 	font-size: 14px;

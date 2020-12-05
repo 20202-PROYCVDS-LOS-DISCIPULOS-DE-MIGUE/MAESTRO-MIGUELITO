@@ -26,13 +26,13 @@
 				<h:form id="signup-form" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
 					<p:inputText type="text" name="ip" class="ip" placeholder="ip" value="#{ip}"/>
-					<p:inputText type="text" name="informacion" class="informacion" placeholder="informacion" value="#{informacion}"/>
+					<p:inputText type="text" name="informacion" class="informacion" placeholder="información" value="#{informacion}"/>
 					<p:commandButton class="register" type="submit" value="Registrar Equipo" actionListener="#{equipoBean.registrarEquipo(ip,informacion)}"/>
 					<br/>
 					<br/>
-					<p:inputText type="number" name="idEquipo" class="idEquipo" placeholder="idEquipo" value="#{idEquipo}"/>
+					<p:inputText type="number" name="idEquipo" class="idEquipo" placeholder="id Equipo" value="#{idEquipo}"/>
 					<p:growl id="message" showDetail="true"/>
-					<p:commandButton value="Dar de Baja Equipo" action = "#{equipoBean.darDeBajaEquipo(idEquipo)}">
+					<p:commandButton class="bajar" value="Dar baja del Equipo" action = "#{equipoBean.darDeBajaEquipo(idEquipo)}">
 						<p:confirm header="Confirmación" message="Está seguro de dar de baja este equipo?" icon="ui-icon-alert"/>
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -55,7 +55,7 @@
 			<br/>
 			
 			<div class="subTitle2">
-				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorio')">Exportar Equipos</button>
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Equipos')">Exportar Equipos</button>
 				<h3>Equipos Registrados</h3>
 			</div>
 			<p:dataTable id="tableExcel" var="Equipos" value="#{equipoBean.getEquipos()}" paginator="false" 
@@ -64,7 +64,7 @@
 
 				<p:column class="columns" filterBy="#{Equipos.idEquipo}" sortBy="#{Equipos.idEquipo}">
 					<f:facet name="header">
-						<h:outputText value="IdEquipo"/>
+						<h:outputText value="Id Equipo"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.idEquipo}"/>
 				</p:column>
@@ -78,7 +78,7 @@
 
 				<p:column class="columns" filterBy="#{Equipos.informacion}" sortBy="#{Equipos.informacion}">
 					<f:facet name="header">
-						<h:outputText value="Informacion"/>
+						<h:outputText value="Información"/>
 					</f:facet>
 					<h:outputText value="#{Equipos.informacion}"/>
 				</p:column>

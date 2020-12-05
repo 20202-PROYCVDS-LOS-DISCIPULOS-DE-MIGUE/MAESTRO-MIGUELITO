@@ -7,7 +7,7 @@
 	<h:head>
 		<title>Asociar Elemento</title>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="/AsociarElemento.css?2.0" media="all"/>
+		<link rel="stylesheet" type="text/css" href="/AsociarElemento.css?1.0" media="all"/>
 	</h:head>
 
 	<h:body>
@@ -25,10 +25,10 @@
 			<div>
 				<h:form id="signup-form2" method="post" action="#">
 					<p:growl id="growl" showDetail="true" sticky="true" life="4000"><p:autoUpdate/></p:growl>
-					<p:inputText type="number" name="idElemento" class="idElemento" placeholder="idElemento" value="#{idElemento}"/>
+					<p:inputText type="number" name="idElemento" class="idElemento" placeholder="id Elemento" value="#{idElemento}"/>
 					<p:inputText type="number" name="equipo" class="equipo" placeholder="equipo" value="#{equipo}"/>
 					<p:growl id="message" showDetail="true"/>
-					<p:commandButton value="Asociar Elemento" action = "#{elementoBean.asociarElemento(idElemento,equipo)}">
+					<p:commandButton class="asociar" value="Asociar Elemento" action = "#{elementoBean.asociarElemento(idElemento,equipo)}">
 						<p:confirm header="Confirmación" message="Está seguro de asociar este elemento?" icon="ui-icon-alert"/>
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -48,7 +48,7 @@
 	
 				<p:column class="columns" filterBy="#{Elementos.idElemento}" sortBy="#{Elementos.idElemento}">
 					<f:facet name="header">
-						<h:outputText value="IdElemento" />
+						<h:outputText value="Id Elemento" />
 					</f:facet>
 					<h:outputText value="#{Elementos.idElemento}" />
 				</p:column>

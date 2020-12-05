@@ -29,9 +29,9 @@
 					<p:commandButton class="register" type="submit" value="Registrar Laboratorio" action="#{laboratorioBean.registrarLaboratorio(nombre)}"/>
 					<br/>
 					<br/>
-					<p:inputText type="number" name="idLaboratorio" class="idLaboratorio" placeholder="idLaboratorio" value="#{idLaboratorio}"/>
+					<p:inputText type="number" name="idLaboratorio" class="idLaboratorio" placeholder="id Laboratorio" value="#{idLaboratorio}"/>
 			<p:growl id="message" showDetail="true"/>
-					<p:commandButton value="Cerrar Laboratorio" action = "#{laboratorioBean.cerrarLaboratorio(idLaboratorio)}">
+					<p:commandButton class="cerrar" value="Cerrar Laboratorio" action = "#{laboratorioBean.cerrarLaboratorio(idLaboratorio)}">
 						<p:confirm header="Confirmación" message="Está seguro de cerrar este laboratorio?" icon="ui-icon-alert"/>
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -43,7 +43,7 @@
 
 			<br/>
 			<div class="subTitle2">
-				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorio')">Exportar Laboratorios</button>
+				<button class="option" onclick="exportTableToExcel('tableExcel', 'Informe Laboratorios')">Exportar Laboratorios</button>
 				<h3>Laboratorios Registrados</h3>
 			</div>
 	
@@ -54,7 +54,7 @@
 				
 				<p:column class="columns" filterBy="#{Laboratorios.idLaboratorio}" sortBy="#{Laboratorios.idLaboratorio}">
 					<f:facet name="header">
-						<h:outputText value="IdLaboratorio" />
+						<h:outputText value="Id Laboratorio" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.idLaboratorio}" />
 				</p:column>
@@ -74,21 +74,21 @@
 				
 				<p:column class="columns" filterBy="#{Laboratorios.equiposAsociados}" sortBy="#{Laboratorios.equiposAsociados}">
 					<f:facet name="header">
-						<h:outputText value="EquiposAsociados" />
+						<h:outputText value="Equipos Asociados" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.equiposAsociados}" />
 				</p:column>
 				
 				<p:column class="columns" filterBy="#{Laboratorios.fechaRegistro}" sortBy="#{Laboratorios.fechaRegistro}">
 					<f:facet name="header">
-						<h:outputText value="FechaRegistro" />
+						<h:outputText value="Fecha Registro" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.fechaRegistro}" />
 				</p:column>
 				
 				<p:column class="columns" filterBy="#{Laboratorios.fechaCierre}" sortBy="#{Laboratorios.fechaCierre}">
 					<f:facet name="header">
-						<h:outputText value="FechaCierre" />
+						<h:outputText value="Fecha Cierre" />
 					</f:facet>
 					<h:outputText value="#{Laboratorios.fechaCierre}" />
 				</p:column>
