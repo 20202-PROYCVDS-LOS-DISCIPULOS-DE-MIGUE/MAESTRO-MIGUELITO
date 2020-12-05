@@ -26,9 +26,17 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
 
 # *Manual de usuario:*
 
+- Iniciamos nuestro recorrido en nuestra vista de inicio de sesion en la cual simplemtente ingresaremos con nuestro usuario y contraseña para iniciar a usar nuestros servicios, debemos tener en cuenta que nuestros usuarios y contraseñas seran suministrados y permaneceran en la base de datos solo estos usuarios pueden entrar a nuestra plataforma de servicios.
 
+![](/src/main/webapp/img/1.PNG)
 
+- Dicho lo anterior si tratamos de ingresar con datos inexistentes en la base de datos se nos rechazara nuestra solicitud de acceso. 
 
+![](/src/main/webapp/img/2.PNG)
+
+- Una vez dentro de nuestra plataforma veremos una interfaz sencilla donde se mostrara todos los servicios ofrecidos como lo son equipos, laboratorios, elementos y novedades.
+
+![](/src/main/webapp/img/4.PNG)
 
 
 
