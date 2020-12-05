@@ -72,7 +72,7 @@ El personal administrativo del laboratorio puede crear laboratorios, equipos y e
   
   ![](/src/main/webapp/img/7.PNG)
   
-  - Al ingresar al apartado de Novedades tendremos varias funcionalidades como:
+- Al ingresar al apartado de Novedades tendremos varias funcionalidades como:
 
   1. Consultar Novedades: esta funcionalidad consulta las Novedades que se encuentran registradas.
   2. Exportar Novedades: esta funcionalidad permite exportar en forma de archivo la consulta de Novedades registradas.
