@@ -95,15 +95,18 @@ Durante la elaboracion del proyecto logramos dar uso en:
 - Capa de aplicación:
   En esta capa usamos Google guice, apache shiro y maven de tal manera que desde el inicio de sesion hasta las consultas se lograran realizar con facilidad
   y agilidad para tener un codigo eficiente y limpio.
+  
   ![](/src/main/webapp/img/shiro.png)
 
 - Capa de presentación
   En esta capa usamos primefaces y JSF este uso nos dara beneficios en la facilididad de la logica usada durante el proceso de visualizacion desde hacer mas agradable
   las vistas hasta realizar y mostrar de manera eficiente los resultados de las consultas.
+  
   ![](/src/main/webapp/img/jsf.jpg)
 
 - Capa de persistencia
   En esta capa usamos MyBatis y una base de datos PostgreSQL los cuales nos dara ese cambio y manejo de informacion provenientes de la base de datos lo cual nos dara una mayor   facilidad en el uso de los elementos obtenidos durante las consultas.
+  
   ![](/src/main/webapp/img/sql.jpg)
 
 ## sistema de integración continua Circle Ci
@@ -115,11 +118,11 @@ Durante la elaboracion del proyecto logramos dar uso en:
 
 # *Descripción del proceso:*
 
-Integrantes.
+Integrantes:
 
-Miguel Angel Rodriguez Siachoque encargado de la implementacion de las VIEWS y BACKEN
-James Alexander Torres Segura encargado de la implementacion BACKEN
-Daniel Santiago Ducuara Ardila encargado de la implementacion BD y BACKEN
+- Miguel Angel Rodriguez Siachoque encargado de la implementacion de las VIEWS y BACKEN
+- James Alexander Torres Segura encargado de la implementacion BACKEN
+- Daniel Santiago Ducuara Ardila encargado de la implementacion BD y BACKEN
 
 
 ## Enlace Taiga
